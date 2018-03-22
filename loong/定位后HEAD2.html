@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HEADER 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="headerfooter.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body >
+<div class="container" >
+<div class="header" >
+
+<div class="col-lg-3"><img src="" alt="logo" width="200px" height="200px"></div>
+<div class="col-lg-6"><input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button></div>
+<div class="col-lg-3">
+  
+    
+    <div class="col-lg-1">
+        
+      </div>
+      <div class="col-lg-3">
+<div><i class="glyphicon glyphicon-user"></i></i></div>
+      </div>
+        <div class="col-lg-3">
+          <i class="material-icons">shopping_cart</i>
+        </div>
+          <div class="col-lg-3">
+            <div class="dropdown">
+<button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">密码</a>
+    <a href="#">喜好</a>
+    <a href="#">等等</a>
+  </div>
+    <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</div>
+          </div>
+          <div class="col-lg-2">
+        
+      </div>
+
+  
+
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
