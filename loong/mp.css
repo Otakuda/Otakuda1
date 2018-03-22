@@ -1,0 +1,35 @@
+.fucker
+{
+	overflow: hidden;
+	background-color: yellow;
+}
+.contianer1 {
+  overflow: hidden;
+  background-color: yellow;
+}
+
+
+#search {
+
+    padding: 50px;
+    background: url(sliverbackgorund.jpg);
+    background-repeat: no-repeat;
+        background-size: auto;
+        height: 500px;
+        text-align: center;
+}
+#add1{
+
+    padding: 25px;
+    background: url(rider.jpg);
+    background-repeat: no-repeat;
+        background-size: auto;
+        height:600px ;
+        text-align: center;
+}
+
+#logo #login
+{
+
+pointer-events: auto;
+}
