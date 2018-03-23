@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:board_id;datatype:int,name:board_title;datatype:string,name:board_name;datatype:string,name:board_pic;datatype:string,name:board_email;datatype:string,name:board_content;datatype:string,name:board_date;datatype:datetime,name:board_re;datatype:string,name:board_redate;datatype:datetime,name:board_ip;datatype:string" />
+	<infoitem key="UD_web_board" value="name:board_id;datatype:int,name:board_title;datatype:string,name:board_name;datatype:string,name:board_pic;datatype:string,name:board_email;datatype:string,name:board_content;datatype:string,name:board_date;datatype:datetime,name:board_re;datatype:string,name:board_redate;datatype:datetime,name:board_ip;datatype:string" />
+</info>
