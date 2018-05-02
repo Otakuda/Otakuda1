@@ -24,9 +24,9 @@ class Login extends CI_Controller {
             redirect(base_url().'welcome');
         }
         //if not load the login page
-        $this->load->view('header');
+       
         $this->load->view('login_page');
-        $this->load->view('footer');
+       
     }
 
     public function doLogin() {
@@ -57,5 +57,6 @@ class Login extends CI_Controller {
         $this->session->unset_userdata('logged_in');
         redirect(base_url().'login');
     }
+
 
 }
