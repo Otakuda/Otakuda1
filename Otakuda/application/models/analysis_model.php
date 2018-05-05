@@ -10,6 +10,7 @@ class analysis_model extends CI_Model
 	}
 	function showdatabase()
 	{
+
 		$query=<<<end_html
 		SELECT `Schema`,`machine` FROM server.ip_table;
 end_html;
