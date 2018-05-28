@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<markers>
+<marker id="1" type="restaurant" lng="-151.225769" lat="-33.869843" address="1/28 Macleay Street, Elizabeth Bay, NSW" name="Billy Kwong"/>
+<marker id="2" type="restaurant" lng="151.171936" lat="-33.861034" address="580 Darling Street, Rozelle, NSW" name="Love.Fish"/>
+<marker id="3" type="bar" lng="151.174469" lat="-33.898113" address="76 Wilford Street, Newtown, NSW" name="Young Henrys"/>
+<marker id="4" type="bar" lng="151.207474" lat="-33.840282" address="Greenwood Plaza, 36 Blue St, North Sydney NSW" name="Hunter Gatherer"/>
+<marker id="5" type="bar" lng="151.194168" lat="-33.910751" address="7A, 2 Huntley Street, Alexandria, NSW" name="The Potting Shed"/>
+<marker id="6" type="bar" lng="151.210449" lat="-33.879917" address="16 Foster Street, Surry Hills, NSW" name="Nomad"/>
+<marker id="7" type="restaurant" lng="151.263763" lat="-33.906357" address="43 Macpherson Street, Bronte, NSW" name="Three Blue Ducks"/>
+<marker id="8" type="restaurant" lng="151.209656" lat="-33.881123" address="60-64 Reservoir Street, Surry Hills, NSW" name="Single Origin Roasters"/>
+<marker id="9" type="restaurant" lng="151.215530" lat="-33.874737" address="60 Riley Street, Darlinghurst, NSW" name="Red Lantern"/>
+</markers>
