@@ -13,7 +13,8 @@
     </tr>
     <tr>
         <td>Code :</td>
-        <td><input type="text" name="recode"><input type="hidden" name="code" value="<?php  echo(rand(000000,999999));?>" ></td>
+        <td><input type="text" name="recode">
+            <input type="hidden" name="code" value="<?php  echo(rand(000000,999999));?>" ></td>
         <td><input type="submit" name="add" value="免费发送验证码" id="" /></td>
     </tr>
     <input type="submit" name="submit" action="<?= base_url(); ?>Welcome/doLogin">
