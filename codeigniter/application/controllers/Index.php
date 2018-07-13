@@ -23,8 +23,10 @@ class Index extends CI_Controller {
             redirect(base_url().'welcome');
         }
         //if not load the login page
-       
+        $this->load->view('header');
         $this->load->view('index');
+        $this->load->view('footer');
+
        
     }
 }

@@ -4,14 +4,8 @@ class Register extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        
-        //load the required helpers and libraries
-        $this->load->helper('url');
-        $this->load->library(['form_validation', 'session']);
-        $this->load->database();
-        
-        //load our Register model here
-        $this->load->model('RegisterModel', 'register');
+        $this->load->library('form_validation');
+        $this->load->model('RegisterModel','register');
     }
 
     //registration form page
@@ -22,18 +16,20 @@ class Register extends CI_Controller {
             redirect(base_url() . 'welcome');
         }
         //load the register page views
-        $this->load->view('header');
+
         $this->load->view('register_page');
-        $this->load->view('footer');
+
     }
 
     //register validation and logic
     public function doRegister() {
         //set the form validation here
-        $this->form_validation->set_rules('name', 'Name', 'required|min_length[3]');
+        $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_message('is_unique', 'Email already exists.');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('conf_password', 'confirm password', 'required|matches[password]');
+//        $this->form_validation->set_rules('i_id', 'i_id', 'required');
 
         //if the above validation fails, redirect to register page
         //with vaildation_errors();
@@ -45,10 +41,11 @@ class Register extends CI_Controller {
             //if not get the input values
             $name = $this->input->post('name');
             $email = $this->input->post('email');
-            $password = sha1($this->input->post('password'));
+            $password = md5($this->input->post('password'));
+//            $i_id = $this->input->post('i_id');
 
             $data = [
-                'name' => $name, 'email' => $email, 'password' => $password, 'date_time' => date('Y-m-d H:i:s')
+                'name' => $name, 'email' => $email, 'password' => $password,'user_level'=>1
             ];
 
             //pass the input values to the register model
@@ -61,5 +58,4 @@ class Register extends CI_Controller {
             }
         }
     }
-
 }

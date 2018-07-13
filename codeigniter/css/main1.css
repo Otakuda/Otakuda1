@@ -373,13 +373,13 @@ iframe {
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 600px) {
   .wrap-login100 {
     padding: 177px 90px 33px 85px;
   }
 
   .login100-pic {
-    width: 35%;
+    width: 20%;
   }
 
   .login100-form {
@@ -387,7 +387,7 @@ iframe {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .wrap-login100 {
     padding: 100px 80px 33px 80px;
   }
@@ -401,7 +401,7 @@ iframe {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 400px) {
   .wrap-login100 {
     padding: 100px 15px 33px 15px;
   }

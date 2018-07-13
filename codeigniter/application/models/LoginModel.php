@@ -1,16 +1,22 @@
-<?php
+<?php 
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
 
 class LoginModel extends CI_Model {
 
-    public function checkLogin($email, $password) {
-        //query the table 'users' and get the result count
-        $this->db->where('email', $email);
-        $this->db->where('password', $password);
-        $query = $this->db->get('users');
-
-        return $query->num_rows();
+     function validate_login($postData){
+        $this->db->select('*');
+        $this->db->where('email', $postData['email']);
+        $this->db->where('password', md5($postData['password']));
+//        $this->db->where('user_level',1);
+        $this->db->from('users');
+        $query=$this->db->get();
+        if ($query->num_rows() == 0)
+            return false;
+        else
+            return $query->result();
     }
-   
 
 }
 
