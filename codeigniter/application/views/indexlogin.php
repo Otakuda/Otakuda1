@@ -81,15 +81,15 @@
                             <div class="slider-content clearfix" style="width: 2820px;">
                                 <div class="slider-item" id="slideshow">
                                     <div class="slider-img-div"
-                                         style="background-image:url(<?= base_url() ?>fb/v1.jpg)"></div>
+                                         style="background-image:url(<?= base_url() ?>fb/1.jpg)"></div>
                                 </div>
 
                                 <div class="slider-item">
                                     <div class="slider-img-div"
-                                         style="background-image:url(<?= base_url() ?>fb/v2.jpg)"></div>
+                                         style="background-image:url(<?= base_url() ?>fb/2.jpg)"></div>
                                 </div>
                                 <div class="slider-item">
-                                    <div class="slider-img-div" style="background-image:url(<?= base_url() ?>fb/v3.jpg)">
+                                    <div class="slider-img-div" style="background-image:url(<?= base_url() ?>fb/3.jpg)">
                                     </div>
                                 </div>
                                 <div class="slider-item">

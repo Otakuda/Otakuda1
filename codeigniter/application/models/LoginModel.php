@@ -9,7 +9,7 @@ class LoginModel extends CI_Model {
         $this->db->select('*');
         $this->db->where('email', $postData['email']);
         $this->db->where('password', md5($postData['password']));
-//        $this->db->where('user_level',1);
+//        $this->db->where('i_id',1);
         $this->db->from('users');
         $query=$this->db->get();
         if ($query->num_rows() == 0)

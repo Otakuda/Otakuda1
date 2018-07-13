@@ -18,7 +18,9 @@ class Order extends CI_Controller {
     public function index() {
        
        
-        $this->load->view('order');
+        $this->load->model('shoppingcart');
+        $data['cart']= $this->shoppingcart->mycart();
+        $this->load->view('order',$data);
        
     }
 }

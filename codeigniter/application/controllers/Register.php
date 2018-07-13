@@ -16,9 +16,9 @@ class Register extends CI_Controller {
             redirect(base_url() . 'welcome');
         }
         //load the register page views
-
+        $this->load->view('header');
         $this->load->view('register_page');
-
+        $this->load->view('footer');
     }
 
     //register validation and logic
@@ -45,7 +45,7 @@ class Register extends CI_Controller {
 //            $i_id = $this->input->post('i_id');
 
             $data = [
-                'name' => $name, 'email' => $email, 'password' => $password,'user_level'=>1
+                'name' => $name, 'email' => $email, 'password' => $password,'i_id'=>1
             ];
 
             //pass the input values to the register model

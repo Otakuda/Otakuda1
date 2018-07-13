@@ -26,7 +26,7 @@ class Login extends CI_Controller {
                 'email'     => $validate[0]->email,
                 'name' => $validate[0]->name,
                 'user_id' => $validate[0]->user_id,
-                'user_level' => $validate[0]->user_level,
+                'i_id' => $validate[0]->i_id,
                 'logged_in' => TRUE,
                 'state' => 'Molek',
                 'state_lat' => '1.524543',

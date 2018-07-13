@@ -56,7 +56,7 @@
                     <li class="has-child">身份状态
                         <ul class="header-nav-merchant header-nav-second">
                             <li><a rel="nofollow">用户</a></li>
-                            <li><a rel="nofollow" href="<?= base_url(); ?>trader" target="_blank">商家</a></li>
+                            <li><a rel="nofollow" href="<?= base_url(); ?>trader">商家</a></li>
                         </ul>
                     </li>
                     <li class="has-child">帮助
