@@ -1,46 +1,40 @@
-<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Index</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<?php echo form_open('Welcome/add_phone');?>
-<table>
-    <tr>
-        <td>Phone :</td>
-        <td><input type="text" name="phone" required></td>
-    </tr>
-    <tr>
-        <td>Code :</td>
-        <td><input type="text" name="recode">
-            <input type="hidden" name="code" value="<?php  echo(rand(000000,999999));?>" ></td>
-        <td><input type="submit" name="add" value="免费发送验证码" id="" /></td>
-    </tr>
-    <input type="submit" name="submit" action="<?= base_url(); ?>Welcome/doLogin">
-</table>
+<form  method="post" action="<?= base_url(); ?>index.php/Welcome/doLogin" >
+<main id="main">
+    <section id="left">
+        <div id="head">
+            <h1>登入页面</h1>
+            <p>简单，容易，快速</p>
+        </div>
 
-<script type="text/javascript">
+    </section>
+    <section id="right">
+        <h1>登入账号</h1>
+        <form action="#">
+            <div id="form-card" class="form-field">
+                <label for="cc-number">Phone :</label>
+               <input type="text" name="phone" id="phone " required>
+            </div>
 
 
-    var wait=60;
-    function time(o) {
-        if (wait == 0) {
-            o.removeAttribute("disabled");
-            o.value="免费获取验证码";
-            wait = 60;
-        } else {
 
-            o.setAttribute("disabled", true);
-            o.value=wait+"秒后可以重新发送";
-            wait--;
-            setTimeout(function() {
-                    time(o)
-                },
-                1000)
-        }
-    }
-    document.getElementById("btn").onclick=function(){time(this);}
-</script>
+            <div id="form-sec-code" class="form-field">
+                <label for="sec-code">Password :</label>
+                <input type="text" name="password" id="password" required>
+            </div>
+
+            <input type="submit" name="submit" id="login">
+            <a href="<?= base_url() ?>index.php/Register_C">没账号？</a>
+    </section>
+</main>
+
+</form>
 </body>
-</html>

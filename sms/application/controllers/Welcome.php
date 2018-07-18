@@ -12,46 +12,31 @@ class Welcome extends CI_Controller
 
 
         $this->load->database();
-        $this->load->model('Add_phone');
+        $this->load->model('User_M');
+        $this->load->model('Phone_M');
+        $this->load->model('Login_M');
     }
 
     public function index()
     {
         $this->load->view('welcome_message');
-
-
-    }
-
-    public function add_phone()
-    {
-        $phone = $this->input->post('phone');
-        $code = $this->input->post('code');
-
-        $data = array(
-            'phone' => $phone,
-            'code' => $code
-        );
-
-        $this->Add_phone->add($data);
-
-        redirect('Welcome/index', 'refresh');
     }
 
     public function doLogin()
     {
         //get the input fields from login form
         $phone = $this->input->post('phone');
-        $code = $this->input->post('code');
+        $password = $this->input->post('password');
 
-        //send the email pass to query if the user is present or not
-        $check_login = $this->welcome->checkLogin($phone, $code);
+        //send the code pass to query if the user is present or not
+        $login = $this->Login_M->check_login($phone,$password);
 
-        if ($check_login)
+        if ($login)
         {
-            echo "right";
-        }else
-        {
-            echo "wrong";
+            echo "做对了";
+        }else{
+            echo "做错了";
         }
-    }
+
+       }
 }
