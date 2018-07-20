@@ -17,8 +17,6 @@ class Place extends CI_Controller
     {
         // get cities
         $data['states'] = $this->PlaceModel->getState();
-        $data['state_lat'] = $this->PlaceModel->getState();
-        $data['state_lng'] = $this->PlaceModel->getState();
         // load view
         $this->load->view('header');
         $this->load->view('place', $data);
@@ -28,12 +26,10 @@ class Place extends CI_Controller
     public function update_state(){
         $input = $this->input->post();
         $state = $input['state'];
-        $state_lat = $input['state_lat'];
-        $state_lng = $input['state_lng'];
-        $this->session->set_userdata('state', $state);
-        $this->session->set_userdata('state_lat', $state_lat);
-        $this->session->set_userdata('state_lng', $state_lng);
-
+        $state_data = $this->PlaceModel->get($state);
+        $this->session->set_userdata('state', $state_data['state_name']);
+        $this->session->set_userdata('state_lat', $state_data['state_lat']);
+        $this->session->set_userdata('state_lng', $state_data['state_lng']);
     }
 
 

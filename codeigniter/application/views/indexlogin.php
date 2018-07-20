@@ -81,15 +81,15 @@
                             <div class="slider-content clearfix" style="width: 2820px;">
                                 <div class="slider-item" id="slideshow">
                                     <div class="slider-img-div"
-                                         style="background-image:url(<?= base_url() ?>fb/1.jpg)"></div>
+                                         style="background-image:url(<?= base_url() ?>fb/v1.jpg)"></div>
                                 </div>
 
                                 <div class="slider-item">
                                     <div class="slider-img-div"
-                                         style="background-image:url(<?= base_url() ?>fb/2.jpg)"></div>
+                                         style="background-image:url(<?= base_url() ?>fb/v2.jpg)"></div>
                                 </div>
                                 <div class="slider-item">
-                                    <div class="slider-img-div" style="background-image:url(<?= base_url() ?>fb/3.jpg)">
+                                    <div class="slider-img-div" style="background-image:url(<?= base_url() ?>fb/v3.jpg)">
                                     </div>
                                 </div>
                                 <div class="slider-item">
@@ -116,7 +116,7 @@
 
                     <a href="" data-bid="b_a4enk0wd" data-lab="{&quot;custom&quot;:{&quot;index&quot;:2}}" class="link"
                        target="_blank">
-                        <div class="item shadow pic-1" style="background-image:url(<?= base_url() ?>fb/bat.jpg"></div>
+                        <div class="item shadow pic-1" style="background-image:url(<?= base_url() ?>fb/back.jpg"></div>
                     </a>
 
 
@@ -195,6 +195,7 @@
 
 <input type="text" name="state_lat" value="<?= $this->session->userdata('state_lat'); ?>">
 <input type="text" name=state_lng" value="<?= $this->session->userdata('state_lng'); ?>">
+
 <script>
     // Initialize and add the map
     function initMap() {

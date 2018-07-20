@@ -9,7 +9,7 @@
                         <option>-- 请选择地区 --</option>
                         <?php
                         foreach ($states as $state) {
-                            echo "<option value='" . $state['state_name'] . "'>" . $state['state_name'] . "</option>";
+                            echo "<option value='" . $state['state_id'] . "'>" . $state['state_name'] . "</option>";
                         }
                         ?>
                     </select>
