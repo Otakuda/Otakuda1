@@ -191,6 +191,7 @@ window.comPtData['header'] = {"currentCity":{"id":1,"name":"北京","pinyin":"be
     </div>
 </div>
 </div>
+</div>
 </footer>
 </body>
 </html>

@@ -16,7 +16,6 @@ class Select_category extends CI_Controller
     public function index()
     {
         $data['categorys'] = $this->Category_cargo->get_category();
-        // load view
         $this->load->view('header2');
         $this->load->view('select_category', $data);
     }
