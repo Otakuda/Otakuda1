@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //if(isset($_SERVER['HTTP_HOST'] && $_SERVER['HTTP_HOST'] == "localhost" )){
 
 //}
-$config['base_url'] = '//localhost/codeigniter/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------

@@ -1,79 +1,102 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-<meta charset="UTF-8">
+<head><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="<?= base_url() ?>images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>vendor/animate/animate.css">
-<!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/util.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/main1.css">
+    <!-- Latest compiled and minified CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" >
 </head>
 <body>
-    
-    <form action="<?= base_url(); ?>register/doRegister" method="post" >
-    <span class="login100-form-title">
-                       Register
-                    </span>
-    <!-- show error messages if the form validation fails -->
-    <?php if ($this->session->flashdata()) { ?>
-        <div class="alert alert-danger">
-            <?=$this->session->flashdata('errors'); ?>
-        </div>
-    <?php } ?>
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" name="name" required class="form-control" id="name">
+<form id="phone_validate" action="<?= base_url(); ?>Register/Phone_Login" method="post">
+
+    <div  class="form-group">
+        <table class="form-group">
+
+            <h1>注册账号</h1>
+            <tr>
+                <td>Phone :</td>
+                <td><input type="text" name="phone" id="phone" required></td>
+            </tr>
+            <tr>
+                <td>Code :</td>
+                <td>
+                    <input type="text" name="code" id="code"></td>
+                <td><input type="button" class="btn btn-default" id="phone_validation" onclick="Send()" value="免费发送验证码" ></td>
+                <!--            <td>-->
+                <!--                <input type="text" id="chance" value="0"></td>-->
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" id="pass"></td>
+            </tr>
+            <tr>
+                <td><a href="<?= base_url(); ?>welcome">有账号？</a></td>
+            </tr>
+
+        </table>
     </div>
-
-    <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="email" name="email" required class="form-control" id="email">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" name="password" required class="form-control" id="pwd">
-    </div>
-
-    <div class="form-group">
-        <label for="pwd">确认密码:</label>
-        <input type="password" name="conf_password" required class="form-control" id="conf_password">
-    </div>
-
-        <input type="text" name="position" value="user" hidden>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-
-    <span class="float-right"><a href="<?= base_url() . 'login'; ?>" class="btn btn-primary">Login</a></span>
-
 </form>
-  <script src="<?= base_url() ?>vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-    <script src="<?= base_url() ?>vendor/bootstrap/js/popper.js"></script>
-    <script src="<?= base_url() ?>vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-    <script src="<?= base_url() ?>vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-    <script src="<?= base_url() ?>vendor/tilt/tilt.jquery.min.js"></script>
-    <script >
-        $('.js-tilt').tilt({
-            scale: 1.1
-        })
-    </script>
-<!--===============================================================================================-->
-    <script src="<?= base_url() ?>js/main.js"></script>
 </body>
-</html>
+<script type="text/javascript">
+    //    $(document).on('click','#phone_validation', function(e){
+    //        e.preventDefault();
+    //        let phone = $("#phone").val();
+    //
+    //        $.post("../index.php/Register_C/add_phone",
+    //            {
+    //                phone: phone
+    //
+    //            }, function (response) {
+    //            let data = jQuery.parseJSON(response);
+    //               if(data['status'] == "fail"){
+    //
+    //               } else {
+    //
+    //               }
+    //            });
+    //    });
 
+    function Send()/*  search database from server*/
+    {
 
+        var phone = document.getElementById("phone").value;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                SetTime();
+
+            }
+
+        };
+        xmlhttp.open("Post", "Register/add_phone", true);
+        xmlhttp.send(phone);// JavaScript Document
+    }
+    function SetTime(){
+
+        var _that=document.getElementById("phone_validation");
+        var count=2;
+        var timer=null;
+        _that.disabled=true;
+        _that.value="还剩"+count+"秒才发送";
+        timer=setInterval(function(){
+            if(count>0){
+                count=count-1;
+                _that.value="还剩"+count+"秒才发送";
+            }
+            else{
+                _that.disabled=false;
+                _that.value="免费发送验证码";
+                count=60;
+                clearInterval(timer)
+            }
+        },1000)
+
+    }
+
+</script>

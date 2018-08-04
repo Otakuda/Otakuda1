@@ -33,7 +33,7 @@
                 </div>
 
 
-<form  action="<?=base_url();?>login/dologin"  method="post"  class="login100-form validate-form">
+<form  action="<?=base_url();?>login/doLogin"  method="post"  class="login100-form validate-form">
 
 
 
@@ -41,15 +41,15 @@
     <div class="wrap-input100 validate-input">
     
 
-        <input class="input100" type="email" name="email" placeholder="Email" id="email" for="email">
+        <input class="input100" type="text" name="phone" id="phone " required>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
                         </span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                        <input class="input100" type="password" name="password" placeholder="Password" id="pwd" for="pwd">
+                        <input class="input100" type="text" name="password" id="password" required>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>

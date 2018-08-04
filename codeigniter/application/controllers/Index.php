@@ -18,15 +18,15 @@ class Index extends CI_Controller {
     public function index() {
         //check if the user is already logged in 
         $logged_in = $this->session->userdata('logged_in');
-        if($logged_in){
+        if($logged_in == TRUE){
             //if yes redirect to welcome page
             redirect(base_url().'welcome');
+        }else{
+            //if not load the login page
+            $this->load->view('header');
+            $this->load->view('index');
+            $this->load->view('footer');
         }
-        //if not load the login page
-        $this->load->view('header');
-        $this->load->view('index');
-        $this->load->view('footer');
 
-       
-    }
-}
+
+}}

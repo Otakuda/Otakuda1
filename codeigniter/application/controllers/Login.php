@@ -1,14 +1,21 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller
 {
 
-    public function __Construct()
+    public function __construct()
     {
-        parent::__Construct();
-        $this->load->model("LoginModel");
+        parent::__construct();
+
+        //load the required helpers and libraries
+        $this->load->helper('url');
+        $this->load->library(['form_validation','session']);
+        $this->load->database();
+        $this->load->model('User_M');
+        $this->load->model('Phone_M');
+        $this->load->model('Login_M');
+        $this->load->model('Index_M');
     }
 
     public function index()
@@ -21,35 +28,43 @@ class Login extends CI_Controller
         }
     }
 
-    public function dologin()
+
+    public function doLogin()
     {
-        $postData = $this->input->post();
-        $validate = $this->LoginModel->validate_login($postData);
-        if ($validate) {
-            $newdata = array(
-                'email' => $validate[0]->email,
-                'name' => $validate[0]->name,
-                'user_id' => $validate[0]->user_id,
-                'user_level' => $validate[0]->user_level,
-                'logged_in' => TRUE,
-                'state' => 'Molek',
-                'state_lat' => '1.524543',
-                'state_lng' => '103.789807',
+        //get the input fields from login form
+        $phone = $this->input->post('phone');
+        $password = md5($this->input->post('password'));
+
+        //send the code pass to query if the user is present or not
+        $login = $this->Login_M->check_login($phone, $password);
+
+        if ($login == TRUE) {
+
+            $data = $this->User_M->display_detail($phone);
+
+            $userdata = array(
+
+                'username' => $data[0]['username'],
+                'phone' => $data[0]['phone'],
+                'logged_in' =>TRUE,
+                'user_level' => $data[0]['user_level'],
+                'shop_level' => $data[0]['shop_level'],
+                'rider_level' => $data[0]['rider_level'],
+
             );
-            $this->session->set_userdata($newdata);
-            redirect("index");
-        } else {
-            $data = array('alert' => true);
-            $this->load->view('login_page', $data);
+            $this->session->set_userdata($userdata);
+
+            redirect('index');
+        }else{
 
         }
     }
 
-    public function logout()
-    {
+        public function logout() {
         $this->session->sess_destroy();
-        redirect('index');
+            $this->load->view('header');
+            $this->load->view('index');
+            $this->load->view('footer');
     }
-
 
 }

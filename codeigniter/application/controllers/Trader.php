@@ -18,11 +18,13 @@ class Trader extends CI_Controller {
     public function index() {
         //check if the user is already logged in 
         $logged_in = $this->session->userdata('logged_in');
-         if($logged_in and $this->session->userdata('user_level') == 1)
+
+         if($logged_in and $this->session->userdata('shop_level') == 0)
          {
-            redirect('shangjia');
+
+            redirect('registerb');
          }
-         elseif($logged_in and $this->session->userdata('user_level') == 2)
+         else if($logged_in and $this->session->userdata('shop_level') == 1)
          {
              $this->load->view('header2');
              $this->load->view('trader');

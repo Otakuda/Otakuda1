@@ -26,7 +26,7 @@
                         <span class="link nav-text ">肉类</span></span>
                             <i class="nav-right-arrow "></i></li>
 
-                        <li class="nav-li " onclick="openPage('fruit', this)">
+                   <li class="nav-li " onclick="openPage('fruit', this)">
                         <span class="nav-text-wrapper">
                         <span class="link nav-text ">水果</span></span>
                             <i class="nav-right-arrow"></i></li>
@@ -59,7 +59,7 @@
                 <div class="home-header-links">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="" data-bid="b_lalhpjhj" data-lab="{&quot;custom&quot;:{&quot;title&quot;:&quot;蔬菜&quot;}}"
-                       class="link waimai-link" title="蔬菜" target="_blank">蔬菜</a>
+                       class="link waimai-link" title="蔬菜" target="_blank" >蔬菜</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="" data-bid="b_lalhpjhj" data-lab="{&quot;custom&quot;:{&quot;title&quot;:&quot;肉类&quot;}}"
                        class="link maoyan-link" title="肉类" query="utm_source=meituanweb"
@@ -89,7 +89,8 @@
                                          style="background-image:url(<?= base_url() ?>fb/v2.jpg)"></div>
                                 </div>
                                 <div class="slider-item">
-                                    <div class="slider-img-div" style="background-image:url(<?= base_url() ?>fb/v3.jpg)">
+                                    <div class="slider-img-div"
+                                         style="background-image:url(<?= base_url() ?>fb/v3.jpg)">
                                     </div>
                                 </div>
                                 <div class="slider-item">
@@ -118,17 +119,14 @@
                        target="_blank">
                         <div class="item shadow pic-1" style="background-image:url(<?= base_url() ?>fb/back.jpg"></div>
                     </a>
-
-
                     <div class="item banner-logincard">
 
                         <div style="float:left">
                             <div class="login-container">
-                                <div class="default" style="display:block"
-                                >
-                                    <div class="head-img-row"><img src="<?= base_url() ?>fb/user.png" alt=""></div>
-                                    <?php echo '<p class="user-name"> ' . $this->session->userdata('name') . "</b></p>"; ?>
-                                    <?php echo '<p class="user-name"> ' . $this->session->userdata('email') . "</b></p>"; ?>
+                                <div class="default" style="display:block">
+                                <div class="head-img-row"><img src="<?= base_url() ?>fb/user.png" alt=""></div>
+                                    <?php echo '<p class="user-name"> ' . $this->session->userdata('username') . "</b></p>";
+                                    ?>
                                     <a class="btn-login" href="<?= base_url(); ?>login/logout">退出</a></div>
                                 <div class="default" style="display:none">t
                                     <div class="setting">
@@ -205,6 +203,11 @@
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
     }
+
+    $( function() {
+        $( "#dialog" ).dialog();
+    } );
+
 </script>
 <!--Load the API from the specified URL
 * The async attribute allows the browser to render the page while the API loads
