@@ -6,12 +6,10 @@ class PlaceModel extends CI_Model
     function getState()
     {
         $response = array();
-
         // Select record
         $this->db->select('*');
         $q = $this->db->get('state');
         $response = $q->result_array();
-
         return $response;
     }
 

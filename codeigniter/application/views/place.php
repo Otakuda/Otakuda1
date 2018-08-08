@@ -7,8 +7,7 @@
                 <div class="choose-wrap">
                     <select id='sel_city'>
                         <option>-- 请选择地区 --</option>
-                        <?php
-                        foreach ($states as $state) {
+                        <?php foreach ($states as $state) {
                             echo "<option value='" . $state['state_id'] . "'>" . $state['state_name'] . "</option>";
                         }
                         ?>

@@ -59,7 +59,8 @@
                             <li class="yui3-u">
                                 <p class="caption">管理相關</p>
                                 <a href="">管理訂單</a>
-                                <a href="">管理商品</a> <a href="<?= base_url(); ?>select_type">我要賣東西</a>
+                                <a href="<?=base_url()?>product_manage">管理商品</a>
+                                <a href="<?= base_url(); ?>select_type">我要賣東西</a>
                                 <a href="">賣家商品通知設定</a>
                                 <span class="break">line</span>
                             </li>

@@ -76,7 +76,6 @@ class Registerb extends CI_Controller {
                     $data['file_name'] = $image_folder.$image_name.".".$image_name_mime_type;
                     $insert_data = $this->registerb->add_user($data);
 
-                    //if data inserted then set the success message and redirect to login page
                     if ($insert_data) {
                         $this->session->set_flashdata('msg', 'Successfully Register, Login now!');
                         redirect(base_url() . 'loginb');
@@ -84,9 +83,6 @@ class Registerb extends CI_Controller {
                     return FALSE;
                 }
             }
-
-            //pass the input values to the register model
-
         }
     }
 

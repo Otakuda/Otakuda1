@@ -17,7 +17,7 @@
         <div class="yui3-u-1">
             <div class="select-category mod-shadow" id="yui_3_12_0_4_1531796242960_256">
                 <form class="submit-product-category submit-flow-set mod-shadow"
-                      action="<?= base_url() ?>cargo_edit" method="post"><h3 class="subject">選擇商品類型</h3>
+                      action="<?= base_url() ?>product_edit" method="post"><h3 class="subject">選擇商品類型</h3>
                     <div class="decorations"></div>
                     <fieldset class="product-type " id="yui_3_12_0_4_1531796242960_272">
                         <h3 class="title hide">選擇商品類型</h3>
@@ -31,7 +31,7 @@
                         <div>
                             <div>
                                 <select id='sel_category' name="sel_category">
-                                    <option>-- 请选择地区 --</option>
+                                    <option>-- 请选择商品種類 --</option>
                                     <?php
                                     foreach ($categorys as $category) {
                                         echo "<option value='" . $category['cargo_id'] . "'>" . $category['cargo_sort'] . "</option>";

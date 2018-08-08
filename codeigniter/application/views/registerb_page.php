@@ -14,7 +14,7 @@
 
 <form action="<?= base_url(); ?>registerb/doRegister" method="post" enctype="multipart/form-data">
 
-    <center><h1> 商家注册</h1></center>
+    <h1> 商家注册</h1>
     </span>
     <!-- show error messages if the form validation fails -->
     <?php if ($this->session->flashdata()) { ?>
@@ -122,7 +122,6 @@
 
     <script src="<?= base_url() ?>js/main.js"></script>
     <script src="<?= base_url() ?>js/confirm_password.js"></script>
-<!--    <script src="--><?//= base_url() ?><!--js/imageupload.js"></script>-->
     <script src="<?= base_url() ?>js/mapsearch.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Fb3SBTL-Hta3jxIJqjtzevzP8gihzeo&callback=initMap">

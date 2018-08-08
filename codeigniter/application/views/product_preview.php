@@ -1,26 +1,89 @@
+<style>
+    .input-number-group {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
 
-    <div class="yui3-g">
-        <div id="bd" class="yui3-g">
-            <div class="yui3-u-1">
-                <div class="step-bar">
-                    <ol class="step-list">
-                        <li class="step done"><span class="step-number">1</span> <span
-                                    class="step-name">選擇商品類型及分類</span> <span
-                                    class="icon-next-step"></span></li>
-                        <li class="step done"><span class="step-number">2</span> <span class="step-name">商品資訊與規格</span>
-                            <span
-                                    class="icon-next-step"></span></li>
-                        <li class="step current"><span class="step-number">3</span> <span class="step-name">預覽</span>
-                            <span
-                                    class="icon-next-step"></span></li>
-                        <li class="step"><span class="step-number">4</span> <span class="step-name">完成</span></li>
-                    </ol>
-                </div>
-                <div class="item-preview">
+    .input-number-group input[type=number]::-webkit-inner-spin-button,
+    .input-number-group input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .input-number-group .input-group-button {
+        line-height: calc(80px / 2 - 5px);
+    }
+
+    .input-number-group .input-number {
+        width: 80px;
+        padding: 0 12px;
+        vertical-align: top;
+        text-align: center;
+        outline: none;
+        display: block;
+        margin: 0;
+    }
+
+    .input-number-group .input-number,
+    .input-number-group .input-number-decrement,
+    .input-number-group .input-number-increment {
+        border: 1px solid #cacaca;
+        height: 40px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border-radius: 0;
+    }
+
+    .input-number-group .input-number-decrement,
+    .input-number-group .input-number-increment {
+        display: inline-block;
+        width: 40px;
+        background: #e6e6e6;
+        color: #0a0a0a;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .input-number-group .input-number-decrement {
+        margin-right: 0.3rem;
+    }
+
+    .input-number-group .input-number-increment {
+        margin-left: 0.3rem;
+    }
+</style>
+<div class="yui3-g">
+    <div id="bd" class="yui3-g">
+        <div class="yui3-u-1">
+            <div class="step-bar">
+                <ol class="step-list">
+                    <li class="step done">
+                        <span class="step-number">1</span>
+                        <span class="step-name">選擇商品類型及分類</span>
+                        <span class="icon-next-step"></span></li>
+                    <li class="step done"><span class="step-number">2</span> <span class="step-name">商品資訊與規格</span>
+                        <span
+                                class="icon-next-step"></span></li>
+                    <li class="step current"><span class="step-number">3</span> <span class="step-name">預覽</span>
+                        <span
+                                class="icon-next-step"></span></li>
+                    <li class="step"><span class="step-number">4</span> <span class="step-name">完成</span></li>
+                </ol>
+            </div>
+            <div class="item-preview">
+                <div>
                     <div>
-                        <div>
-                            <form action="<?=base_url()?>Product_upload/doUpload" method="post">
-                            <div  class="pageRoot__2VRqJ " data-reactroot="">
+                        <form action="<?= base_url() ?>Product_upload/doUpload" method="post">
+                            <div class="pageRoot__2VRqJ " data-reactroot="">
                                 <div class="pageRowBox__3xNZf">
                                     <section class="previewInfoWrap__3L8oc">
                                         <div class="inner__1kUlf">
@@ -46,18 +109,23 @@
                                                         <section class="wrap__bGMYC">
                                                             <div>
                                                                 <figure class="focusedImageFigure__c4PVd">
-                                                                    <img class="focusedImage__3HmoX " name="images"
-                                                                         src="<?php echo base_url() . $image_path; ?>">
+                                                                    <div class="dz-message">
+                                                                        <h3>上傳圖片</h3>
+                                                                    </div>
+<!--                                                                    <img class="focusedImage__3HmoX"-->
+<!--                                                                         src="--><?//= $image_path ?><!--">-->
                                                                 </figure>
                                                             </div>
                                                             <ul class="imageList__22FSs">
                                                                 <li class="listItem__3BRt8">
                                                                     <mark class="checkedMark__2Qoej"></mark>
-                                                                    <img src="<?php echo base_url() . $image_path; ?>"
-                                                                         class="image__3l8Vh">
-                                                                    <input type="hidden" name="product_image"
-                                                                           id="'product_image"
-                                                                           value="<?= $image_path ?> "
+                                                                    <div class="dz-message">
+                                                                        <h3>上傳圖片</h3>
+                                                                    </div>
+<!--                                                                    <img src="--><?//= $image_path ?><!--"-->
+<!--                                                                         class="image__3l8Vh" id="productUpload_image">-->
+<!--                                                                    <input type="hidden" name="image_path"-->
+<!--                                                                           id="image_path" value="--><?//= $image_path ?><!--">-->
                                                                 </li>
                                                             </ul>
                                                         </section>
@@ -87,35 +155,41 @@
                                                                     <span class="soldQuantity__1So65">/ 已售出 <em>0</em> 件</span>
                                                                 </div>
                                                             </div>
-                                                                <div class="row__1kjJO row__-8aqS">
-                                                                    <div class="caption__xNd14 caption__2IQBR">
-                                                                        <span>數量</span>
-                                                                    </div>
-                                                                    <div class="content__36o8N content__3X3yq">
-                                                                        <button class="qtyButton__2r29Y qtyMinusButton__2isH0">
-                                                                            <i class="fi-minus qtyButtonIcon__2LVNb"></i>
-                                                                        </button>
-                                                                        <input type="number" class="qtyInput__1dbgq "
-                                                                               min="1" max="<?= $product_quantity ?>"
-                                                                               value="1">
-                                                                        <input type="hidden" class="qtyInput__1dbgq "
-                                                                               name="product_quantity"
-                                                                               value="<?= $product_quantity ?>">
-                                                                        <button class="qtyButton__2r29Y qtyPlusButton__2NOnk">
-                                                                            <i class="fi-plus qtyButtonIcon__2LVNb"></i>
-                                                                        </button>
-                                                                    </div>
+                                                            <div class="row__1kjJO row__-8aqS">
+                                                                <div class="caption__xNd14 caption__2IQBR">
+                                                                    <span>數量</span>
                                                                 </div>
-                                                                <div class="row__-8aqS actionButtons__GoaRG">
-                                                                    <div class="purchaseButtons__2RKKR">
-                                                                        <button class="buyNowButton__1aR87 actionButton__2aXKn button__yn_TD primaryButtonType2__m1h-8">
-                                                                            立即購買
-                                                                        </button>
-                                                                        <button class="addToCartButton__39VJh actionButton__2aXKn button__yn_TD secondaryButtonType2__3QWSM">
-                                                                            加入購物車
-                                                                        </button>
+                                                                <div class="content__36o8N content__3X3yq">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group input-number-group">
+                                                                            <div class="input-group-button">
+                                                                                <span class="input-number-decrement">-</span>
+                                                                            </div>
+                                                                            <input class="input-number" type="number"
+                                                                                   value="1" min="1" max="<?= $product_quantity ?>">
+                                                                            <div class="input-group-button">
+                                                                                <span class="input-number-increment">+</span>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
+                                                                    <input type="hidden" class="qtyInput__1dbgq "
+                                                                           name="product_quantity"
+                                                                           value="<?= $product_quantity ?>">
                                                                 </div>
+                                                            </div>
+                                                            <input type="text" value="<?=$temp_name?>">
+                                                            <input type="hidden" name="user_id"
+                                                                   value="<?= $this->session->userdata('user_id') ?>">
+                                                            <div class="row__-8aqS actionButtons__GoaRG">
+                                                                <div class="purchaseButtons__2RKKR">
+                                                                    <button class="buyNowButton__1aR87 actionButton__2aXKn button__yn_TD primaryButtonType2__m1h-8">
+                                                                        立即購買
+                                                                    </button>
+                                                                    <button class="addToCartButton__39VJh actionButton__2aXKn button__yn_TD secondaryButtonType2__3QWSM">
+                                                                        加入購物車
+                                                                    </button>
+                                                                </div>
+                                                            </div>
                                                         </section>
                                                     </div>
                                                 </div>
@@ -124,21 +198,71 @@
                                     </main>
                                 </div>
                             </div>
-                        </div>
                     </div>
-                    <div class="action-wrap">
-                        <ul id="submit-preview-confirm-button">
-                            <li>
-                                <a href="<?= base_url() ?>Select_type" class="button-submit button-secondary btn-pad"
-                                   data-rapid_p="2">取消</a>
-                            </li>
-                            <li>
-                                <button class="button-submit button-main btn-pad"
-                                        data-rapid_p="2">確定</button>
-                            </li>
-                        </ul>
-                        </form>
-                    </div>
+                </div>
+                <div class="action-wrap">
+                    <ul id="submit-preview-confirm-button">
+                        <li>
+                            <a href="<?= base_url() ?>Select_type" class="button-submit button-secondary btn-pad"
+                               data-rapid_p="2">取消</a>
+                        </li>
+                        <li>
+                            <button class="button-submit button-main btn-pad"
+                                    data-rapid_p="2" id="submit"> 確定
+                            </button>
+                        </li>
+                    </ul>
+                    </form>
+                </div>
+                <script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
+                <script src="<?php echo base_url(); ?>vendor/dropzone/dropzone.min.js"></script>
+                <script>
+                    $('.input-number-increment').click(function () {
+                        var $input = $(this).parents('.input-number-group').find('.input-number');
+                        var val = parseInt($input.val(), 10);
+                        $input.val(val + 1);
+                    });
 
+                    $('.input-number-decrement').click(function () {
+                        var $input = $(this).parents('.input-number-group').find('.input-number');
+                        var val = parseInt($input.val(), 10);
+                        $input.val(val - 1);
+                    })
 
+                    Dropzone.autoDiscover = false;
+                    var myDropzone = new Dropzone("#my-dropzone", {
+                        url: "<?php echo site_url("Product_edit/upload") ?>",
+                        acceptedFiles: "image/*",
+                        addRemoveLinks: true,
+                        removedfile: function(file) {
+                            var name = file.name;
+
+                            $.ajax({
+                                type: "post",
+                                url: "<?php echo site_url("Product_edit/remove") ?>",
+                                data: { file: name },
+                                dataType: 'html'
+                            });
+
+                            // remove the thumbnail
+                            var previewElement;
+                            return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+                        }
+//                        ,
+//                        init: function () {
+//                            var me = this;
+//                            $.get("<?php //echo site_url("Product_edit/list_files") ?>//", function (data) {
+//                                // if any files already in server show all here
+//                                if (data.length > 0) {
+//                                    $.each(data, function (key, value) {
+//                                        var mockFile = value;
+//                                        me.emit("addedfile", mockFile);
+//                                        me.emit("thumbnail", mockFile, "<?php //echo base_url(); ?>//uploads/" + value.name);
+//                                        me.emit("complete", mockFile);
+//                                    });
+//                                }
+//                            });
+//                        }
+                    });
+                </script>
 

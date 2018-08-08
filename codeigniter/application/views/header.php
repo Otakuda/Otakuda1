@@ -18,16 +18,16 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/index1.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/searchbutton.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/settings.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/com_header1.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/show_product.css">
     <script src="<?= base_url() ?>js/es6-shim.js"></script>
     <script src="<?= base_url() ?>js/react.js"></script>
     <script src="<?= base_url() ?>js/react-dom.js"></script>
     <script src="<?= base_url() ?>js/common.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 </head>
 <body id="main">
-<link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/com_header1.css">
 <header class="com-header">
     <div class="header-bar">
         <div class="header-content clearfix">
