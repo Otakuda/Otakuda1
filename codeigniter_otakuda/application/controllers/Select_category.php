@@ -10,7 +10,6 @@ class Select_category extends CI_Controller
         $this->load->helper('url');
         //load model
         $this->load->model('Category_cargo');
-
     }
 
     public function index()

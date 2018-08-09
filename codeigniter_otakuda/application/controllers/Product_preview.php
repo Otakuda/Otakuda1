@@ -15,14 +15,13 @@ class Product_preview extends CI_Controller
 
     public function index()
     {
-<<<<<<< HEAD
+
         $input=$this->input->post();
 //        $user['user_id'] = $input['user_id'];
 //        $showUser['show'] = $this->Product_previewModel->get($user['user_id']);
-=======
->>>>>>> 8987446d231e554a49338a398c28ef505a9fa455
+
         $this->load->view('header2');
-        $this->load->view('product_preview');
+        $this->load->view('product_preview',$input);
 
     }
 
