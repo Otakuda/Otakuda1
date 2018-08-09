@@ -26,6 +26,7 @@
         background: #fff;
         border: 2px dashed #ddd;
         border-radius: 5px;
+        /*widawdawd*/
     }
 
     .dz-message {
