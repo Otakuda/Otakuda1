@@ -14,7 +14,6 @@ class User_M extends CI_Model
         return $this->db->insert('users', $user);
     }
 
-
     public function display_detail($phone)
     {
         $this->db->select('*');
@@ -26,18 +25,28 @@ class User_M extends CI_Model
 
     }
 
-    public function get($where = array())
-    {
-        if (!empty($where)) {
-            $this->db->where($where);
-        }
-        $query = $this->db->get('users');
-        return $query->row_array();
-    }
+//    public function get($where)
+//    {
+//        if (!empty($where)) {
+//            $query=$this->db->where($where);
+//        }
+////        $query = $this->db->get('users');
+////        print_r($query);
+//        print_r($query);
+//
+//        return $query->row_array();
+//
+//    }
 
-    public function update_shop_level($data = array(), $id)
+    public function update_shop_level($phone)
     {
-        $this->db->update('users', $data, array('id' => $id));
+        $data = array(
+            'shop_level' => 1
+        );
+
+        $this->db->where('phone', $phone);
+        $this->db->update('users', $data);
+
     }
 
 

@@ -2,9 +2,9 @@
 $grand_total = 0;
 
 if ($cart = $this->cart->contents()):
-	foreach ($cart as $item):
-		$grand_total = $grand_total + $item['subtotal'];
-	endforeach;
+    foreach ($cart as $item):
+        $grand_total = $grand_total + $item['subtotal'];
+    endforeach;
 endif;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -37,28 +37,29 @@ endif;
 
 	<table border="0" cellpadding="2px" width="600px">
 		<?php
-			foreach ($products as $product){
-				$id = $product['id'];
-				$name = $product['name'];
-				$description = $product['description'];
-				$price = $product['price'];
+			foreach ($products as $product)
+			{
+				$product_id = $product['product_id'];
+				$product_name = $product['product_name'];
+				$product_brief = $product['product_brief'];
+				$product_price = $product['product_price'];
 		?>
     	<tr>
-        	<td><img src="<?php echo $product['picture']?>" /></td>
-            <td><b><?php echo $name; ?></b><br />
-            		<?php echo $description; ?><br />
+        	<td><img width="200px" height="100%" src="<?php echo $product['product_image']?>" /></td>
+            <td><b><?php echo $product_name; ?></b><br />
+            		<?php echo $product_brief; ?><br />
                     Price:<big style="color:green">
-                    $<?php echo $price; ?></big><br /><br />
+                    $<?php echo $product_price; ?></big><br /><br />
                     <?php
 					echo form_open('cart/add');
-					echo form_hidden('id', $id);
-					echo form_hidden('name', $name);
-					echo form_hidden('price', $price);
+					echo form_hidden('id', $product_id);
+					echo form_hidden('name', $product_name);
+					echo form_hidden('price', $product_price);
 					echo form_submit('action', 'Add to Cart');
 					echo form_close();
 					?>
+
 			</td>
-		</tr>
         <tr><td colspan="2"><hr size="1" /></td>
         <?php } ?>
     </table>

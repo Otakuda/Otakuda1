@@ -15,11 +15,11 @@
 				$description = $shop['shop_description'];
 				
 		?>
-    	<tr>
-        	<td><img src="<?php echo $shop['picture']?>" width="200px" height="100px"/></td>
+    	<td>0px" height="100px"/></td>
             <td><b><?php echo $name; ?></b><br />
             		<?php echo $description; ?><br />
-            		<a href=product?id=<?=$id?>> <?=$name?></a>
+            		<a href=prodd
+            <td><img src="<?php echo $shop['picture']?>" width="20uct?id=<?=$id?>> <?=$name?></a>
                     
 			</td>
 		</tr>
