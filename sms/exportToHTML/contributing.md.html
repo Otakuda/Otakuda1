@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>contributing.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); font-weight: bold; }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(169,183,198); }
+.s3 { color: rgb(128,128,128); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+contributing.md</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0"># </span><span class="s2">Contributing to CodeIgniter</span><span class="s1"> 
+ 
+ 
+</span><span class="s2">CodeIgniter is a community driven project and accepts contributions of code and documentation from the community. These contributions are made in the form of Issues or </span><span class="s1">[</span><span class="s2">Pull Requests</span><span class="s1">](http://help.github.com/send-pull-requests/) </span><span class="s2">on the </span><span class="s1">[</span><span class="s2">CodeIgniter repository</span><span class="s1">](https://github.com/bcit-ci/CodeIgniter&gt;) </span><span class="s2">on GitHub.</span><span class="s1"> 
+ 
+</span><span class="s2">Issues are a quick way to point out a bug. If you find a bug or documentation error in CodeIgniter then please check a few things first</span><span class="s1">: 
+ 
+</span><span class="s0">1. </span><span class="s2">There is not already an open Issue</span><span class="s1"> 
+</span><span class="s0">2. </span><span class="s2">The issue has already been fixed </span><span class="s1">(</span><span class="s2">check the develop branch, or look for closed Issues</span><span class="s1">) 
+</span><span class="s0">3. </span><span class="s2">Is it something really obvious that you can fix yourself?</span><span class="s1"> 
+ 
+</span><span class="s2">Reporting issues is helpful but an even better approach is to send a Pull Request, which is done by </span><span class="s1">&quot;</span><span class="s2">Forking</span><span class="s1">&quot; </span><span class="s2">the main repository and committing to your own copy. This will require you to use the version control system called Git.</span><span class="s1"> 
+ 
+</span><span class="s0">## </span><span class="s2">Guidelines</span><span class="s1"> 
+ 
+</span><span class="s2">Before we look into how, here are the guidelines. If your Pull Requests fail</span><span class="s1"> 
+</span><span class="s2">to pass these guidelines it will be declined and you will need to re-submit</span><span class="s1"> 
+</span><span class="s2">when you’ve made the changes. This might sound a bit tough, but it is required</span><span class="s1"> 
+</span><span class="s2">for us to maintain quality of the code-base.</span><span class="s1"> 
+ 
+</span><span class="s0">### </span><span class="s2">PHP Style</span><span class="s1"> 
+ 
+</span><span class="s2">All code must meet the </span><span class="s1">[</span><span class="s2">Style Guide</span><span class="s1">](https://codeigniter.com/user_guide/general/styleguide.html)</span><span class="s2">, which is</span><span class="s1"> 
+</span><span class="s2">essentially the </span><span class="s1">[</span><span class="s2">Allman indent style</span><span class="s1">](https://en.wikipedia.org/wiki/Indent_style#Allman_style)</span><span class="s2">, underscores and readable operators. This makes certain that all code is the same format as the existing code and means it will be as readable as possible.</span><span class="s1"> 
+ 
+</span><span class="s0">### </span><span class="s2">Documentation</span><span class="s1"> 
+ 
+</span><span class="s2">If you change anything that requires a change to documentation then you will need to add it. New classes, methods, parameters, changing default values, etc are all things that will require a change to documentation. The change-log must also be updated for every change. Also PHPDoc blocks must be maintained.</span><span class="s1"> 
+ 
+</span><span class="s0">### </span><span class="s2">Compatibility</span><span class="s1"> 
+ 
+</span><span class="s2">CodeIgniter recommends PHP 5.4 or newer to be used, but it should be</span><span class="s1"> 
+</span><span class="s2">compatible with PHP 5.2.4 so all code supplied must stick to this</span><span class="s1"> 
+</span><span class="s2">requirement. If PHP 5.3 </span><span class="s1">(</span><span class="s2">and above</span><span class="s1">) </span><span class="s2">functions or features are used then</span><span class="s1"> 
+</span><span class="s2">there must be a fallback for PHP 5.2.4.</span><span class="s1"> 
+ 
+</span><span class="s0">### </span><span class="s2">Branching</span><span class="s1"> 
+ 
+</span><span class="s2">CodeIgniter uses the </span><span class="s1">[</span><span class="s2">Git-Flow</span><span class="s1">](http://nvie.com/posts/a-successful-git-branching-model/) </span><span class="s2">branching model which requires all pull requests to be sent to the </span><span class="s1">&quot;</span><span class="s2">develop</span><span class="s1">&quot; </span><span class="s2">branch. This is</span><span class="s1"> 
+</span><span class="s2">where the next planned version will be developed. The </span><span class="s1">&quot;</span><span class="s2">master</span><span class="s1">&quot; </span><span class="s2">branch will always contain the latest stable version and is kept clean so a </span><span class="s1">&quot;</span><span class="s2">hotfix</span><span class="s1">&quot; (</span><span class="s2">e.g</span><span class="s1">: </span><span class="s2">an emergency security patch</span><span class="s1">) </span><span class="s2">can be applied to master to create a new version, without worrying about other features holding it up. For this reason all commits need to be made to </span><span class="s1">&quot;</span><span class="s2">develop</span><span class="s1">&quot; </span><span class="s2">and any sent to </span><span class="s1">&quot;</span><span class="s2">master</span><span class="s1">&quot; </span><span class="s2">will be closed automatically. If you have multiple changes to submit, please place all changes into their own branch on your fork.</span><span class="s1"> 
+ 
+</span><span class="s2">One thing at a time</span><span class="s1">: </span><span class="s2">A pull request should only contain one change. That does not mean only one commit, but one change - however many commits it took. The reason for this is that if you change X and Y but send a pull request for both at the same time, we might really want X but disagree with Y, meaning we cannot merge the request. Using the Git-Flow branching model you can create new branches for both of these features and send two requests.</span><span class="s1"> 
+ 
+</span><span class="s0">### </span><span class="s2">Signing</span><span class="s1"> 
+ 
+</span><span class="s2">You must sign your work, certifying that you either wrote the work or otherwise have the right to pass it on to an open source project. git makes this trivial as you merely have to use </span><span class="s3">`</span><span class="s2">--signoff</span><span class="s3">` </span><span class="s2">on your commits to your CodeIgniter fork.</span><span class="s1"> 
+ 
+</span><span class="s3">`</span><span class="s2">git commit --signoff</span><span class="s3">`</span><span class="s1"> 
+ 
+</span><span class="s2">or simply</span><span class="s1"> 
+ 
+</span><span class="s3">`</span><span class="s2">git commit -s</span><span class="s3">`</span><span class="s1"> 
+ 
+</span><span class="s2">This will sign your commits with the information setup in your git config, e.g.</span><span class="s1"> 
+ 
+</span><span class="s3">`</span><span class="s2">Signed-off-by</span><span class="s1">: </span><span class="s2">John Q Public </span><span class="s1">&lt;john.public@example.com&gt;</span><span class="s3">`</span><span class="s1"> 
+ 
+</span><span class="s2">If you are using </span><span class="s1">[</span><span class="s2">Tower</span><span class="s1">](http://www.git-tower.com/) </span><span class="s2">there is a </span><span class="s1">&quot;</span><span class="s2">Sign-Off</span><span class="s1">&quot; </span><span class="s2">checkbox in the commit window. You could even alias git commit to use the </span><span class="s3">`</span><span class="s2">-s</span><span class="s3">` </span><span class="s2">flag so you don’t have to think about it.</span><span class="s1"> 
+ 
+</span><span class="s2">By signing your work in this manner, you certify to a </span><span class="s1">&quot;</span><span class="s2">Developer</span><span class="s1">'</span><span class="s2">s Certificate of Origin</span><span class="s1">&quot;</span><span class="s2">. The current version of this certificate is in the </span><span class="s3">`</span><span class="s2">DCO.txt</span><span class="s3">` </span><span class="s2">file in the root of this repository.</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">## </span><span class="s2">How-to Guide</span><span class="s1"> 
+ 
+</span><span class="s2">There are two ways to make changes, the easy way and the hard way. Either way you will need to </span><span class="s1">[</span><span class="s2">create a GitHub account</span><span class="s1">](https://github.com/signup/free)</span><span class="s2">.</span><span class="s1"> 
+ 
+</span><span class="s2">Easy way GitHub allows in-line editing of files for making simple typo changes and quick-fixes. This is not the best way as you are unable to test the code works. If you do this you could be introducing syntax errors, etc, but for a Git-phobic user this is good for a quick-fix.</span><span class="s1"> 
+ 
+</span><span class="s2">Hard way The best way to contribute is to </span><span class="s1">&quot;</span><span class="s2">clone</span><span class="s1">&quot; </span><span class="s2">your fork of CodeIgniter to your development area. That sounds like some jargon, but </span><span class="s1">&quot;</span><span class="s2">forking</span><span class="s1">&quot; </span><span class="s2">on GitHub means </span><span class="s1">&quot;</span><span class="s2">making a copy of that repo to your account</span><span class="s1">&quot; </span><span class="s2">and </span><span class="s1">&quot;</span><span class="s2">cloning</span><span class="s1">&quot; </span><span class="s2">means </span><span class="s1">&quot;</span><span class="s2">copying that code to your environment so you can work on it</span><span class="s1">&quot;</span><span class="s2">.</span><span class="s1"> 
+ 
+</span><span class="s0">1. </span><span class="s2">Set up Git </span><span class="s1">(</span><span class="s2">Windows, Mac &amp; Linux</span><span class="s1">) 
+</span><span class="s0">2. </span><span class="s2">Go to the CodeIgniter repo</span><span class="s1"> 
+</span><span class="s0">3. </span><span class="s2">Fork it</span><span class="s1"> 
+</span><span class="s0">4. </span><span class="s2">Clone your CodeIgniter repo</span><span class="s1">: </span><span class="s2">git@github.com</span><span class="s1">:&lt;</span><span class="s2">your-name</span><span class="s1">&gt;</span><span class="s2">/CodeIgniter.git</span><span class="s1"> 
+</span><span class="s0">5. </span><span class="s2">Checkout the </span><span class="s1">&quot;</span><span class="s2">develop</span><span class="s1">&quot; </span><span class="s2">branch At this point you are ready to start making changes. </span><span class="s1"> 
+</span><span class="s0">6. </span><span class="s2">Fix existing bugs on the Issue tracker after taking a look to see nobody else is working on them.</span><span class="s1"> 
+</span><span class="s0">7. </span><span class="s2">Commit the files</span><span class="s1"> 
+</span><span class="s0">8. </span><span class="s2">Push your develop branch to your fork</span><span class="s1"> 
+</span><span class="s0">9. </span><span class="s2">Send a pull request </span><span class="s1">[http://help.github.com/send-pull-requests/](http://help.github.com/send-pull-requests/) 
+ 
+</span><span class="s2">The Reactor Engineers will now be alerted about the change and at least one of the team will respond. If your change fails to meet the guidelines it will be bounced, or feedback will be provided to help you improve it.</span><span class="s1"> 
+ 
+</span><span class="s2">Once the Reactor Engineer handling your pull request is happy with it they will merge it into develop and your patch will be part of the next release.</span><span class="s1"> 
+ 
+</span><span class="s0">### </span><span class="s2">Keeping your fork up-to-date</span><span class="s1"> 
+ 
+</span><span class="s2">Unlike systems like Subversion, Git can have multiple remotes. A remote is the name for a URL of a Git repository. By default your fork will have a remote named </span><span class="s1">&quot;</span><span class="s2">origin</span><span class="s1">&quot; </span><span class="s2">which points to your fork, but you can add another remote named </span><span class="s1">&quot;</span><span class="s2">codeigniter</span><span class="s1">&quot; </span><span class="s2">which points to </span><span class="s3">`</span><span class="s2">git</span><span class="s1">:</span><span class="s2">//github.com/bcit-ci/CodeIgniter.git</span><span class="s3">`</span><span class="s2">. This is a read-only remote but you can pull from this develop branch to update your own.</span><span class="s1"> 
+ 
+</span><span class="s2">If you are using command-line you can do the following</span><span class="s1">: 
+ 
+</span><span class="s0">1. </span><span class="s3">`</span><span class="s2">git remote add codeigniter git</span><span class="s1">:</span><span class="s2">//github.com/bcit-ci/CodeIgniter.git</span><span class="s3">`</span><span class="s1"> 
+</span><span class="s0">2. </span><span class="s3">`</span><span class="s2">git pull codeigniter develop</span><span class="s3">`</span><span class="s1"> 
+</span><span class="s0">3. </span><span class="s3">`</span><span class="s2">git push origin develop</span><span class="s3">`</span><span class="s1"> 
+ 
+</span><span class="s2">Now your fork is up to date. This should be done regularly, or before you send a pull request at least.</span></pre>
+</body>
+</html>

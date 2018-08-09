@@ -1,0 +1,343 @@
+<html>
+<head>
+<title>index.php</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); font-weight: bold; }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(98,151,85); font-style: italic; }
+.s3 { color: rgb(98,151,85); font-weight: bold; font-style: italic; }
+.s4 { color: rgb(128,128,128); }
+.s5 { color: rgb(169,183,198); }
+.s6 { color: rgb(106,135,89); }
+.s7 { color: rgb(204,120,50); }
+.s8 { color: rgb(152,118,170); }
+.s9 { color: rgb(104,151,187); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+index.php</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">&lt;?php</span><span class="s1"> 
+</span><span class="s2">/** 
+ * CodeIgniter 
+ * 
+ * An open source application development framework for PHP 
+ * 
+ * This content is released under the MIT License (MIT) 
+ * 
+ * Copyright (c) 2014 - 2017, British Columbia Institute of Technology 
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy 
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal 
+ * in the Software without restriction, including without limitation the rights 
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+ * copies of the Software, and to permit persons to whom the Software is 
+ * furnished to do so, subject to the following conditions: 
+ * 
+ * The above copyright notice and this permission notice shall be included in 
+ * all copies or substantial portions of the Software. 
+ * 
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+ * THE SOFTWARE. 
+ * 
+ * </span><span class="s3">@package </span><span class="s2">CodeIgniter 
+ * </span><span class="s3">@author  </span><span class="s2">EllisLab Dev Team 
+ * </span><span class="s3">@copyright   </span><span class="s2">Copyright (c) 2008 - 2014, EllisLab, Inc. (</span><span class="s3">https://ellislab.com/)</span><span class="s2"> 
+ * </span><span class="s3">@copyright   </span><span class="s2">Copyright (c) 2014 - 2017, British Columbia Institute of Technology (</span><span class="s3">http://bcit.ca/)</span><span class="s2"> 
+ * </span><span class="s3">@license http://opensource.org/licenses/MIT  MIT </span><span class="s2">License 
+ * </span><span class="s3">@link    https://codeigniter.com</span><span class="s2"> 
+ * </span><span class="s3">@since   </span><span class="s2">Version 1.0.0 
+ * </span><span class="s3">@filesource</span><span class="s2"> 
+ */</span><span class="s1"> 
+ 
+</span><span class="s4">/* 
+ *--------------------------------------------------------------- 
+ * APPLICATION ENVIRONMENT 
+ *--------------------------------------------------------------- 
+ * 
+ * You can load different configurations depending on your 
+ * current environment. Setting the environment also influences 
+ * things like logging and error reporting. 
+ * 
+ * This can be set to anything, but default usage is: 
+ * 
+ *     development 
+ *     testing 
+ *     production 
+ * 
+ * NOTE: If you change these, also change the error_reporting() code below 
+ */</span><span class="s1"> 
+    </span><span class="s5">define</span><span class="s1">(</span><span class="s6">'ENVIRONMENT'</span><span class="s7">, </span><span class="s0">isset</span><span class="s1">(</span><span class="s8">$_SERVER</span><span class="s1">[</span><span class="s6">'CI_ENV'</span><span class="s1">]) ? </span><span class="s8">$_SERVER</span><span class="s1">[</span><span class="s6">'CI_ENV'</span><span class="s1">] : </span><span class="s6">'development'</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+ 
+</span><span class="s4">/* 
+ *--------------------------------------------------------------- 
+ * ERROR REPORTING 
+ *--------------------------------------------------------------- 
+ * 
+ * Different environments will require different levels of error reporting. 
+ * By default development will show errors but testing and live will hide them. 
+ */</span><span class="s1"> 
+</span><span class="s0">switch </span><span class="s1">(</span><span class="s5">ENVIRONMENT</span><span class="s1">) 
+{ 
+    </span><span class="s0">case </span><span class="s6">'development'</span><span class="s1">: 
+        </span><span class="s5">error_reporting</span><span class="s1">(-</span><span class="s9">1</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s5">ini_set</span><span class="s1">(</span><span class="s6">'display_errors'</span><span class="s7">, </span><span class="s9">1</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+    </span><span class="s0">break</span><span class="s7">;</span><span class="s1"> 
+ 
+    </span><span class="s0">case </span><span class="s6">'testing'</span><span class="s1">: 
+    </span><span class="s0">case </span><span class="s6">'production'</span><span class="s1">: 
+        </span><span class="s5">ini_set</span><span class="s1">(</span><span class="s6">'display_errors'</span><span class="s7">, </span><span class="s9">0</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(</span><span class="s5">version_compare</span><span class="s1">(</span><span class="s5">PHP_VERSION</span><span class="s7">, </span><span class="s6">'5.3'</span><span class="s7">, </span><span class="s6">'&gt;='</span><span class="s1">)) 
+        { 
+            </span><span class="s5">error_reporting</span><span class="s1">(</span><span class="s5">E_ALL </span><span class="s1">&amp; ~</span><span class="s5">E_NOTICE </span><span class="s1">&amp; ~</span><span class="s5">E_DEPRECATED </span><span class="s1">&amp; ~</span><span class="s5">E_STRICT </span><span class="s1">&amp; ~</span><span class="s5">E_USER_NOTICE </span><span class="s1">&amp; ~</span><span class="s5">E_USER_DEPRECATED</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">else</span><span class="s1"> 
+        { 
+            </span><span class="s5">error_reporting</span><span class="s1">(</span><span class="s5">E_ALL </span><span class="s1">&amp; ~</span><span class="s5">E_NOTICE </span><span class="s1">&amp; ~</span><span class="s5">E_STRICT </span><span class="s1">&amp; ~</span><span class="s5">E_USER_NOTICE</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        } 
+    </span><span class="s0">break</span><span class="s7">;</span><span class="s1"> 
+ 
+    </span><span class="s0">default</span><span class="s1">: 
+        </span><span class="s5">header</span><span class="s1">(</span><span class="s6">'HTTP/1.1 503 Service Unavailable.'</span><span class="s7">, </span><span class="s5">TRUE</span><span class="s7">, </span><span class="s9">503</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">echo </span><span class="s6">'The application environment is not set correctly.'</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">exit</span><span class="s1">(</span><span class="s9">1</span><span class="s1">)</span><span class="s7">; </span><span class="s4">// EXIT_ERROR</span><span class="s1"> 
+} 
+ 
+</span><span class="s4">/* 
+ *--------------------------------------------------------------- 
+ * SYSTEM DIRECTORY NAME 
+ *--------------------------------------------------------------- 
+ * 
+ * This variable must contain the name of your &quot;system&quot; directory. 
+ * Set the path if it is not in the same directory as this file. 
+ */</span><span class="s1"> 
+    </span><span class="s8">$system_path </span><span class="s1">= </span><span class="s6">'system'</span><span class="s7">;</span><span class="s1"> 
+ 
+</span><span class="s4">/* 
+ *--------------------------------------------------------------- 
+ * APPLICATION DIRECTORY NAME 
+ *--------------------------------------------------------------- 
+ * 
+ * If you want this front controller to use a different &quot;application&quot; 
+ * directory than the default one you can set its name here. The directory 
+ * can also be renamed or relocated anywhere on your server. If you do, 
+ * use an absolute (full) server path. 
+ * For more info please see the user guide: 
+ * 
+ * https://codeigniter.com/user_guide/general/managing_apps.html 
+ * 
+ * NO TRAILING SLASH! 
+ */</span><span class="s1"> 
+    </span><span class="s8">$application_folder </span><span class="s1">= </span><span class="s6">'application'</span><span class="s7">;</span><span class="s1"> 
+ 
+</span><span class="s4">/* 
+ *--------------------------------------------------------------- 
+ * VIEW DIRECTORY NAME 
+ *--------------------------------------------------------------- 
+ * 
+ * If you want to move the view directory out of the application 
+ * directory, set the path to it here. The directory can be renamed 
+ * and relocated anywhere on your server. If blank, it will default 
+ * to the standard location inside your application directory. 
+ * If you do move this, use an absolute (full) server path. 
+ * 
+ * NO TRAILING SLASH! 
+ */</span><span class="s1"> 
+    </span><span class="s8">$view_folder </span><span class="s1">= </span><span class="s6">''</span><span class="s7">;</span><span class="s1"> 
+ 
+ 
+</span><span class="s4">/* 
+ * -------------------------------------------------------------------- 
+ * DEFAULT CONTROLLER 
+ * -------------------------------------------------------------------- 
+ * 
+ * Normally you will set your default controller in the routes.php file. 
+ * You can, however, force a custom routing by hard-coding a 
+ * specific controller class/function here. For most applications, you 
+ * WILL NOT set your routing here, but it's an option for those 
+ * special instances where you might want to override the standard 
+ * routing in a specific front controller that shares a common CI installation. 
+ * 
+ * IMPORTANT: If you set the routing here, NO OTHER controller will be 
+ * callable. In essence, this preference limits your application to ONE 
+ * specific controller. Leave the function name blank if you need 
+ * to call functions dynamically via the URI. 
+ * 
+ * Un-comment the $routing array below to use this feature 
+ */</span><span class="s1"> 
+    </span><span class="s4">// The directory name, relative to the &quot;controllers&quot; directory.  Leave blank</span><span class="s1"> 
+    </span><span class="s4">// if your controller is not in a sub-directory within the &quot;controllers&quot; one</span><span class="s1"> 
+    </span><span class="s4">// $routing['directory'] = '';</span><span class="s1"> 
+ 
+    </span><span class="s4">// The controller class file name.  Example:  mycontroller</span><span class="s1"> 
+    </span><span class="s4">// $routing['controller'] = '';</span><span class="s1"> 
+ 
+    </span><span class="s4">// The controller function you wish to be called.</span><span class="s1"> 
+    </span><span class="s4">// $routing['function'] = '';</span><span class="s1"> 
+ 
+ 
+</span><span class="s4">/* 
+ * ------------------------------------------------------------------- 
+ *  CUSTOM CONFIG VALUES 
+ * ------------------------------------------------------------------- 
+ * 
+ * The $assign_to_config array below will be passed dynamically to the 
+ * config class when initialized. This allows you to set custom config 
+ * items or override any default config values found in the config.php file. 
+ * This can be handy as it permits you to share one application between 
+ * multiple front controller files, with each file containing different 
+ * config values. 
+ * 
+ * Un-comment the $assign_to_config array below to use this feature 
+ */</span><span class="s1"> 
+    </span><span class="s4">// $assign_to_config['name_of_config_item'] = 'value of config item';</span><span class="s1"> 
+ 
+ 
+ 
+</span><span class="s4">// --------------------------------------------------------------------</span><span class="s1"> 
+</span><span class="s4">// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE</span><span class="s1"> 
+</span><span class="s4">// --------------------------------------------------------------------</span><span class="s1"> 
+ 
+</span><span class="s4">/* 
+ * --------------------------------------------------------------- 
+ *  Resolve the system path for increased reliability 
+ * --------------------------------------------------------------- 
+ */</span><span class="s1"> 
+ 
+    </span><span class="s4">// Set the current directory correctly for CLI requests</span><span class="s1"> 
+    </span><span class="s0">if </span><span class="s1">(</span><span class="s5">defined</span><span class="s1">(</span><span class="s6">'STDIN'</span><span class="s1">)) 
+    { 
+        </span><span class="s5">chdir</span><span class="s1">(</span><span class="s5">dirname</span><span class="s1">(</span><span class="s5">__FILE__</span><span class="s1">))</span><span class="s7">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">if </span><span class="s1">((</span><span class="s8">$_temp </span><span class="s1">= </span><span class="s5">realpath</span><span class="s1">(</span><span class="s8">$system_path</span><span class="s1">)) !== </span><span class="s5">FALSE</span><span class="s1">) 
+    { 
+        </span><span class="s8">$system_path </span><span class="s1">= </span><span class="s8">$_temp</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s7">;</span><span class="s1"> 
+    } 
+    </span><span class="s0">else</span><span class="s1"> 
+    { 
+        </span><span class="s4">// Ensure there's a trailing slash</span><span class="s1"> 
+        </span><span class="s8">$system_path </span><span class="s1">= </span><span class="s5">strtr</span><span class="s1">( 
+            </span><span class="s5">rtrim</span><span class="s1">(</span><span class="s8">$system_path</span><span class="s7">, </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s1">)</span><span class="s7">,</span><span class="s1"> 
+            </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s7">,</span><span class="s1"> 
+            </span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1"> 
+        ).</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s7">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s4">// Is the system path correct?</span><span class="s1"> 
+    </span><span class="s0">if </span><span class="s1">( ! </span><span class="s5">is_dir</span><span class="s1">(</span><span class="s8">$system_path</span><span class="s1">)) 
+    { 
+        </span><span class="s5">header</span><span class="s1">(</span><span class="s6">'HTTP/1.1 503 Service Unavailable.'</span><span class="s7">, </span><span class="s5">TRUE</span><span class="s7">, </span><span class="s9">503</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">echo </span><span class="s6">'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '</span><span class="s1">.</span><span class="s5">pathinfo</span><span class="s1">(</span><span class="s5">__FILE__</span><span class="s7">, </span><span class="s5">PATHINFO_BASENAME</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">exit</span><span class="s1">(</span><span class="s9">3</span><span class="s1">)</span><span class="s7">; </span><span class="s4">// EXIT_CONFIG</span><span class="s1"> 
+    } 
+ 
+</span><span class="s4">/* 
+ * ------------------------------------------------------------------- 
+ *  Now that we know the path, set the main path constants 
+ * ------------------------------------------------------------------- 
+ */</span><span class="s1"> 
+    </span><span class="s4">// The name of THIS file</span><span class="s1"> 
+    </span><span class="s5">define</span><span class="s1">(</span><span class="s6">'SELF'</span><span class="s7">, </span><span class="s5">pathinfo</span><span class="s1">(</span><span class="s5">__FILE__</span><span class="s7">, </span><span class="s5">PATHINFO_BASENAME</span><span class="s1">))</span><span class="s7">;</span><span class="s1"> 
+ 
+    </span><span class="s4">// Path to the system directory</span><span class="s1"> 
+    </span><span class="s5">define</span><span class="s1">(</span><span class="s6">'BASEPATH'</span><span class="s7">, </span><span class="s8">$system_path</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+ 
+    </span><span class="s4">// Path to the front controller (this file) directory</span><span class="s1"> 
+    </span><span class="s5">define</span><span class="s1">(</span><span class="s6">'FCPATH'</span><span class="s7">, </span><span class="s5">dirname</span><span class="s1">(</span><span class="s5">__FILE__</span><span class="s1">).</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+ 
+    </span><span class="s4">// Name of the &quot;system&quot; directory</span><span class="s1"> 
+    </span><span class="s5">define</span><span class="s1">(</span><span class="s6">'SYSDIR'</span><span class="s7">, </span><span class="s5">basename</span><span class="s1">(</span><span class="s5">BASEPATH</span><span class="s1">))</span><span class="s7">;</span><span class="s1"> 
+ 
+    </span><span class="s4">// The path to the &quot;application&quot; directory</span><span class="s1"> 
+    </span><span class="s0">if </span><span class="s1">(</span><span class="s5">is_dir</span><span class="s1">(</span><span class="s8">$application_folder</span><span class="s1">)) 
+    { 
+        </span><span class="s0">if </span><span class="s1">((</span><span class="s8">$_temp </span><span class="s1">= </span><span class="s5">realpath</span><span class="s1">(</span><span class="s8">$application_folder</span><span class="s1">)) !== </span><span class="s5">FALSE</span><span class="s1">) 
+        { 
+            </span><span class="s8">$application_folder </span><span class="s1">= </span><span class="s8">$_temp</span><span class="s7">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">else</span><span class="s1"> 
+        { 
+            </span><span class="s8">$application_folder </span><span class="s1">= </span><span class="s5">strtr</span><span class="s1">( 
+                </span><span class="s5">rtrim</span><span class="s1">(</span><span class="s8">$application_folder</span><span class="s7">, </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s1">)</span><span class="s7">,</span><span class="s1"> 
+                </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s7">,</span><span class="s1"> 
+                </span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1"> 
+            )</span><span class="s7">;</span><span class="s1"> 
+        } 
+    } 
+    </span><span class="s0">elseif </span><span class="s1">(</span><span class="s5">is_dir</span><span class="s1">(</span><span class="s5">BASEPATH</span><span class="s1">.</span><span class="s8">$application_folder</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">)) 
+    { 
+        </span><span class="s8">$application_folder </span><span class="s1">= </span><span class="s5">BASEPATH</span><span class="s1">.</span><span class="s5">strtr</span><span class="s1">( 
+            </span><span class="s5">trim</span><span class="s1">(</span><span class="s8">$application_folder</span><span class="s7">, </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s1">)</span><span class="s7">,</span><span class="s1"> 
+            </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s7">,</span><span class="s1"> 
+            </span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1"> 
+        )</span><span class="s7">;</span><span class="s1"> 
+    } 
+    </span><span class="s0">else</span><span class="s1"> 
+    { 
+        </span><span class="s5">header</span><span class="s1">(</span><span class="s6">'HTTP/1.1 503 Service Unavailable.'</span><span class="s7">, </span><span class="s5">TRUE</span><span class="s7">, </span><span class="s9">503</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">echo </span><span class="s6">'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '</span><span class="s1">.</span><span class="s5">SELF</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">exit</span><span class="s1">(</span><span class="s9">3</span><span class="s1">)</span><span class="s7">; </span><span class="s4">// EXIT_CONFIG</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s5">define</span><span class="s1">(</span><span class="s6">'APPPATH'</span><span class="s7">, </span><span class="s8">$application_folder</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+ 
+    </span><span class="s4">// The path to the &quot;views&quot; directory</span><span class="s1"> 
+    </span><span class="s0">if </span><span class="s1">( ! </span><span class="s0">isset</span><span class="s1">(</span><span class="s8">$view_folder</span><span class="s1">[</span><span class="s9">0</span><span class="s1">]) &amp;&amp; </span><span class="s5">is_dir</span><span class="s1">(</span><span class="s5">APPPATH</span><span class="s1">.</span><span class="s6">'views'</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">)) 
+    { 
+        </span><span class="s8">$view_folder </span><span class="s1">= </span><span class="s5">APPPATH</span><span class="s1">.</span><span class="s6">'views'</span><span class="s7">;</span><span class="s1"> 
+    } 
+    </span><span class="s0">elseif </span><span class="s1">(</span><span class="s5">is_dir</span><span class="s1">(</span><span class="s8">$view_folder</span><span class="s1">)) 
+    { 
+        </span><span class="s0">if </span><span class="s1">((</span><span class="s8">$_temp </span><span class="s1">= </span><span class="s5">realpath</span><span class="s1">(</span><span class="s8">$view_folder</span><span class="s1">)) !== </span><span class="s5">FALSE</span><span class="s1">) 
+        { 
+            </span><span class="s8">$view_folder </span><span class="s1">= </span><span class="s8">$_temp</span><span class="s7">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">else</span><span class="s1"> 
+        { 
+            </span><span class="s8">$view_folder </span><span class="s1">= </span><span class="s5">strtr</span><span class="s1">( 
+                </span><span class="s5">rtrim</span><span class="s1">(</span><span class="s8">$view_folder</span><span class="s7">, </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s1">)</span><span class="s7">,</span><span class="s1"> 
+                </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s7">,</span><span class="s1"> 
+                </span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1"> 
+            )</span><span class="s7">;</span><span class="s1"> 
+        } 
+    } 
+    </span><span class="s0">elseif </span><span class="s1">(</span><span class="s5">is_dir</span><span class="s1">(</span><span class="s5">APPPATH</span><span class="s1">.</span><span class="s8">$view_folder</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">)) 
+    { 
+        </span><span class="s8">$view_folder </span><span class="s1">= </span><span class="s5">APPPATH</span><span class="s1">.</span><span class="s5">strtr</span><span class="s1">( 
+            </span><span class="s5">trim</span><span class="s1">(</span><span class="s8">$view_folder</span><span class="s7">, </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s1">)</span><span class="s7">,</span><span class="s1"> 
+            </span><span class="s6">'/</span><span class="s7">\\</span><span class="s6">'</span><span class="s7">,</span><span class="s1"> 
+            </span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1"> 
+        )</span><span class="s7">;</span><span class="s1"> 
+    } 
+    </span><span class="s0">else</span><span class="s1"> 
+    { 
+        </span><span class="s5">header</span><span class="s1">(</span><span class="s6">'HTTP/1.1 503 Service Unavailable.'</span><span class="s7">, </span><span class="s5">TRUE</span><span class="s7">, </span><span class="s9">503</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">echo </span><span class="s6">'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '</span><span class="s1">.</span><span class="s5">SELF</span><span class="s7">;</span><span class="s1"> 
+        </span><span class="s0">exit</span><span class="s1">(</span><span class="s9">3</span><span class="s1">)</span><span class="s7">; </span><span class="s4">// EXIT_CONFIG</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s5">define</span><span class="s1">(</span><span class="s6">'VIEWPATH'</span><span class="s7">, </span><span class="s8">$view_folder</span><span class="s1">.</span><span class="s5">DIRECTORY_SEPARATOR</span><span class="s1">)</span><span class="s7">;</span><span class="s1"> 
+ 
+</span><span class="s4">/* 
+ * -------------------------------------------------------------------- 
+ * LOAD THE BOOTSTRAP FILE 
+ * -------------------------------------------------------------------- 
+ * 
+ * And away we go... 
+ */</span><span class="s1"> 
+</span><span class="s0">require_once </span><span class="s5">BASEPATH</span><span class="s1">.</span><span class="s6">'core/CodeIgniter.php'</span><span class="s7">;</span><span class="s1"> 
+</span></pre>
+</body>
+</html>
