@@ -474,6 +474,7 @@
                             class="decoration">decoration</em>
                     <div class="submenu columex2">
                         <ul class="yui3-g">
+<<<<<<< HEAD
                             <li class="yui3-u"><p class="caption">管理相關</p>  <a
                                         href="https://tw.bid.yahoo.com/partner/order/list">管理訂單</a> <a
                                         href="https://tw.bid.yahoo.com/partner/merchandise/list_merchandise">管理商品</a> <a
@@ -484,6 +485,14 @@
                                         href="https://tw.billing.bid.yahoo.com/tw/show/billingcycle">繳費設定</a> <a
                                         href="https://tw.billing.bid.yahoo.com/tw/show/billing">消費記錄</a> <a
                                         href="https://tw.billing.yahoo.com/mybilling/?func_select=microtx">查詢預付點</a>
+=======
+                            <li class="yui3-u">
+                                <p class="caption">管理相關</p>
+                                <a href="">管理訂單</a>
+                                <a href="">管理商品</a> <a href="<?= base_url(); ?>select_type">我要賣東西</a>
+                                <a href="">賣家商品通知設定</a>
+                                <span class="break">line</span>
+>>>>>>> parent of 84ada8e... lee
                             </li>
                             <li class="yui3-u"><p class="caption">銷售設定</p>
                                 <a

@@ -19,6 +19,7 @@
             <div class="select-category mod-shadow" id="yui_3_12_0_4_1531796242960_256">
                 <form class="submit-product-category submit-flow-set mod-shadow"
                       action="<?= base_url() ?>cargo_edit" method="post"><h3 class="subject">選擇商品類型</h3>
+<<<<<<< HEAD
                     <div class="decorations"><em>block</em> <em class="arrow">arrow</em></div>
                     <input type="hidden" name="_crumb" value="IkhlFZ/lLpv"> <input type="hidden" name="action"
                                                                                    value="edit"> <input type="hidden"
@@ -27,6 +28,11 @@
                     <input type="hidden" name="rememberLocation" value="on">
                     <fieldset class="product-type " id="yui_3_12_0_4_1531796242960_272"><h3 class="title hide">
                             選擇商品類型</h3>
+=======
+                    <div class="decorations"></div>
+                    <fieldset class="product-type " id="yui_3_12_0_4_1531796242960_272">
+                        <h3 class="title hide">選擇商品類型</h3>
+>>>>>>> parent of 84ada8e... lee
                         <ul class="input-error hidden">
                             <li>請選擇商品類型</li>
                         </ul>

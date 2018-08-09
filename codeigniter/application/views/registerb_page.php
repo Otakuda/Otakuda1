@@ -15,7 +15,10 @@
 <form action="<?= base_url(); ?>registerb/doRegister" method="post" enctype="multipart/form-data">
 
     <center><h1> 商家注册</h1></center>
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 84ada8e... lee
     </span>
     <!-- show error messages if the form validation fails -->
     <?php if ($this->session->flashdata()) { ?>

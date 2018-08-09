@@ -3,8 +3,7 @@
 class Product_uploadModel extends CI_Model
 {
 
-    public function add_product($data)
-    {
+    public function add_product($data){
         return $this->db->insert('products', $data);
     }
 

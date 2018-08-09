@@ -15,12 +15,19 @@ class Product_preview extends CI_Controller
 
     public function index()
     {
+<<<<<<< HEAD
+=======
+        $input=$this->input->post();
+>>>>>>> parent of 84ada8e... lee
         $this->load->view('header2');
         $this->load->view('product_preview');
 
+<<<<<<< HEAD
     }
 
 
 
+=======
+>>>>>>> parent of 84ada8e... lee
 
 }
