@@ -124,9 +124,22 @@
                         <div style="float:left">
                             <div class="login-container">
                                 <div class="default" style="display:block">
-                                <div class="head-img-row"><img src="<?= base_url() ?>fb/user.png" alt=""></div>
+                                <div class="head-img-row">
+                                    <img src="<?= base_url() ?>fb/user.png" alt=""></div>
                                     <?php echo '<p class="user-name"> ' . $this->session->userdata('username') . "</b></p>";
                                     ?>
+                                    <div class="fn-row clearfix">
+                                        <div class="fn-item">
+                                                <div class="icon"><i class="iconfont icon-order_iconx"></i></div>
+                                                <p class="fn-name">我的订单</p></a></div>
+                                        <div class="fn-item">
+                                                <div class="icon"><i class="iconfont icon-comment_iconx"></i></div>
+                                                <p class="fn-name">我的评价</p></a></div>
+                                        <div class="fn-item">
+                                                <div class="icon"><i class="iconfont icon-collection_iconx"></i></div>
+                                                <p class="fn-name">我的收藏</p></a></div>
+                                    </div>
+
                                     <a class="btn-login" href="<?= base_url(); ?>login/logout">退出</a></div>
                                 <div class="default" style="display:none">t
                                     <div class="setting">
