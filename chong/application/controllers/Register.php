@@ -33,7 +33,9 @@ class Register extends CI_Controller
 
         if ($phone_value == FALSE) {
 
+
             $phone_data = $this->Phone_M->get($phone);
+
 
             if (!empty($phone_data)) {
                 $chance = $phone_data['chance'] + 1;
@@ -52,6 +54,11 @@ class Register extends CI_Controller
                 'created_date' => date('Y-m-d H:i:s'),
                 'chance' => $chance
             );
+
+//            include_once "SMS.php";
+//            $Sms=new SMS();
+//            $Sms->Set('0926911696','1qaz2wsx',"http://api.message.net.tw");
+//            $Sms->Send($phone,$code);
 
             $this->Phone_M->add($data);
             echo json_encode(array('status' => "SMS send successfully."));
