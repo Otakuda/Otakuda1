@@ -38,10 +38,10 @@ endif;
 	<table border="0" cellpadding="2px" width="600px">
 		<?php
 			foreach ($products as $product){
-				$id = $product['id'];
-				$name = $product['name'];
-				$description = $product['description'];
-				$price = $product['price'];
+				$id = $product['product_id'];
+				$name = $product['product_name'];
+//				$description = $product['description'];
+				$price = $product['product_price'];
 		?>
     	<tr>
         	<td><img src="<?php echo $product['picture']?>" /></td>

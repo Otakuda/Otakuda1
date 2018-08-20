@@ -63,13 +63,14 @@ class Product_edit extends CI_Controller
                 $image_name_mime_type = substr($image_data['file_name'], (strpos($image_data['file_name'], '.') ?: -1) + 1);
                 $this->data['temp_name'] = $image_folder.$image_name.".".$image_name_mime_type;
 //                echo json_encode($this->data['temp_name']);
+
             }
         }
     }
 
     public function remove()
     {
-        $file = $this->input->post("file");
+        $file = $this->input->post("temp_file");
         if ($file && file_exists("./temp_image/". $file)) {
             unlink("./temp_image/" . $file);
         }

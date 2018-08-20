@@ -115,28 +115,6 @@
                                 <div class="caption">
                                     <span>商品圖片</span>
                                 </div>
-                                <!--                                <div class="form-field-input upload-image-wrap">-->
-                                <!--                                    <div class="illuTrans-wrap ver2" id="yui_3_12_0_4_1531808580258_2448">-->
-                                <!--                                        <div class="trigger-wrap">-->
-                                <!--                                            <input type="file" id="images" name="productImage" class="inputfile">-->
-                                <!--                                            <label class="yui3-u trigger" for="images">-->
-                                <!--                                                選擇圖片-->
-                                <!--                                            </label>-->
-                                <!--                                        </div>-->
-                                <!--                                        <section class="illuTrans basic" id="illuTrans-auc90">-->
-                                <!--                                            <h3>illuTrans</h3>-->
-                                <!--                                            <ul class="yui3-g" id="list">-->
-                                <!--                                                <li class="yui3-u">-->
-                                <!--                                                    <div>-->
-                                <!--                                                        <div class="irwrap">-->
-                                <!--                                                            <div class="irens" id="images-to-upload" data-image="">-->
-                                <!--                                                                <input type="hidden" id="image_id" name="image_path">-->
-                                <!--                                                            </div>-->
-                                <!--                                                        </div>-->
-                                <!--                                                </li>-->
-                                <!--                                            </ul>-->
-                                <!--                                    </div>-->
-                                <!--                                </div>-->
                                 <div id="content">
                                     <div id="my-dropzone" class="dropzone">
                                         <div class="dz-message">
@@ -145,6 +123,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php
+                            foreach(glob('./temp_image/*$temp_name*') as $total_image){
+                            echo $total_image;
+                            }
+                            ?>
                             <div class="row-wrap item-qty-wrap" id="yui_3_12_0_1_1531884359549_20">
                                 <div class="caption">
                                     <span>數量</span>
@@ -227,23 +210,10 @@
 
         $("#my-dropzone").dropzone({
             addRemoveLinks: true,
+            maxFiles: 5,
             url: "<?php echo site_url("Product_edit/upload") ?>",
 
             init: function () {
-//            thisDropzone = this;
-//            $.get('/getpics.php', function(data) {
-//                $.each(data, function(key,value){
-//
-//                    var file = { serverId: value.name, size: value.size };
-//
-//                    thisDropzone.options.addedf...(thisDropzone, file);
-//
-//                    thisDropzone.options.thumbn...(thisDropzone, file, "/uploads/"+value.name);
-//
-//                });
-//
-//            });
-
                 this.on("success", function (file, response) {
                     var data = JSON.parse(response);
                     var file_name = data.file_name;
@@ -251,7 +221,7 @@
                     console.log(total_image_array);
                     file.serverId = response;
                 });
-                this.on("removedfile", function (file) {
+                this.on("removedFile", function (file) {
                     var name = file.name;
 
                     $.ajax({
@@ -265,43 +235,10 @@
                     var previewElement;
                     return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
                 });
-            }
-        });
 
-//    var myDropzone = new Dropzone("#my-dropzone", {
-//        url: "<?php //echo site_url("Product_edit/upload") ?>//",
-//        acceptedFiles: "image/*",
-//        addRemoveLinks: true,
-//        removedfile: function(file) {
-//            var name = file.name;
-//
-//            $.ajax({
-//                type: "post",
-//                url: "<?php //echo site_url("Product_edit/remove") ?>//",
-//                data: { file: name },
-//                dataType: 'html'
-//            });
-//
-//            // remove the thumbnail
-//            var previewElement;
-//            return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
-//        }
-//        ,
-//        init: function() {
-//            var me = this;
-//            $.get("<?php //echo site_url("Product_edit/list_files") ?>//", function(data) {
-//                // if any files already in server show all here
-//                if (data.length > 0) {
-//                    $.each(data, function(key, value) {
-//                        var mockFile = value;
-//                        me.emit("addedfile", mockFile);
-//                        me.emit("thumbnail", mockFile, "<?php //echo base_url(); ?>//uploads/" + value.name);
-//                        me.emit("complete", mockFile);
-//                    });
-//                }
-//            });
-//        }
-//    });
+            }
+
+        });
 
     });
 </script>

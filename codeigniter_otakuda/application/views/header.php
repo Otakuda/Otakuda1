@@ -50,6 +50,7 @@
 
             <nav class="header-bar-nav">
                 <ul class="header-nav-first">
+                    <li><a href="<?=base_url()?>product_order">購物車</a></li>
                     <li class="has-child">
                         <a rel="nofollow" href="" target="_blank">用户
                             <ul class="header-nav-my header-nav-second">

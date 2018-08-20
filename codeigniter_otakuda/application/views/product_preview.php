@@ -91,14 +91,14 @@
                 <div>
                     <div>
                         <form action="<?= base_url() ?>Product_upload/doUpload" method="post">
-                            <div class="pageRoot__2VRqJ " >
+                            <div class="pageRoot__2VRqJ ">
                                 <div class="pageRowBox__3xNZf">
                                     <section class="previewInfoWrap__3L8oc">
                                         <div class="inner__1kUlf">
                                             <h2 class="title__3SBcO">商品刊登預覽</h2>
                                             <div class="caption">商品分類：
-                                               <?= $cargo_sort ?>
-                                                <input type="hidden" value="<?=$cargo_id?>" name="cargo_id">
+                                                <?= $cargo_sort ?>
+                                                <input type="hidden" value="<?= $cargo_id ?>" name="cargo_id">
                                             </div>
                                         </div>
                                     </section>
@@ -112,7 +112,7 @@
                                                         <section class="wrap__bGMYC">
                                                             <div>
                                                                 <figure class="focusedImageFigure__c4PVd">
-                                                                    <div class="dz-message">
+                                                                    <div>
                                                                         <h3>上傳圖片</h3>
                                                                     </div>
                                                                 </figure>
@@ -120,7 +120,7 @@
                                                             <ul class="imageList__22FSs">
                                                                 <li class="listItem__3BRt8">
                                                                     <mark class="checkedMark__2Qoej"></mark>
-                                                                    <div class="dz-message">
+                                                                    <div>
                                                                         <h3>上傳圖片</h3>
                                                                     </div>
                                                                 </li>
@@ -186,71 +186,27 @@
                                                                 </div>
                                                             </div>
                                                         </section>
-                                </div>
-                                <div class="action-wrap">
-                                    <ul >
-                                        <li>
-                                            <a href="<?= base_url() ?>Select_type" class="button-submit button-secondary btn-pad">取消</a>
-                                        </li>
-                                        <li>
-                                            <button class="button-submit button-main btn-pad"> 確定</button>
-                                        </li>
-                                    </ul>
+                                                    </div>
+                                                    <div class="action-wrap">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="<?= base_url() ?>Select_type"
+                                                                   class="button-submit button-secondary btn-pad">取消</a>
+                                                            </li>
+                                                            <li>
+                                                                <button class="button-submit button-main btn-pad"> 確定
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </main>
                                 </div>
                         </form>
                     </div>
                 </div>
             </div>
-                    <script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
-                    <script src="<?php echo base_url(); ?>vendor/dropzone/dropzone.min.js"></script>
-                    <script>
-                        $('.input-number-increment').click(function () {
-                            var $input = $(this).parents('.input-number-group').find('.input-number');
-                            var val = parseInt($input.val(), 10);
-                            $input.val(val + 1);
-                        });
-
-                        $('.input-number-decrement').click(function () {
-                            var $input = $(this).parents('.input-number-group').find('.input-number');
-                            var val = parseInt($input.val(), 10);
-                            $input.val(val - 1);
-                        })
-
-                        Dropzone.autoDiscover = false;
-                        var myDropzone = new Dropzone("#my-dropzone", {
-                            url: "<?php echo site_url("Product_edit/upload") ?>",
-                            acceptedFiles: "image/*",
-                            addRemoveLinks: true,
-                            removedfile: function (file) {
-                                var name = file.name;
-
-                                $.ajax({
-                                    type: "post",
-                                    url: "<?php echo site_url("Product_edit/remove") ?>",
-                                    data: {file: name},
-                                    dataType: 'html'
-                                });
-
-                                // remove the thumbnail
-                                var previewElement;
-                                return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
-                            }
-//                        ,
-//                        init: function () {
-//                            var me = this;
-//                            $.get("<?php //echo site_url("Product_edit/list_files") ?>//", function (data) {
-//                                // if any files already in server show all here
-//                                if (data.length > 0) {
-//                                    $.each(data, function (key, value) {
-//                                        var mockFile = value;
-//                                        me.emit("addedfile", mockFile);
-//                                        me.emit("thumbnail", mockFile, "<?php //echo base_url(); ?>//uploads/" + value.name);
-//                                        me.emit("complete", mockFile);
-//                                    });
-//                                }
-//                            });
-//                        }
-                        });
-                    </script>
 
 

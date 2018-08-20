@@ -30,4 +30,6 @@ class Product_details extends CI_Controller
         $this->load->view('product_details',$this->data);
         $this->load->view('footer');
     }
+
+
 }

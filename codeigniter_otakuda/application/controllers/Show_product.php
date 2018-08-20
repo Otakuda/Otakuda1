@@ -19,11 +19,13 @@ class Show_product extends CI_Controller {
         $this->load->view('footer');
     }
 
-    public function product_detail($id){
+    public function shop_detail($id){
         $product_id=$id;
         $this->data['product'] = $this->Show_productModel->get($product_id);
         $this->load->view('header');
         $this->load->view('show_product',$this->data);
         $this->load->view('footer');
     }
+
+
 }

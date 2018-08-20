@@ -12,10 +12,14 @@ class Show_productModel extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('shop');
-        $this->db->join('products', 'shop.shop_id = products.shop_id','INNER');
+        $this->db->join('products', 'shop.shop_id = products.shop_id','left');
         $this->db->where('shop.shop_id', $id);
-//        $this->db->where('business_id',$id);
         $query = $this->db->get();
-        return $query->row_array();
+        return $query->result_array();
+
+//        $this->db->where('shop_id', $id);
+//        $q = $this->db->get('shop');
+//        $response = $q->row_array();
+//        return $response;
     }
 }

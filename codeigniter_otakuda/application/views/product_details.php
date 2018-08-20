@@ -2,8 +2,7 @@
       href="https://s.yimg.com/zq/auc/assets/statics/css/pure/pure-min__mV8W61ddn7.css">
 <link rel="stylesheet" type="text/css"
       href="https://s.yimg.com/zq/auc/assets/statics/css/pure/grids-responsive-min__42Gz9vABEF.css">
-<link rel="stylesheet" type="text/css"
-      href="https://s.yimg.com/zq/auc/frontend/bundle/itemPreview.ddf7236a65e1c21585d8.css">
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/test.css">
 <script src="<?= base_url() ?>js/jquery.js"></script>
 <style>
     .input-number-group {
@@ -71,12 +70,12 @@
 
 </style>
 <div class="yui3-g">
-    <div id="bd" class="yui3-g">
+    <div class="yui3-g">
         <div class="yui3-u-1">
             <div class="item-preview">
                 <div>
                     <div>
-                        <form action="<?= base_url() ?>Product_upload/doUpload" method="post">
+                        <form action="<?= base_url() ?>Product_order/add" method="post">
                             <div class="itemPageModule__1UoRD">
                                 <main class="main__3C2yn">
                                     <div class="pure-g flexContainer__jnSOl">
@@ -88,6 +87,7 @@
                                                             <figure class="focusedImageFigure__c4PVd">
                                                                 <img class="focusedImage__3HmoX"
                                                                      src="<?= base_url() . $product['product_image'] ?>">
+                                                                <input type="hidden" value="<?=$product['product_id']?>" readonly name="product_id">
                                                             </figure>
                                                         </div>
                                                         <ul class="imageList__22FSs">
@@ -95,9 +95,9 @@
                                                                 <mark class="checkedMark__2Qoej"></mark>
                                                                 <img src="<?= base_url() . $product['product_image'] ?>"
                                                                      class="image__3l8Vh" id="productUpload_image">
-                                                                <input type="hidden" name="image_path"
-                                                                       id="image_path"
-                                                                       value="<?= $product['product_image'] ?>">
+<!--                                                                <input type="hidden" name="image_path"-->
+<!--                                                                       id="image_path"-->
+<!--                                                                       value="--><?//= $product['product_image'] ?><!--">-->
                                                             </li>
                                                         </ul>
                                                     </section>
@@ -110,15 +110,15 @@
                                                         <div class="tagsRow__3AkOv">
                                                             <a class="previewDisableAction hashTag__Bhj5J"
                                                                href="">#<?= $product['product_brief_detail'] ?>
-                                                                <input type="hidden"
-                                                                       value="<?= $product['product_brief_detail'] ?>"
-                                                                       name="product_brief_detail">
+<!--                                                                <input type="hidden"-->
+<!--                                                                       value="--><?//= $product['product_brief_detail'] ?><!--"-->
+<!--                                                                       name="product_brief_detail">-->
                                                             </a>
                                                         </div>
                                                         <p class="subtitle__3NvAJ"><?= $product['product_brief'] ?></p>
-                                                        <input type="hidden"
-                                                               value="<?= $product['product_brief_detail'] ?>"
-                                                               name="product_brief">
+<!--                                                        <input type="hidden"-->
+<!--                                                               value="--><?//= $product['product_brief_detail'] ?><!--"-->
+<!--                                                               name="product_brief">-->
                                                         <div class="row__-8aqS">
                                                             <div class="caption__2IQBR">定價</div>
                                                             <div class="content__3X3yq">
@@ -141,15 +141,20 @@
                                                                         </div>
                                                                         <input class="input-number" type="number"
                                                                                value="1" min="1"
-                                                                               max="<?= $product['product_quantity'] ?>">
+                                                                               max="<?= $product['product_quantity'] ?>" name="product_quantity">
                                                                         <div class="input-group-button">
                                                                             <span class="input-number-increment">+</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <input type="hidden" class="qtyInput__1dbgq "
-                                                                       name="product_quantity"
-                                                                       value="<?= $product['product_quantity'] ?>">
+                                                            </div>
+                                                            <div class="purchaseButtons__2RKKR">
+                                                               <button class="buyNowButton__1aR87 actionButton__2aXKn button__yn_TD primaryButtonType2__m1h-8" value=""submit>
+                                                                    立即購買
+                                                                </button>
+                                                                <button class="addToCartButton__39VJh actionButton__2aXKn button__yn_TD secondaryButtonType2__3QWSM">
+                                                                    加入購物車
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </section>
