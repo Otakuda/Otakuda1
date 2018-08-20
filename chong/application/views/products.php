@@ -50,19 +50,30 @@ endif;
             		<?php echo $product_brief; ?><br />
                     Price:<big style="color:green">
                     $<?php echo $product_price; ?></big><br /><br />
-                    <?php
-					echo form_open('cart/add');
-					echo form_hidden('id', $product_id);
-					echo form_hidden('name', $product_name);
-					echo form_hidden('price', $product_price);
-					echo form_submit('action', 'Add to Cart');
-					echo form_close();
-					?>
+                <input type="qty" name="qty" id="qty" maxlength="1" size="1">
+                <input type="submit" name="checkout" id="checkout" onclick="select()" >
+            </td>
 
-			</td>
         <tr><td colspan="2"><hr size="1" /></td>
         <?php } ?>
     </table>
 </div>
 </body>
+<script type="text/javascript">
+    function select()
+    {
+
+        var qty = document.getElementById("qty").value;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+            }
+
+        };
+        xmlhttp.open("Post", "cart/add", true);
+        xmlhttp.send(qty);// JavaScript Document
+    }
+</script>
 </html>

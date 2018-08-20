@@ -44,9 +44,7 @@ function clear_cart() {
 			echo form_hidden('cart['. $item['id'] .'][qty]', $item['qty']);
 		?>
 		<tr bgcolor="#FFFFFF">
-			<td>
-				<?php echo $i++; ?>
-			</td>
+
 			<td>
 				<?php echo $item['name']; ?>
 			</td>
@@ -54,7 +52,7 @@ function clear_cart() {
 				$ <?php echo number_format($item['price'],2); ?>
 			</td>
 			<td>
-				<?php echo form_input('cart['. $item['id'] .'][qty]', $item['qty'], 'maxlength="3" size="1" style="text-align: right"'); ?>
+				<?php echo number_format($item['qty']); ?>
 			</td>
 			<?php $grand_total = $grand_total + $item['subtotal']; ?>
 			<td>

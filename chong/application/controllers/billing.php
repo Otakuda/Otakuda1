@@ -20,9 +20,9 @@ class Billing extends CI_Controller {
 	{
 		$customer = array(
 			'name' 		=> $this->input->post('name'),
-			'email' 	=> $this->input->post('email'),
-			'address' 	=> $this->input->post('address'),
-			'phone' 	=> $this->input->post('phone')
+            'address' 	=> $this->input->post('address'),
+			'phone' 	=> $this->input->post('phone'),
+            'remark' 	=> $this->input->post('remark')
 		);		
 
 		$cust_id = $this->Billing_model->insert_customer($customer);

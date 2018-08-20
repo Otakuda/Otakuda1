@@ -27,20 +27,11 @@ class Information extends CI_Controller
             redirect(base_url() . 'welcome');
         }
         //if not load the login page
-
+        $this->load->view('header');
+        $this->load->view('information');
         $this->load->view('information');
 
     }
 
-    function update_user_name()
-    {
-        $id = $this->input->post('user_id');
-        $username = $this->input->post('username');
-        $data = array(
-            'username' => $username
 
-        );
-        $this->User_M->update_username($id, $data);
-
-    }
 }

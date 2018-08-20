@@ -25,18 +25,14 @@ class User_M extends CI_Model
 
     }
 
-//    public function get($where)
-//    {
-//        if (!empty($where)) {
-//            $query=$this->db->where($where);
-//        }
-////        $query = $this->db->get('users');
-////        print_r($query);
-//        print_r($query);
-//
-//        return $query->row_array();
-//
-//    }
+    public function get($where)
+    {
+        if (!empty($where)) {
+            $this->db->where($where);
+        }
+        $query = $this->db->get('users');
+        return $query->row_array();
+    }
 
     public function update_shop_level($phone)
     {
@@ -50,10 +46,10 @@ class User_M extends CI_Model
     }
 
 
-    function update_username($id, $data)
+    function update_username($id,$data)
     {
         $this->db->where('user_id', $id);
-        $this->db->update('users', $data);
+        return $this->db->update('users', $data);
     }
 
 }

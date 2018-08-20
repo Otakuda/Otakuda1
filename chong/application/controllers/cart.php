@@ -23,6 +23,8 @@ class Cart extends CI_Controller {
 
 	public function add()
 	{
+        header('Content-type: application/json');
+        $phone = file_get_contents('php://input');
 		$this->load->model('Cart_model');
 	
 		$insert_room = array(
@@ -33,8 +35,8 @@ class Cart extends CI_Controller {
 		);		
 
 		$this->cart->insert($insert_room);
-			
-		redirect('cart');
+
+        $this->load->view('cart', $this->data);
 	}
 	
 	function remove($rowid) {

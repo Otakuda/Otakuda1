@@ -50,6 +50,7 @@ class Login extends CI_Controller
                 'user_level' => $data[0]['user_level'],
                 'shop_level' => $data[0]['shop_level'],
                 'rider_level' => $data[0]['rider_level'],
+                'user_id' => $data[0]['user_id']
 
             );
             $this->session->set_userdata($userdata);
