@@ -17,7 +17,9 @@
                 <div class="content">
                     <div class="details clear">
                         <div class="d-left">
-                            <a href="<?=base_url()?>show_product/shop_detail/<?=$item['shop_id']?>"><div class="name"><?= $item['shop_name'] ?></div></a>
+                            <a href="<?=base_url()?>show_product/shop_detail/<?=$item['shop_id']?>">
+                                <div class="name"><?= $item['shop_name'] ?></div>
+                            </a>
                             <div class="address">
                                 <p>地址：<?= $item['address'] ?></p>
                                 <p>电话：<?= $item['phone'] ?></p>

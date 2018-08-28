@@ -12,8 +12,7 @@
           rel="stylesheet" type="text/css">
     <link href="https://s.yimg.com/zz/combo?/ma/auc/pexqi_auc_20180705/auction/templates/my/nav/static/nav.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/breadcrumb/static/breadcrumb.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/selectType/static/selectType.css?v=1&amp;/ma/auc/pdlgi_auc_20180622/auction/templates/common/announcementLayer/static/announcementLayer.css?v=1&amp;/ma/auc/pdlgi_auc_20180622/auction/templates/common/helper/static/helper.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/stepBar/static/stepBar.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/itemPreview/static/itemPreview.css?v=1&amp;/ma/auc/pexqi_auc_20180705/auction/templates/my/pageLevelMessageBar/static/pageLevelMessageBar.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/itemAdvertising/static/itemAdvertising.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/purchaseAdSuccess/static/purchaseAdSuccess.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/submitSuccess/static/submitSuccess.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/itemEdit/static/itemEdit.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/selectCategory/static/selectCategory.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/itemEasyEdit/static/itemEasyEdit.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/htmlEditor/static/htmlEditor.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/htmlEditor/static/closureEditor.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/illuTrans/static/illuTrans.css?v=1&amp;/ma/auc/pehvh_ms_20180703/merchantsuite/templates/itemSubmit/specUpload/static/specUpload.css?v=1&amp;/ma/auc/pehvi_ms_20180703/merchantsuite/lib/css/flow/itemSubmit.css?v=1"
           rel="stylesheet" type="text/css">
-
-      <link rel="stylesheet" type="text/css"
+    <link rel="stylesheet" type="text/css"
           href="https://s.yimg.com/zq/auc/assets/statics/css/pure/pure-min__mV8W61ddn7.css">
     <link rel="stylesheet" type="text/css"
           href="https://s.yimg.com/zq/auc/assets/statics/css/pure/grids-responsive-min__42Gz9vABEF.css">
@@ -29,7 +28,8 @@
         <nav class="my-nav" id="yui_3_12_0_5_1531460838790_1927">
             <ul class="yui3-g" id="yui_3_12_0_5_1531460838790_1926">
                 <li class="yui3-u nav-tabs none act" id="yui_3_12_0_5_1531460838790_1925">
-                    <a href="" id="yui_3_12_0_5_1531460838790_1924"><?php echo '<p class="user-name"> ' . $this->session->userdata('username') . "</p>"; ?></a>
+                    <a href="<?= base_url() ?>trader"
+                       id="yui_3_12_0_5_1531460838790_1924"><?php echo '<p class="user-name"> ' . $this->session->userdata('username') . "</p>"; ?></a>
                     <em class="decoration">decoration</em>
                 </li>
                 <li class="yui3-u nav-tabs none act" id="yui_3_12_0_5_1531460838790_1925">
@@ -40,11 +40,9 @@
                     <a href="#seller">商品管理<em class="yui3-u arrow">arrow</em></a>
                     <div class="submenu">
                         <ul class="yui3-g">
-                            <li class="yui3-u"><p class="caption">管理相關</p>
-                                <a href="https://tw.bid.yahoo.com/partner/order/list">管理訂單</a>
-                                <a href="https://tw.bid.yahoo.com/partner/merchandise/list_merchandise">管理商品</a>
-                                <a href="<?= base_url(); ?>select_type">我要賣東西</a>
-                                <a href="https://tw.bid.yahoo.com/myauc/item_notify_setting">賣家商品通知設定</a>
+                            <li class="yui3-u"><p class="caption">商品管理</p>
+                                <a href="https://tw.bid.yahoo.com/partner/merchandise/list_merchandise">商品目錄</a>
+                                <a href="<?= base_url(); ?>select_category">上架新商品</a>
                             </li>
                         </ul>
                     </div>
@@ -57,10 +55,8 @@
                     <div class="submenu">
                         <ul class="yui3-g">
                             <li class="yui3-u">
-                                <a href="https://tw.bid.yahoo.com/myauc/order">訂單查詢</a>
-                                <a href="https://tw.bid.yahoo.com/myauc/orderqna">買賣留言板</a>
-                                <a href="https://tw.bid.yahoo.com/myauc/friendlist">最愛賣家</a>
-                                <a href="https://tw.bid.yahoo.com/myauc/watch">喜愛商品</a>
+                                <a href="<?=base_url()?>trader">訂單查詢</a>
+                                <a href="https://tw.bid.yahoo.com/myauc/orderqna">買家留言</a>
                             </li>
                         </ul>
                         <em class="sep-line">decoration</em></div>
@@ -73,10 +69,6 @@
                     <div class="submenu">
                         <ul class="yui3-g">
                             <li class="yui3-u">
-                                <a href="https://tw.bid.yahoo.com/myauc/order">訂單查詢</a>
-                                <a href="https://tw.bid.yahoo.com/myauc/orderqna">買賣留言板</a>
-                                <a href="https://tw.bid.yahoo.com/myauc/friendlist">最愛賣家</a>
-                                <a href="https://tw.bid.yahoo.com/myauc/watch">喜愛商品</a>
                             </li>
                         </ul>
                         <em class="sep-line">decoration</em></div>

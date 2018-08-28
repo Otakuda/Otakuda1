@@ -43,14 +43,14 @@ class Login extends CI_Controller
             $data = $this->User_M->display_detail($phone);
 
             $userdata = array(
-
                 'username' => $data[0]['username'],
                 'phone' => $data[0]['phone'],
                 'logged_in' =>TRUE,
+                'user_id'=>$data[0]['user_id'],
                 'user_level' => $data[0]['user_level'],
                 'shop_level' => $data[0]['shop_level'],
                 'rider_level' => $data[0]['rider_level'],
-
+                'shop_id' => $data[0]['shop_id'],
             );
             $this->session->set_userdata($userdata);
 

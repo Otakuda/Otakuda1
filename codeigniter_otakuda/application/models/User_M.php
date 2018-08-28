@@ -16,13 +16,12 @@ class User_M extends CI_Model
 
     public function display_detail($phone)
     {
-        $this->db->select('*');
+        $this->db->select('users.user_id,users.username,users.phone,users.user_level,users.shop_level,users.rider_level,shop.shop_id');
         $this->db->from("users");
-        $this->db->where('phone', $phone);
-
+        $this->db->join('shop', 'shop.user_id = users.user_id','left');
+        $this->db->where('users.phone', $phone);
         $query = $this->db->get();
         return $query->result_array();
-
     }
 
 //    public function get($where)

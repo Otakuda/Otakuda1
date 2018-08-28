@@ -59,10 +59,11 @@ class Product_edit extends CI_Controller
             }
             else{
                 $image_data = $this->upload->data();
-                echo json_encode($image_data);
+//                echo json_encode($image_data);
                 $image_name_mime_type = substr($image_data['file_name'], (strpos($image_data['file_name'], '.') ?: -1) + 1);
                 $this->data['temp_name'] = $image_folder.$image_name.".".$image_name_mime_type;
-//                echo json_encode($this->data['temp_name']);
+//                $this->load->view('product_edit',$this->data);
+                echo json_encode($this->data['temp_name']);
 
             }
         }

@@ -11,7 +11,7 @@ class Trader extends CI_Controller {
         $this->load->helper('url');
         $this->load->library(['form_validation','session']);
         $this->load->database();
-        
+        $this->load->model('Trader_model');
        
     }
 
@@ -21,16 +21,18 @@ class Trader extends CI_Controller {
 
          if($logged_in and $this->session->userdata('shop_level') == 0)
          {
-
             redirect('registerb');
          }
          else if($logged_in and $this->session->userdata('shop_level') == 1)
          {
-             $this->load->view('header2');
+             $where=array(
+                 'shop_id'=>$this->session->userdata('shop_id')
+             );
+             $this->data['order']=$this->Trader_model->getOrder($where);
+             $this->load->view('header2',$this->data);
              $this->load->view('trader');
-
          }
-        //if not load the login page
-
     }
+
+
 }

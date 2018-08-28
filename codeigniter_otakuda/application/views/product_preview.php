@@ -103,7 +103,7 @@
                                         </div>
                                     </section>
                                 </div>
-                                <div class="itemPageModule__1UoRD">
+                                <div>
                                     <main class="main__3C2yn">
                                         <div class="pure-g flexContainer__jnSOl">
                                             <div class="pure-u-1 firstFoldWrap__3LZTE">
@@ -118,6 +118,24 @@
                                                                 </figure>
                                                             </div>
                                                             <ul class="imageList__22FSs">
+                                                                <li class="listItem__3BRt8">
+                                                                    <mark class="checkedMark__2Qoej"></mark>
+                                                                    <div>
+                                                                        <h3>上傳圖片</h3>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="listItem__3BRt8">
+                                                                    <mark class="checkedMark__2Qoej"></mark>
+                                                                    <div>
+                                                                        <h3>上傳圖片</h3>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="listItem__3BRt8">
+                                                                    <mark class="checkedMark__2Qoej"></mark>
+                                                                    <div>
+                                                                        <h3>上傳圖片</h3>
+                                                                    </div>
+                                                                </li>
                                                                 <li class="listItem__3BRt8">
                                                                     <mark class="checkedMark__2Qoej"></mark>
                                                                     <div>
@@ -194,7 +212,7 @@
                                                                    class="button-submit button-secondary btn-pad">取消</a>
                                                             </li>
                                                             <li>
-                                                                <button class="button-submit button-main btn-pad"> 確定
+                                                                <button class="button-submit button-main btn-pad" type="submit"> 確定
                                                                 </button>
                                                             </li>
                                                         </ul>

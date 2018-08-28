@@ -19,7 +19,7 @@ class Product_order extends CI_Controller
         $this->data['title'] = 'Shopping Carts';
 
         if (!$this->cart->contents()){
-            $this->data['message'] = '<p>Your cart is empty!</p>';
+            $this->data['message'] = '<p>你的購物車是空的!</p>';
         }else{
             $this->data['message'] = $this->session->flashdata('message');
         }
@@ -33,7 +33,9 @@ class Product_order extends CI_Controller
             'id' => $this->input->post('product_id'),
             'name' => $this->input->post('product_name'),
             'price' => $this->input->post('product_price'),
-            'qty' => $this->input->post('product_quantity')
+            'qty' => $this->input->post('product_quantity'),
+            'remark' => $this->input->post('remark'),
+            'shop_id' => $this->input->post('shop_id')
         );
         $this->cart->insert($insert_room);
         redirect('product_order');

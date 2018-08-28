@@ -148,8 +148,22 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                        <div class="row__1kjJO row__-8aqS">
+                                                            <div class="caption__xNd14 caption__2IQBR">
+                                                                <span>備註</span>
+                                                            </div>
+                                                            <div class="content__36o8N content__3X3yq">
+                                                                <div class="input-group">
+                                                                    <div class="input-group input-number-group">
+                                                                        <input type="text" name="remark">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" value="<?= $product['shop_id'] ?>" name="shop_id" readonly>
                                                             <div class="purchaseButtons__2RKKR">
-                                                               <button class="buyNowButton__1aR87 actionButton__2aXKn button__yn_TD primaryButtonType2__m1h-8" value=""submit>
+                                                                <button class="buyNowButton__1aR87 actionButton__2aXKn button__yn_TD primaryButtonType2__m1h-8" value=""submit>
                                                                     立即購買
                                                                 </button>
                                                                 <button class="addToCartButton__39VJh actionButton__2aXKn button__yn_TD secondaryButtonType2__3QWSM">

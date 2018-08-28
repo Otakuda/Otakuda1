@@ -148,7 +148,6 @@
                                            class="price-only small-input column-left"
                                            name="product_price" autocomplete="off">
                                 </div>
-                            </div>
                         </fieldset>
                     </div>
 
@@ -235,10 +234,9 @@
                     var previewElement;
                     return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
                 });
-
             }
-
         });
-
     });
+
+
 </script>
