@@ -65,6 +65,7 @@
                         <ul class="header-nav-merchant header-nav-second">
                             <li><a rel="nofollow">用户</a></li>
                             <li><a rel="nofollow" href="<?= base_url(); ?>trader" target="_blank">商家</a></li>
+                            <li><a rel="nofollow" href="<?= base_url(); ?>driver_index" target="_blank">騎手</a></li>
                         </ul>
                     </li>
                     <li class="has-child">帮助

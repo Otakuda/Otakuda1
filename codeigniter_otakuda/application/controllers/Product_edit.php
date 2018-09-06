@@ -45,54 +45,31 @@ class Product_edit extends CI_Controller
 
     public function upload()
     {
-        if ( ! empty($_FILES))
-        {
+        if (!empty($_FILES)) {
             $image_folder = "temp_image/";
             $image_name = 'product_image_' . rand(9999, 999999) . '_' . date('Ymd_His');
             $config['file_name'] = $image_name;
-            $config["upload_path"]   = "./temp_image/";
+            $config["upload_path"] = "./temp_image/";
             $config["allowed_types"] = "gif|jpg|jpeg|png";
             $this->load->library('upload', $config);
 
-            if ( ! $this->upload->do_upload("file")) {
+            if (!$this->upload->do_upload("file")) {
                 echo "failed to upload file(s)";
-            }
-            else{
+            } else {
                 $image_data = $this->upload->data();
-//                echo json_encode($image_data);
                 $image_name_mime_type = substr($image_data['file_name'], (strpos($image_data['file_name'], '.') ?: -1) + 1);
-                $this->data['temp_name'] = $image_folder.$image_name.".".$image_name_mime_type;
-//                $this->load->view('product_edit',$this->data);
+                $this->data['temp_name'] = $image_folder .  $image_name.'.'.$image_name_mime_type;
+//                    . "." . $image_name_mime_type;
                 echo json_encode($this->data['temp_name']);
-
             }
         }
     }
 
     public function remove()
     {
-        $file = $this->input->post("temp_file");
-        if ($file && file_exists("./temp_image/". $file)) {
-            unlink("./temp_image/" . $file);
+        $file = $this->input->post("response");
+        if ($file && file_exists( "temp_image/". $file)) {
+            unlink("temp_image/". $file);
         }
     }
-
-    public function list_files()
-    {
-        $this->load->helper("file");
-        $files = get_filenames("./temp_image/");
-        // we need name and size for dropzone mockfile
-        foreach ($files as &$file) {
-            $file = array(
-                'name' => $file,
-                'size' => filesize("./temp_image/". $file)
-            );
-        }
-
-        header("Content-type: text/json");
-        header("Content-type: application/json");
-        echo json_encode($files);
-    }
-
-
 }

@@ -1,27 +1,9 @@
+<!--<link rel="stylesheet" href="--><? //=base_url()?><!--css/bootstrap.min.css" />-->
+<!-- DROPZONE -->
+<!--<link rel="stylesheet" href="--><? //=base_url()?><!--css/dropzone.css" />-->
 <link rel="stylesheet" href="<?php echo base_url(); ?>vendor/dropzone/dropzone.min.css">
+
 <style>
-    /*.inputfile {*/
-    /*width: 0.1px;*/
-    /*height: 0.1px;*/
-    /*opacity: 0;*/
-    /*overflow: hidden;*/
-    /*position: absolute;*/
-    /*z-index: -1;*/
-    /*}*/
-
-    /*.inputfile:focus + label {*/
-    /*outline: 1px dotted #000;*/
-    /*outline: -webkit-focus-ring-color auto 5px;*/
-    /*}*/
-
-    /*.inputfile + label * {*/
-    /*pointer-events: none;*/
-    /*}*/
-
-    /*img {*/
-    /*width: 80px;*/
-    /*}*/
-
     .dropzone {
         background: #fff;
         border: 2px dashed #ddd;
@@ -118,16 +100,26 @@
                                 <div id="content">
                                     <div id="my-dropzone" class="dropzone">
                                         <div class="dz-message">
-                                            <h3>上傳圖片</h3>
+                                            <h3>將圖片拖放此處或者點擊上傳</h3>
                                         </div>
                                     </div>
                                 </div>
+
+                                <!--                                <div class="container">-->
+                                <!--                                    <div id="my-dropzone" class="dropzone"></div>-->
+                                <!--                                </div>-->
+
+                                <!--                                <div id="content">-->
+                                <!--                                    <div id="my-dropzone" class="dropzone">-->
+                                <!--                                        <div class="dz-message">-->
+                                <!--                                            <h3>上傳圖片</h3>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
                             </div>
-                            <?php
-                            foreach(glob('./temp_image/*$temp_name*') as $total_image){
-                            echo $total_image;
-                            }
-                            ?>
+
+                            <div id="logger" class="web_console"  ></div>
+
                             <div class="row-wrap item-qty-wrap" id="yui_3_12_0_1_1531884359549_20">
                                 <div class="caption">
                                     <span>數量</span>
@@ -202,27 +194,58 @@
 </div>
 <script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>vendor/dropzone/dropzone.min.js"></script>
+<!--<script>
+    Dropzone.autoDiscover = false;
+    var myDropzone = new Dropzone("#my-dropzone", {
+        url: "<?php echo site_url("Product_edit/upload") ?>",
+        acceptedFiles: "image/*",
+        addRemoveLinks: true,
+        maxFiles: 5,
+        dictFallbackMessage         : "您的瀏覽器不支援拖放檔案上傳",
+        dictFallbackText: "您的瀏覽器不支援拖放檔案上傳",
+        dictFileTooBig              : "檔案大小限制：{{maxFilesize}}MB, 檔案太大 ({{filesize}}MB)",
+        dictInvalidFileType         : "您可以上傳 jpg, jpeg, png 圖檔",
+        dictRemoveFileConfirmation  : "您確定刪除這張圖檔嗎？",
+        dictMaxFilesExceeded        : "檔案個數限制：5",
+        removedfile: function(file) {
+            var name = file.name;
+
+            $.ajax({
+                type: "post",
+                url: "<?php echo site_url("Product_edit/remove") ?>",
+                data: { file: name },
+                dataType: 'html'
+            });
+
+            // remove the thumbnail
+            var previewElement;
+            return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+        }
+    });
+
+</script>
+-->
+
 <script>
-    var total_image_array = [];
+    //    var total_image_array = [];
     $(document).ready(function () {
         Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone("#my-dropzone", {
 
-        $("#my-dropzone").dropzone({
             addRemoveLinks: true,
             maxFiles: 5,
+            dictFallbackMessage: "您的瀏覽器不支援拖放檔案上傳",
+            dictFallbackText: "您的瀏覽器不支援拖放檔案上傳",
+            dictFileTooBig: "檔案大小限制：{{maxFilesize}}MB, 檔案太大 ({{filesize}}MB)",
+            dictInvalidFileType: "您可以上傳 jpg, jpeg, png 圖檔",
+            dictRemoveFileConfirmation: "您確定刪除這張圖檔嗎？",
+            dictMaxFilesExceeded: "檔案個數限制：5",
+
             url: "<?php echo site_url("Product_edit/upload") ?>",
 
             init: function () {
-                this.on("success", function (file, response) {
-                    var data = JSON.parse(response);
-                    var file_name = data.file_name;
-                    total_image_array.push(file_name);
-                    console.log(total_image_array);
-                    file.serverId = response;
-                });
                 this.on("removedFile", function (file) {
                     var name = file.name;
-
                     $.ajax({
                         type: "post",
                         url: "<?php echo site_url("Product_edit/remove") ?>",
@@ -235,8 +258,24 @@
                     return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
                 });
             }
-        });
-    });
+        })
+            .on("success", function (file, response) {
+                var console = {};
 
+                // Getting div to insert logs
+                var logger = document.getElementById("logger");
+
+                // Adding log method from our console object
+                console.log = function (text) {
+                    var element = document.createElement("div");
+                    var txt = document.createTextNode(text);
+
+                    element.appendChild(txt);
+                    logger.appendChild(element);
+                }
+                console.log(response);
+            });
+
+    });
 
 </script>

@@ -17,30 +17,28 @@ class Product_preview extends CI_Controller
     {
 
         $input=$this->input->post();
-//        $user['user_id'] = $input['user_id'];
-//        $showUser['show'] = $this->Product_previewModel->get($user['user_id']);
-
+        print_r($input);
         $this->load->view('header2');
         $this->load->view('product_preview',$input);
 
     }
 
-    public function list_files()
-    {
-        $this->load->helper("file");
-        $files = get_filenames("./temp_image/");
-        // we need name and size for dropzone mockfile
-        foreach ($files as &$file) {
-            $file = array(
-                'name' => $file,
-                'size' => filesize("./temp_image/". $file)
-            );
-        }
-
-        header("Content-type: text/json");
-        header("Content-type: application/json");
-        echo json_encode($files);
-    }
+//    public function list_files()
+//    {
+//        $this->load->helper("file");
+//        $files = get_filenames("./temp_image/");
+//        // we need name and size for dropzone mockfile
+//        foreach ($files as &$file) {
+//            $file = array(
+//                'name' => $file,
+//                'size' => filesize("./temp_image/". $file)
+//            );
+//        }
+//
+//        header("Content-type: text/json");
+//        header("Content-type: application/json");
+//        echo json_encode($files);
+//    }
 
 
 
