@@ -2,27 +2,31 @@
 
 class Trader_model extends CI_Model
 {
-//    // Get cities
-//    function getShop()
-//    {
-//        $response = array();
-//        // Select record
-//        $this->db->select('*');
-//        $q = $this->db->get('shop');
-//        $response = $q->row_array();
-//        return $response;
-//    }
-
-    function getOrder($where=array())
+    function getOrder($where)
     {
-        $this->db->select('*');
-        $this->db->where($where);
-        $q = $this->db->get('order_detail');
+        $this->db->select('orders.*,order_detail.quantity,order_detail.price,order_detail.remark,products.product_name,products.product_price');
+        $this->db->from('orders');
+        $this->db->join('order_detail','order_detail.order_id=orders.order_id');
+        $this->db->join('products','products.product_id=order_detail.product_id','left');
+        $this->db->where('order_detail.shop_id',$where);
+        $this->db->group_by('orders.order_id');
+        $q = $this->db->get();
         return $q->result_array();
+    }
 
-//        $this->db->where('shop_id');
-//        $q = $this->db->get('order_detail');
-//        $response = $q->result_array();
-//        return $response;
+    function getOrderDetail()
+    {
+        $this->db->select('order_detail.*,products.*');
+        $this->db->from('order_detail');
+        $this->db->join('products','products.product_id=order_detail.product_id','left');
+//        $this->db->group_by('order_id');
+        $q=$this->db->get();
+        return $q->result_array();
+    }
+
+    function update_order($uid,$data)
+    {
+        $this->db->where('order_id',$uid);
+        $this->db->update('orders',$data);
     }
 }

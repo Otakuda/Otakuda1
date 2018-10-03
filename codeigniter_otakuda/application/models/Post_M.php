@@ -12,7 +12,7 @@ class Post_M extends CI_Model
     {
         $match = $this->input->post('search');
         $this->db->like('shop_name', $match);
-        $this->db->or_like('address', $match);
+        $this->db->or_like('shop_address', $match);
         $this->db->or_like('phone', $match);
         $query = $this->db->get('shop');
         return $query->result_array();

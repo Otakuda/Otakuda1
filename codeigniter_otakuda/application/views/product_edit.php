@@ -98,7 +98,7 @@
                                     <span>商品圖片</span>
                                 </div>
                                 <div id="content">
-                                    <div id="my-dropzone" class="dropzone">
+                                    <div id="my-dropzone" class="dropzone" onchange="updateFileName()">
                                         <div class="dz-message">
                                             <h3>將圖片拖放此處或者點擊上傳</h3>
                                         </div>
@@ -118,7 +118,7 @@
                                 <!--                                </div>-->
                             </div>
 
-                            <div id="logger" class="web_console"  ></div>
+                            <input type="hidden" id="test" name="test">
 
                             <div class="row-wrap item-qty-wrap" id="yui_3_12_0_1_1531884359549_20">
                                 <div class="caption">
@@ -250,7 +250,7 @@
                         type: "post",
                         url: "<?php echo site_url("Product_edit/remove") ?>",
                         data: {file: name},
-                        dataType: 'html'
+                        dataType: 'json'
                     });
 
                     // remove the thumbnail
@@ -261,21 +261,12 @@
         })
             .on("success", function (file, response) {
                 var console = {};
-
-                // Getting div to insert logs
-                var logger = document.getElementById("logger");
-
-                // Adding log method from our console object
+                var logger = document.getElementById("test");
                 console.log = function (text) {
-                    var element = document.createElement("div");
-                    var txt = document.createTextNode(text);
-
-                    element.appendChild(txt);
-                    logger.appendChild(element);
-                }
+                  $('#test').val(response);
+                };
                 console.log(response);
             });
-
     });
 
 </script>

@@ -70,7 +70,7 @@
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="<?=base_url()?>driver_statistic"> <i class="menu-icon fa fa-asterisk"></i>統計</a>
+                    <a href="<?=base_url()?>driver_statistic"> <i class="menu-icon fa fa-bar-chart-o"></i>統計</a>
                 </li>
                 <li class="active">
                     <a href="index.html"> <i class="menu-icon fa fa-asterisk"></i>設置</a>

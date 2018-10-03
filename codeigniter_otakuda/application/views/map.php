@@ -21,14 +21,16 @@
                                 <div class="name"><?= $item['shop_name'] ?></div>
                             </a>
                             <div class="address">
-                                <p>地址：<?= $item['address'] ?></p>
+                                <p>地址：<?= $item['shop_address'] ?></p>
                                 <p>电话：<?= $item['phone'] ?></p>
                             </div>
                         </div>
                         <div class="d-right">
                             <div class="big">
                                 <div class="imgbox" style="height: 100%; width: 100%;">
-                                    <a href="<?=base_url()?>show_product/shop_detail/<?=$item['shop_id']?>"><img src="<?= $item['file_name']; ?>"></a>
+                                    <a href="<?=base_url()?>show_product/shop_detail/<?=$item['shop_id']?>">
+                                        <img src="<?= $item['file_name']; ?>">
+                                    </a>
                                 </div>
                             </div>
                         </div>

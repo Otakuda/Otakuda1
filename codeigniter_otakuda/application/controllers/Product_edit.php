@@ -49,7 +49,7 @@ class Product_edit extends CI_Controller
             $image_folder = "temp_image/";
             $image_name = 'product_image_' . rand(9999, 999999) . '_' . date('Ymd_His');
             $config['file_name'] = $image_name;
-            $config["upload_path"] = "./temp_image/";
+            $config["upload_path"] =$image_folder;
             $config["allowed_types"] = "gif|jpg|jpeg|png";
             $this->load->library('upload', $config);
 
@@ -59,7 +59,6 @@ class Product_edit extends CI_Controller
                 $image_data = $this->upload->data();
                 $image_name_mime_type = substr($image_data['file_name'], (strpos($image_data['file_name'], '.') ?: -1) + 1);
                 $this->data['temp_name'] = $image_folder .  $image_name.'.'.$image_name_mime_type;
-//                    . "." . $image_name_mime_type;
                 echo json_encode($this->data['temp_name']);
             }
         }

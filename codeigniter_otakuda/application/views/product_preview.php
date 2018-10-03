@@ -113,7 +113,7 @@
                                                             <div>
                                                                 <figure class="focusedImageFigure__c4PVd">
                                                                     <div>
-                                                                        <h3>上傳圖片</h3>
+                                                                        <img src="<?=$input['test']?>">
                                                                     </div>
                                                                 </figure>
                                                             </div>

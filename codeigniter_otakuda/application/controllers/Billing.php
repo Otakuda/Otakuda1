@@ -18,7 +18,7 @@ class Billing extends CI_Controller
     public function save_order()
     {
         $order = array(
-            'date' => date('Y-m-d'),
+            'date' => date('Y-m-d H:i:s '),
             'user_id' => $this->input->post('user_id'),
             'name' => $this->input->post('name'),
             'address' => $this->input->post('address'),
@@ -34,7 +34,8 @@ class Billing extends CI_Controller
                     'shop_id' => $item['shop_id'],
                     'product_id' => $item['id'],
                     'quantity' => $item['qty'],
-                    'price' => $item['subtotal']
+                    'price' => $item['subtotal'],
+                    'remark'=>$item['remark']
                 );
 
                 $user_id = $this->Billing_model->insert_order_detail($order_detail);

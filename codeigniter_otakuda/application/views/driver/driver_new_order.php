@@ -17,15 +17,15 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="<?=base_url()?>driver/assets/css/normalize.css">
-    <link rel="stylesheet" href="<?=base_url()?>driver/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>driver/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>driver/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="<?=base_url()?>driver/assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>driver/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="<?= base_url() ?>driver/assets/css/normalize.css">
+    <link rel="stylesheet" href="<?= base_url() ?>driver/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>driver/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>driver/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<?= base_url() ?>driver/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>driver/assets/css/cs-skin-elastic.css">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="<?=base_url()?>driver/assets/scss/style.css">
-    <link href="<?=base_url()?>driver/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url() ?>driver/assets/scss/style.css">
+    <link href="<?= base_url() ?>driver/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -58,19 +58,19 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="<?=base_url()?>driver_index"> <i class="menu-icon fa fa-dashboard"></i>主頁</a>
+                    <a href="<?= base_url() ?>driver_index"> <i class="menu-icon fa fa-dashboard"></i>主頁</a>
                 </li>
                 <!--<h3 class="menu-title">UI elements</h3>&lt;!&ndash; /.menu-title &ndash;&gt;-->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>訂單</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="<?=base_url()?>driver_new_order">新訂單</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="<?=base_url()?>driver_order_record">訂單歷史記錄</a></li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="<?= base_url() ?>driver_new_order">新訂單</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="<?= base_url() ?>driver_order_record">訂單歷史記錄</a></li>
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="<?=base_url()?>driver_statistic"> <i class="menu-icon fa fa-asterisk"></i>統計</a>
+                    <a href="<?= base_url() ?>driver_statistic"> <i class="menu-icon fa fa-bar-chart-o"></i>統計</a>
                 </li>
                 <li class="active">
                     <a href="index.html"> <i class="menu-icon fa fa-asterisk"></i>設置</a>
@@ -195,117 +195,169 @@
                                     <th>店面名字</th>
                                     <th>發貨地址</th>
                                     <th>收件人姓名</th>
-                                    <th>收貨地址</th>
-                                    <th>價錢(RM)</th>
-                                    <th></th>
+                                    <th>送貨地址</th>
+                                    <th>訂單詳情</th>
+                                    <th>距離/時間</th>
+                                    <th>接/拒单</th>
                                 </tr>
                                 </thead>
-                                <?php foreach ($orderD as $item): ?>
-                                <tbody>
-                                <tr>
-                                    <td>#1</td>
-                                    <td><?=$item['order_id']?></td>
-                                    <td>25,Jln Ros Merah 2/8</td>
-                                    <td>Mr Chong</td>
-                                    <td>53,Jln Impian Emas 14</td>
-                                    <td>50</td>
-                                    <td>
-                                        <!--<button type="button" class="fa-search" data-toggle="modal" data-target="#mediumModal">-->
-                                        <button type="button" data-toggle="modal" data-target="#mediumModal">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                </tbody>
+                                <?php
+                                foreach ($orderD as $item):
+                                    ?>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <?= $item['order_id'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $item['shop_name'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $item['shop_address'] ?>
+                                            <input type="hidden" value="<?= $item['shop_address'] ?>" id="start"
+                                                   readonly>
+                                        </td>
+                                        <td>
+                                            <?= $item['name'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $item['address'] ?>
+                                            <input type="hidden" value="<?= $item['address'] ?>" id="end" readonly>
+                                        </td>
+                                        <td>
+                                            <a href="<?= base_url() ?>Driver_new_order_detail/get_orderDetail/<?= $item['order_id'] ?>">
+                                                <button type="button" data-toggle="modal" data-target="#mediumModal">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <div id="output"></div>
+                                        </td>
+                                        <td>
+                                            <a href="<?= base_url() ?>Driver_new_order/next/<?= $item['order_id'] ?>">
+                                                <button type="button">
+                                                    拒單
+                                                </button>
+                                            </a>
+
+                                            <a href="<?= base_url() ?>Driver_to_shop/getDirection/<?= $item['order_id'] ?>">
+                                                <button>
+                                                    接單
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
                                 <?php endforeach; ?>
                             </table>
                         </div>
                     </div>
+
+                    <div id="map" hidden></div>
+
+
                 </div>
             </div>
         </div><!-- .animated -->
     </div><!-- .content -->
+    <script>
+        function initMap() {
+            var bounds = new google.maps.LatLngBounds;
+            var markersArray = [];
 
+            var origin = document.getElementById('start').value;
+            var destination = document.getElementById('end').value;
+
+            var destinationIcon = {lat: 1.5320015, lng: 103.79326709999998};
+            var originIcon = {lat: 1.5381871, lng: 103.67989499999999};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 55.53, lng: 9.4},
+                zoom: 10
+            });
+            var geocoder = new google.maps.Geocoder;
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                document.getElementById('latlng').value = [position.coords.latitude, position.coords.longitude];
+            });
+            var service = new google.maps.DistanceMatrixService;
+            service.getDistanceMatrix({
+                origins: [origin],
+                destinations: [destination],
+                travelMode: 'DRIVING',
+                unitSystem: google.maps.UnitSystem.METRIC,
+                avoidHighways: false,
+                avoidTolls: false
+            }, function (response, status) {
+                if (status !== 'OK') {
+                    alert('Error was: ' + status);
+                } else {
+                    var originList = response.originAddresses;
+                    var destinationList = response.destinationAddresses;
+                    var outputDiv = document.getElementById('output');
+                    outputDiv.innerHTML = '';
+                    deleteMarkers(markersArray);
+
+                    var showGeocodedAddressOnMap = function (asDestination) {
+                        var icon = asDestination ? destinationIcon : originIcon;
+                        return function (results, status) {
+                            if (status === 'OK') {
+                                map.fitBounds(bounds.extend(results[0].geometry.location));
+                                markersArray.push(new google.maps.Marker({
+                                    map: map,
+                                    position: results[0].geometry.location,
+                                    icon: icon
+                                }));
+                            } else {
+                                alert('Geocode was not successful due to: ' + status);
+                            }
+                        };
+                    };
+
+                    for (var i = 0; i < originList.length; i++) {
+                        var results = response.rows[i].elements;
+                        geocoder.geocode({'address': originList[i]},
+                            showGeocodedAddressOnMap(false));
+                        for (var j = 0; j < results.length; j++) {
+                            geocoder.geocode({'address': destinationList[j]},
+                                showGeocodedAddressOnMap(true));
+                            outputDiv.innerHTML += '距離:' + results[j].distance.text + '<br>'
+                                + '時間:' + results[j].duration.text + '<br>'
+                            ;
+                        }
+                    }
+                }
+            });
+        }
+
+        function deleteMarkers(markersArray) {
+            for (var i = 0; i < markersArray.length; i++) {
+                markersArray[i].setMap(null);
+            }
+            markersArray = [];
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Fb3SBTL-Hta3jxIJqjtzevzP8gihzeo&callback=initMap">
+    </script>
 </div><!-- /#right-panel -->
-<!--order detail-->
-<div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="mediumModalLabel">商品</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="card-body">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">商品名稱</th>
-                            <th scope="col">數量</th>
-                            <th scope="col">價錢(RM)</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>蘋果</td>
-                            <td>25</td>
-                            <td>25</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>橙</td>
-                            <td>25</td>
-                            <td>25</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    總價錢RM50
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">拒單</button>
-               <a href="delivery.html"> <button type="button" class="btn btn-primary">接單</button></a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Right Panel -->
 
-<script src="<?=base_url()?>driver/assets/js/vendor/jquery-2.1.4.min.js"></script>
+
+<script src="<?= base_url() ?>driver/assets/js/vendor/jquery-2.1.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-<script src="<?=base_url()?>driver/assets/js/plugins.js"></script>
-<script src="<?=base_url()?>driver/assets/js/main.js"></script>
+<script src="<?= base_url() ?>driver/assets/js/plugins.js"></script>
+<script src="<?= base_url() ?>driver/assets/js/main.js"></script>
 
-<script src="<?=base_url()?>driver/assets/js/lib/chart-js/Chart.bundle.js"></script>
-<script src="<?=base_url()?>driver/assets/js/dashboard.js"></script>
-<script src="<?=base_url()?>driver/assets/js/widgets.js"></script>
-<script src="<?=base_url()?>driver/assets/js/lib/vector-map/jquery.vmap.js"></script>
-<script src="<?=base_url()?>driver/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-<script src="<?=base_url()?>driver/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-<script src="<?=base_url()?>driver/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
-<script>
-    (function ($) {
-        "use strict";
-
-        jQuery('#vmap').vectorMap({
-            map: 'world_en',
-            backgroundColor: null,
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#1de9b6',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#1de9b6', '#03a9f5'],
-            normalizeFunction: 'polynomial'
-        });
-    })(jQuery);
-</script>
+<script src="<?= base_url() ?>driver/assets/js/lib/chart-js/Chart.bundle.js"></script>
+<script src="<?= base_url() ?>driver/assets/js/dashboard.js"></script>
+<script src="<?= base_url() ?>driver/assets/js/widgets.js"></script>
+<script src="<?= base_url() ?>driver/assets/js/lib/vector-map/jquery.vmap.js"></script>
+<script src="<?= base_url() ?>driver/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+<script src="<?= base_url() ?>driver/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+<script src="<?= base_url() ?>driver/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
 
 </body>
 </html>

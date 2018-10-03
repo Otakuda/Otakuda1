@@ -11,7 +11,7 @@ class Trader extends CI_Controller {
         $this->load->helper('url');
         $this->load->library(['form_validation','session']);
         $this->load->database();
-        $this->load->model('Trader_model');
+        $this->load->model('trader_model');
        
     }
 
@@ -25,13 +25,23 @@ class Trader extends CI_Controller {
          }
          else if($logged_in and $this->session->userdata('shop_level') == 1)
          {
-             $where=array(
-                 'shop_id'=>$this->session->userdata('shop_id')
-             );
-             $this->data['order']=$this->Trader_model->getOrder($where);
-             $this->load->view('header2',$this->data);
-             $this->load->view('trader');
+             $where=$this->session->userdata('shop_id');
+             $this->data['order']=$this->trader_model->getOrder($where);
+             $this->data['order_detail']=$this->trader_model->getOrderDetail();
+             $this->load->view('header2');
+             $this->load->view('trader',$this->data);
          }
+    }
+
+    public function accept_order($id)
+    {
+        $uid = $id;
+        $data = array(
+            'accepter' => '1'
+        );
+        $this->trader_model->update_order($uid, $data);
+        $this->load->view('header2');
+        $this->load->view('trader');
     }
 
 

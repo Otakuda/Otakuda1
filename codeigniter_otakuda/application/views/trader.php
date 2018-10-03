@@ -10,42 +10,62 @@
 
         <div class="module-order-list" data-query-order-url="/myauc/orderListsQuery" data-order-qty="">
             <div class="empty-wrap">
+
                 <table border="0" cellpadding="5px" cellspacing="1px"
                        style="font-family:Verdana, Geneva, sans-serif; font-size:11px; background-color:#E1E1E1"
                        width="100%">
-                    <tr bgcolor="#FFFFFF" style="font-weight:bold">
-                        <td>Serial</td>
-                        <td>商品</td>
-                        <td>單價</td>
-                        <td>數量</td>
-                        <td>價錢</td>
-                        <td>備註</td>
-                        <td>選項</td>
-                    </tr>
                     <?php
-                    $i = 1;
-                    foreach ($order as $item): ?>
-                    <tr bgcolor="#FFFFFF">
-                        <td>
-                            <?php echo $i++; ?>
-                        </td>
-                        <td>
-                            <?php echo $item['product_id']; ?>
-                        </td>
-                        <td>
-                            <?php echo $item['quantity']; ?>
-                        </td>
-                        <td>
-                            <?php echo $item['price']; ?>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                        <?php endforeach; ?>
-                    </tr>
+                    $a = 1;
+                    foreach ($order as $item) { ?>
+                        <tr>
+                            <td>
+                                訂單<?php echo $a++; ?>
+                            </td>
+                        </tr>
+                        <tr bgcolor="#FFFFFF" style="font-weight:bold">
+                            <td>#</td>
+                            <td>商品</td>
+                            <td>單價</td>
+                            <td>數量</td>
+                            <td>價錢</td>
+                            <td>備註</td>
+                        </tr>
+                        <?php
+                        $i = 1;
+                        foreach ($order_detail as $r) {
+                            if ($r['order_id'] == $item['order_id']) {
+                                ?>
+                                <tr bgcolor="#FFFFFF">
+                                    <td>
+                                        <?php echo $i++; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $r['product_name']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $r['product_price']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $r['quantity']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $r['price']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $r['remark']; ?>
+                                    </td>
+                                </tr>
+                            <?php }
+                        } ?>
+                        <tr bgcolor="#FFFFFF">
+                            <td colspan="7" align="center">
+                                <a href="<?= base_url() ?>trader/accept_order/<?= $item['order_id'] ?>">
+                                    <button>接受</button>
+                                </a>
+                                <button>拒絕</button>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>
             <div class="buyerCompleteWlpTxTips hidden">{"img":null,"title":null,"content":null}</div>

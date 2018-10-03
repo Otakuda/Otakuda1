@@ -48,7 +48,7 @@
                     </div>
                 </li>
                 <li class="yui3-u nav-tabs" id="yui_3_12_0_5_1531460838790_1937">
-                    <a href="#buyer" id="yui_3_12_0_5_1531460838790_1938">買家管理
+                    <a href="#buyer" id="yui_3_12_0_5_1531460838790_1938">訂單管理
                         <em class="yui3-u arrow">arrow</em>
                     </a>
                     <em class="decoration">decoration</em>
@@ -56,6 +56,7 @@
                         <ul class="yui3-g">
                             <li class="yui3-u">
                                 <a href="<?=base_url()?>trader">訂單查詢</a>
+                                <a href="<?=base_url()?>scancode">掃描騎手二維碼</a>
                                 <a href="https://tw.bid.yahoo.com/myauc/orderqna">買家留言</a>
                             </li>
                         </ul>

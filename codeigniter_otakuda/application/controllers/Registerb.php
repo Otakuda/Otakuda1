@@ -93,7 +93,7 @@ class Registerb extends CI_Controller
         $phone = $this->input->post('phone');
         $hphone = $this->input->post('hphone');
         $email = $this->input->post('email');
-        $address = $this->input->post('address');
+        $address = $this->input->post('shop_address');
         $lat = $this->input->post('lat');
         $lng = $this->input->post('lng');
         $password = md5($this->input->post('password'));

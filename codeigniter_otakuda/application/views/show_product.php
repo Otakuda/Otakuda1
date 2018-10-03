@@ -5,7 +5,7 @@
                 <div class="d-left">
                     <div class="name"><?= $product[0]['shop_name'] ?></div>
                     <div class="address">
-                        <p>地址：<?= $product[0]['address'] ?></p>
+                        <p>地址：<?= $product[0]['shop_address'] ?></p>
                         <p>电话：<?= $product[0]['phone'] ?></p>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                             <div class="one clear">
                                 <div class="pic">
                                     <div class="imgbox" style="height: 100%; width: 100%;">
-                                        <img src="<?= base_url() . $product['product_image'] ?>">
+                                        <img src="<?= base_url() . $product['photo_name'] ?>">
                                     </div>
                                 </div>
                                 <div class="info">
