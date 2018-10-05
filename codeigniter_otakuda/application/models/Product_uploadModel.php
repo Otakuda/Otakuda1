@@ -8,4 +8,8 @@ class Product_uploadModel extends CI_Model
         return $this->db->insert('products', $data);
     }
 
+    public function add_productPhoto($photo)
+    {
+        return $this->db->insert('product_photo', $photo);
+    }
 }

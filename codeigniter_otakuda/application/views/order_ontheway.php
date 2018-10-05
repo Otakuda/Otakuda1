@@ -3,7 +3,7 @@
         <div class="my-breadcrumb-wrap">
             <ul class="my-breadcrumb yui3-g">
                 <li class="yui3-u">
-                    <span itemprop="title">新訂單</span>
+                    <span itemprop="title">運送中的訂單</span>
                 </li>
             </ul>
         </div>
@@ -57,14 +57,6 @@
                                 </tr>
                             <?php }
                         } ?>
-                        <tr bgcolor="#FFFFFF">
-                            <td colspan="7" align="center">
-                                <a href="<?= base_url() ?>trader/accept_order/<?= $item['order_id'] ?>">
-                                    <button>接受</button>
-                                </a>
-                                <button>拒絕</button>
-                            </td>
-                        </tr>
                     <?php } ?>
                 </table>
             </div>

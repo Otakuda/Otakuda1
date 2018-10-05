@@ -15,45 +15,40 @@
       <file leaf-file-name="product_preview.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/product_preview.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="115" column="97" lean-forward="false" selection-start-line="115" selection-start-column="97" selection-end-line="115" selection-end-column="97" />
+            <state relative-caret-position="-252">
+              <caret line="220" column="67" lean-forward="false" selection-start-line="220" selection-start-column="67" selection-end-line="220" selection-end-column="67" />
               <folding>
-                <marker date="1538548419373" expanded="true" signature="5223:5384" ph="..." />
-                <marker date="1538548419373" expanded="true" signature="5730:5891" ph="..." />
-                <marker date="1538548419373" expanded="true" signature="6237:6398" ph="..." />
-                <marker date="1538548419373" expanded="true" signature="6744:6905" ph="..." />
+                <marker date="1538724967447" expanded="true" signature="15312:15513" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product_preview.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_preview.php">
+      <file leaf-file-name="Product_upload.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+            <state relative-caret-position="601">
+              <caret line="65" column="2" lean-forward="true" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_edit.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/product_edit.php">
+      <file leaf-file-name="Product_uploadModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Product_uploadModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="236" column="0" lean-forward="false" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
-              <folding>
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="252">
+              <caret line="12" column="56" lean-forward="false" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product_edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_edit.php">
+      <file leaf-file-name="Billing.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Billing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+            <state relative-caret-position="105">
+              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -90,14 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/driver_index.html" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Login.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/config/config.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_index.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/header.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_order_record.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_satistic.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_satistic.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/models/Product_previewModel.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/models/Post_M.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_new_order_detail.php" />
@@ -122,10 +109,7 @@
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_statistic.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_new_order.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/models/Driver_new_order_model.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/trader.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Trader.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/models/Trader_model.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/header2.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Scancode.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/build/qcode-decoder.min.js" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/build/rsdecoder.js" />
@@ -133,14 +117,25 @@
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/scancode.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/CheckQrCode.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/models/CheckQrCode_model.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/checkQr.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/map.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_order_delivery.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_to_shop.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_order_delivery.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/product_preview.php" />
-        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_edit.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_preview.php" />
         <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/product_edit.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_edit.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/css/style.css" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/product_preview.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/checkQr.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/trader.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/models/Trader_model.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/header2.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/order_ontheway" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/models/Order_ontheway_model.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Order_ontheway.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/views/order_ontheway.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/models/Product_uploadModel.php" />
+        <option value="$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_upload.php" />
       </list>
     </option>
   </component>
@@ -172,7 +167,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,6 +305,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -318,6 +313,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -477,11 +473,15 @@
       <workItem from="1538358649440" duration="15767000" />
       <workItem from="1538445266497" duration="18648000" />
       <workItem from="1538531300208" duration="14543000" />
+      <workItem from="1538557190226" duration="1738000" />
+      <workItem from="1538619107314" duration="17266000" />
+      <workItem from="1538713080037" duration="8364000" />
+      <workItem from="1538726594733" duration="3354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437365000" />
+    <option name="totallyTimeSpent" value="468087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -519,188 +519,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/show_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="87" lean-forward="false" selection-start-line="28" selection-start-column="87" selection-end-line="28" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/work/codeigniter_otakuda/application/views/product_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="274" column="17" lean-forward="true" selection-start-line="262" selection-start-column="15" selection-end-line="274" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/vendor/dropzone/dropzone.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12535">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Product_editModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8232">
-          <caret line="28" column="78" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../qrcodeci/application/views/qrcodetext.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../qrcodeci/application/controllers/QrController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="34" column="87" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="34" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/libraries/qrcode/qrconst.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/libraries/phpqrcode/qrimage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/QRcode_application/controllers/Qrimages.php" />
-    <entry file="file://$USER_HOME$/Downloads/QRcode_application/views/qrcode.php" />
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_new_order_detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="219" column="36" lean-forward="false" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_new_order_detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="81" column="40" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="81" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_statistic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="82" column="10" lean-forward="true" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Driver_new_order_detail_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_new_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5145">
-          <caret line="245" column="54" lean-forward="false" selection-start-line="245" selection-start-column="54" selection-end-line="245" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_new_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="66" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="30" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Driver_new_order_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Trader_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/header2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="58" column="70" lean-forward="false" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_finish_delivery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="179" column="14" lean-forward="false" selection-start-line="179" selection-start-column="14" selection-end-line="179" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Trader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Driver_finish_delivery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/qcode-decoder-master/qcode-decoder-master/examples/camera.html" />
     <entry file="file://$USER_HOME$/Downloads/qcode-decoder-master/qcode-decoder-master/examples/multi-camera.html" />
     <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/build/rsdecoder.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -724,14 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Driver_to_shop_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="43" lean-forward="true" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Scancode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -740,51 +550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/trader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="45" column="74" lean-forward="true" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/scancode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="30" column="51" lean-forward="false" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/checkQr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="44" column="39" lean-forward="true" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/CheckQrCode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/CheckQrCode_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/product_upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,15 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-441">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/map.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -836,14 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Product_previewModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -852,42 +604,265 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/product_preview.php">
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/CheckQrCode.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="115" column="97" lean-forward="false" selection-start-line="115" selection-start-column="97" selection-end-line="115" selection-end-column="97" />
-          <folding>
-            <marker date="1538548419373" expanded="true" signature="5223:5384" ph="..." />
-            <marker date="1538548419373" expanded="true" signature="5730:5891" ph="..." />
-            <marker date="1538548419373" expanded="true" signature="6237:6398" ph="..." />
-            <marker date="1538548419373" expanded="true" signature="6744:6905" ph="..." />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/ci_dropzone-finish/ci_dropzone-finish/application/views/welcome_message.php" />
+    <entry file="file://$USER_HOME$/Downloads/ci_dropzone-start/ci_dropzone-start/application/views/welcome_message.php" />
+    <entry file="file://$USER_HOME$/Downloads/ci_dropzone-finish/ci_dropzone-finish/application/views/index.php" />
+    <entry file="file://$USER_HOME$/Downloads/ci_dropzone-finish/ci_dropzone-finish/application/controllers/Images.php" />
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/driver/driver_new_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="251" column="52" lean-forward="true" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/jq22zoom-slideshow1722201808020940/zoom-slideshow/css/style.css" />
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="997">
+          <caret line="86" column="4" lean-forward="false" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/css/style.css" />
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/product_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="192" column="6" lean-forward="false" selection-start-line="192" selection-start-column="6" selection-end-line="192" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/jqslider/jqslider/index.html" />
+    <entry file="file://$USER_HOME$/Downloads/gallery_vol1dot02/gallery_vol1dot02/application/controllers/Gallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4200">
+          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1617">
+          <caret line="80" column="50" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/simple-fade-slideshow.slider.jquery/with-jquery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="118" column="56" lean-forward="true" selection-start-line="118" selection-start-column="56" selection-end-line="118" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_preview.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        <state relative-caret-position="483">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_edit.php">
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+        <state relative-caret-position="273">
+          <caret line="46" column="103" lean-forward="false" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="103" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/product_edit.php">
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Show_productModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="236" column="0" lean-forward="false" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Product_detailsModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Category_cargo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/CheckQrCode_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Driver_to_shop_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="43" lean-forward="true" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Driver_order_delivery_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Driver_new_order_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/trader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/header2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="62" column="33" lean-forward="false" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Trader_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Order_ontheway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="60" lean-forward="false" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Order_ontheway_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/order_ontheway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/checkQr.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Trader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/models/Product_uploadModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="56" lean-forward="false" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/product_upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="58" lean-forward="false" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/views/product_preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <caret line="220" column="67" lean-forward="false" selection-start-line="220" selection-start-column="67" selection-end-line="220" selection-end-column="67" />
           <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <marker date="1538724967447" expanded="true" signature="15312:15513" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Billing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter_otakuda/application/controllers/Product_upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="65" column="2" lean-forward="true" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

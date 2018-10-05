@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Trader_model extends CI_Model
+class Order_ontheway_model extends CI_Model
 {
     function getOrder($where)
     {
@@ -9,7 +9,7 @@ class Trader_model extends CI_Model
         $this->db->join('order_detail','order_detail.order_id=orders.order_id');
         $this->db->join('products','products.product_id=order_detail.product_id','left');
         $this->db->where('order_detail.shop_id',$where);
-        $this->db->where('orders.accepter',0);
+        $this->db->where('orders.accepter',1);
         $this->db->group_by('orders.order_id');
         $q = $this->db->get();
         return $q->result_array();

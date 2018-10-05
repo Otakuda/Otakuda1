@@ -118,8 +118,7 @@
                                 <!--                                </div>-->
                             </div>
 
-                            <input type="hidden" id="test" name="test">
-
+                            <input type="hidden" id="test" name="image">
                             <div class="row-wrap item-qty-wrap" id="yui_3_12_0_1_1531884359549_20">
                                 <div class="caption">
                                     <span>數量</span>
@@ -194,79 +193,37 @@
 </div>
 <script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>vendor/dropzone/dropzone.min.js"></script>
-<!--<script>
+<script>
+    var image_array = [];
     Dropzone.autoDiscover = false;
     var myDropzone = new Dropzone("#my-dropzone", {
-        url: "<?php echo site_url("Product_edit/upload") ?>",
+        url: "<?php echo site_url("product_edit/upload") ?>",
         acceptedFiles: "image/*",
-        addRemoveLinks: true,
         maxFiles: 5,
-        dictFallbackMessage         : "您的瀏覽器不支援拖放檔案上傳",
-        dictFallbackText: "您的瀏覽器不支援拖放檔案上傳",
-        dictFileTooBig              : "檔案大小限制：{{maxFilesize}}MB, 檔案太大 ({{filesize}}MB)",
-        dictInvalidFileType         : "您可以上傳 jpg, jpeg, png 圖檔",
-        dictRemoveFileConfirmation  : "您確定刪除這張圖檔嗎？",
-        dictMaxFilesExceeded        : "檔案個數限制：5",
-        removedfile: function(file) {
+        dictMaxFilesExceeded: "檔案個數限制：5",
+        addRemoveLinks: true,
+        removedfile: function (file) {
             var name = file.name;
-
             $.ajax({
                 type: "post",
-                url: "<?php echo site_url("Product_edit/remove") ?>",
-                data: { file: name },
+                url: "<?php echo site_url("product_edit/remove") ?>",
+                data: {file: name},
                 dataType: 'html'
             });
-
+            var index = image_array.indexOf(name);
+            if (index.length != 0) {
+                image_array.splice(index, 1);
+                $('#test').val(image_array);
+            }
             // remove the thumbnail
             var previewElement;
             return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+        },
+        init: function () {
+            this.on("success", function (file, response) {
+                image_array.push(response);
+                $('#test').val(image_array);
+            });
         }
     });
-
-</script>
--->
-
-<script>
-    //    var total_image_array = [];
-    $(document).ready(function () {
-        Dropzone.autoDiscover = false;
-        var myDropzone = new Dropzone("#my-dropzone", {
-
-            addRemoveLinks: true,
-            maxFiles: 5,
-            dictFallbackMessage: "您的瀏覽器不支援拖放檔案上傳",
-            dictFallbackText: "您的瀏覽器不支援拖放檔案上傳",
-            dictFileTooBig: "檔案大小限制：{{maxFilesize}}MB, 檔案太大 ({{filesize}}MB)",
-            dictInvalidFileType: "您可以上傳 jpg, jpeg, png 圖檔",
-            dictRemoveFileConfirmation: "您確定刪除這張圖檔嗎？",
-            dictMaxFilesExceeded: "檔案個數限制：5",
-
-            url: "<?php echo site_url("Product_edit/upload") ?>",
-
-            init: function () {
-                this.on("removedFile", function (file) {
-                    var name = file.name;
-                    $.ajax({
-                        type: "post",
-                        url: "<?php echo site_url("Product_edit/remove") ?>",
-                        data: {file: name},
-                        dataType: 'json'
-                    });
-
-                    // remove the thumbnail
-                    var previewElement;
-                    return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
-                });
-            }
-        })
-            .on("success", function (file, response) {
-                var console = {};
-                var logger = document.getElementById("test");
-                console.log = function (text) {
-                  $('#test').val(response);
-                };
-                console.log(response);
-            });
-    });
-
 </script>

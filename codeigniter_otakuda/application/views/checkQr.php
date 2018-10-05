@@ -39,7 +39,7 @@
             <?php } ?>
             <tr bgcolor="#FFFFFF">
                 <td colspan="7" align="center">
-                    <a href="<? //= base_url() ?>trader/accept_order/<?= $item['order_id'] ?>">
+                    <a href="<?= base_url() ?>trader?>">
                         <button>確定</button>
                     </a>
                     <button>取消</button>
