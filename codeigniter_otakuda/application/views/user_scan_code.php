@@ -22,7 +22,7 @@
         function resultHandler (err, result) {
             if (err)
                 return console.log(err.message);
-            window.location="CheckQrCode/getOrderId/"+result;
+            window.location="user_receive/get_stock/"+result;
         }
 
         // prepare a canvas element that will receive

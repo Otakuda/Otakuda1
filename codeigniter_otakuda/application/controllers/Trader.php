@@ -40,8 +40,11 @@ class Trader extends CI_Controller {
             'accepter' => '1'
         );
         $this->trader_model->update_order($uid, $data);
+        $where=$this->session->userdata('shop_id');
+        $this->data['order']=$this->trader_model->getOrder($where);
+        $this->data['order_detail']=$this->trader_model->getOrderDetail();
         $this->load->view('header2');
-        $this->load->view('trader');
+        $this->load->view('trader',$this->data);
     }
 
 

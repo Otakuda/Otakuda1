@@ -3,7 +3,7 @@
         <div class="my-breadcrumb-wrap">
             <ul class="my-breadcrumb yui3-g">
                 <li class="yui3-u">
-                    <span itemprop="title">待取貨的訂單</span>
+                    <span itemprop="title">運送中的訂單</span>
                 </li>
             </ul>
         </div>

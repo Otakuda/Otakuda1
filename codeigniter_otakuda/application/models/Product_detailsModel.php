@@ -13,10 +13,13 @@ class Product_detailsModel extends CI_Model
         $this->load->database();
     }
 
-    function get($id)
+    function get($pid)
     {
-        $this->db->where('product_id',$id);
-        $query = $this->db->get('products');
+        $this->db->select('products.*,product_photo.photo_name');
+        $this->db->from('products');
+        $this->db->join('product_photo','product_photo.product_id=products.product_id','left');
+        $this->db->where('products.product_id',$pid);
+        $query = $this->db->get();
         return $query->row_array();
     }
 }

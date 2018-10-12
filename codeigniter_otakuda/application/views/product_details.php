@@ -86,14 +86,14 @@
                                                         <div>
                                                             <figure class="focusedImageFigure__c4PVd">
                                                                 <img class="focusedImage__3HmoX"
-                                                                     src="<?= base_url() . $product['product_image'] ?>">
+                                                                     src="<?= base_url() . $product['photo_name'] ?>">
                                                                 <input type="hidden" value="<?=$product['product_id']?>" readonly name="product_id">
                                                             </figure>
                                                         </div>
                                                         <ul class="imageList__22FSs">
                                                             <li class="listItem__3BRt8">
                                                                 <mark class="checkedMark__2Qoej"></mark>
-                                                                <img src="<?= base_url() . $product['product_image'] ?>"
+                                                                <img src="<?= base_url() . $product['photo_name'] ?>"
                                                                      class="image__3l8Vh" id="productUpload_image">
 <!--                                                                <input type="hidden" name="image_path"-->
 <!--                                                                       id="image_path"-->
@@ -126,7 +126,7 @@
                                                                 <input type="hidden"
                                                                        value="<?= $product['product_price'] ?>"
                                                                        name="product_price">
-                                                                <span class="soldQuantity__1So65">/ 已售出 <em>0</em> 件</span>
+                                                                <span class="soldQuantity__1So65">/ 已售出 <em></em> 件</span>
                                                             </div>
                                                         </div>
                                                         <div class="row__1kjJO row__-8aqS">

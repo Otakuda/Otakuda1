@@ -57,8 +57,8 @@ class Product_edit extends CI_Controller
 //                echo "failed to upload file(s)";
 //            } else {
 //                $image_data = $this->upload->data();
-//                $image_name_mime_type = substr($image_data, (strpos($image_data, '.') ?: -1) + 1);
-//                $this->data['temp_name'] = $image_folder . '.'.$image_name_mime_type;
+//                $image_name_mime_type = substr($image_data['file_name'], (strpos($image_data['file_name'], '.') ?: -1) + 1);
+//                $this->data['temp_name'] = $image_folder . $image_name.'.'.$image_name_mime_type;
 //                echo json_encode($this->data['temp_name']);
 //            }
 //        }

@@ -216,9 +216,11 @@
                                         <div class="inner__1kUlf">
                                             <h2 class="title__3SBcO">商品刊登預覽</h2>
                                             <div class="caption">商品分類：
-                                                <?= $cargo_sort ?>
+                                                <?php echo $this->session->userdata('cargo_sort'); ?>
                                                 <input type="hidden" value="<?= $cargo_id ?>" name="cargo_id">
-                                                <input type="hidden" value="<?php echo $this->session->userdata('shop_id'); ?>" name="shop_id">
+                                                <input type="hidden"
+                                                       value="<?php echo $this->session->userdata('shop_id'); ?>"
+                                                       name="shop_id">
                                             </div>
                                         </div>
                                     </section>
@@ -232,31 +234,24 @@
                                                         <section class="wrap__bGMYC">
                                                             <div>
                                                                 <figure class="focusedImageFigure__c4PVd">
-                                                                    <!--                                                                    <div>-->
-                                                                    <!--                                                                        --><?php
-                                                                    //                                                                        foreach($image_url as $img):
-                                                                    //                                                                        ?>
-                                                                    <!--                                                                        <h3> <img src="-->
-                                                                    <? //="temp_image/".$img?><!--"></h3>-->
-                                                                    <!--                                                                        --><?php //endforeach; ?>
-                                                                    <!--                                                                    </div>-->
                                                                     <div id="jssor_1"
                                                                          style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
-                                                                        <!-- Loading Screen -->
                                                                         <div data-u="slides"
                                                                              style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
                                                                             <?php
-                                                                            foreach ($image_url as $img):
+                                                                            foreach ($image_url as $img){
                                                                                 ?>
                                                                                 <div>
                                                                                     <img data-u="image"
-                                                                                         src="<?= "temp_image/" . $img ?>" name="img_path">
+                                                                                         src="<?= "temp_image/" . $img ?>">
                                                                                 </div>
-                                                                            <?php endforeach; ?>
+                                                                                <input type="hidden" name="img_path[]"
+                                                                                       value="<?= $img ?>" >
+                                                                            <?php } ?>
+
                                                                         </div>
-                                                                        <!-- Bullet Navigator -->
                                                                         <div data-u="navigator" class="jssorb051"
-                                                                             style="position:absolute;bottom:12px;right:12px;"
+                                                                             style="position:absolute;bottom:12px;right:12px;}"
                                                                              data-autocenter="1" data-scale="0.5"
                                                                              data-scale-bottom="0.75">
                                                                             <div data-u="prototype" class="i"
@@ -268,13 +263,12 @@
                                                                                 </svg>
                                                                             </div>
                                                                         </div>
-                                                                        <!-- Arrow Navigator -->
                                                                         <div data-u="arrowleft" class="jssora051"
                                                                              style="width:55px;height:55px;top:0px;left:25px;"
                                                                              data-autocenter="2" data-scale="0.75"
                                                                              data-scale-left="0.75">
                                                                             <svg viewbox="0 0 16000 16000"
-                                                                                 style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                                                                 style="position:absolute;top:0;left:0;width:100%;height:100%;background-color:black;">
                                                                                 <polyline class="a"
                                                                                           points="11040,1920 4960,8000 11040,14080 "></polyline>
                                                                             </svg>
@@ -284,7 +278,7 @@
                                                                              data-autocenter="2" data-scale="0.75"
                                                                              data-scale-right="0.75">
                                                                             <svg viewbox="0 0 16000 16000"
-                                                                                 style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                                                                 style="position:absolute;top:0;left:0;width:100%;height:100%;background-color:black;">
                                                                                 <polyline class="a"
                                                                                           points="4960,1920 11040,8000 4960,14080 "></polyline>
                                                                             </svg>
@@ -372,7 +366,10 @@
                                                         <ul>
                                                             <li>
                                                                 <a href=""
-                                                                   class="button-submit button-secondary btn-pad">取消</a>
+                                                                <button class="button-submit button-secondary btn-pad">
+                                                                    取消
+                                                                </button>
+                                                                </a>
                                                             </li>
                                                             <li>
                                                                 <button class="button-submit button-main btn-pad"

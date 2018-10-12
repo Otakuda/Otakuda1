@@ -32,7 +32,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-
 </head>
 <body id="main">
 <header class="com-header">
@@ -50,7 +49,7 @@
 
             <nav class="header-bar-nav">
                 <ul class="header-nav-first">
-                    <li><a href="<?=base_url()?>product_order">購物車</a></li>
+                    <li><a href="<?= base_url() ?>product_order">購物車</a></li>
                     <li class="has-child">
                         <a rel="nofollow" href="" target="_blank">用户
                             <ul class="header-nav-my header-nav-second">

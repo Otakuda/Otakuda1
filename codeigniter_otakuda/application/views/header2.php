@@ -56,8 +56,9 @@
                         <ul class="yui3-g">
                             <li class="yui3-u">
                                 <a href="<?=base_url()?>trader">新訂單</a>
-                                <a href="<?=base_url()?>order_ontheway">運送中的訂單</a>
-                                <a href="<?=base_url()?>trader">訂單歷史記錄</a>
+                                <a href="<?=base_url()?>order_ontheway">待取貨的訂單</a>
+                                <a href="<?=base_url()?>order_todestination">運送中的訂單</a>
+                                <a href="<?=base_url()?>check_lastOrder">訂單歷史記錄</a>
                                 <a href="<?=base_url()?>scancode">掃描騎手二維碼</a>
                                 <a href="https://tw.bid.yahoo.com/myauc/orderqna">買家留言</a>
                             </li>

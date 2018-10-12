@@ -24,8 +24,8 @@ class Product_details extends CI_Controller
     }
 
     public function product_getDetail($id){
-        $product_id=$id;
-        $this->data['product'] = $this->Product_detailsModel->get($product_id);
+        $pid=$id;
+        $this->data['product'] = $this->Product_detailsModel->get($pid);
         $this->load->view('header');
         $this->load->view('product_details',$this->data);
         $this->load->view('footer');

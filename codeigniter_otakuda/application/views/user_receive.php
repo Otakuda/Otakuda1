@@ -39,7 +39,7 @@
             <?php } ?>
             <tr bgcolor="#FFFFFF">
                 <td colspan="7" align="center">
-                    <a href="<?= base_url() ?>order_todestination/updateAccepter/<?php echo $item['order_id']; ?>">
+                    <a href="<?= base_url() ?>delivery_finish/close_order/<?php echo $item['order_id']; ?>">
                         <button>確定</button>
                     </a>
                     <button>取消</button>

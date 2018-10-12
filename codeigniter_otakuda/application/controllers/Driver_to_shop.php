@@ -16,8 +16,6 @@ class Driver_to_shop extends CI_Controller
     public function getDirection($id)
     {
         $this->data['direction'] = $this->Driver_to_shop_model->get($id);
-
-//        $product = $this->Driver_to_shop_model->getProduct($id);
         $this->data['img_url'] = "";
         $this->load->library('ciqrcode');
         $qr_image = 'OrderCode_' . rand() . '.png';
