@@ -95,9 +95,6 @@
                                                                 <mark class="checkedMark__2Qoej"></mark>
                                                                 <img src="<?= base_url() . $product['photo_name'] ?>"
                                                                      class="image__3l8Vh" id="productUpload_image">
-<!--                                                                <input type="hidden" name="image_path"-->
-<!--                                                                       id="image_path"-->
-<!--                                                                       value="--><?//= $product['product_image'] ?><!--">-->
                                                             </li>
                                                         </ul>
                                                     </section>

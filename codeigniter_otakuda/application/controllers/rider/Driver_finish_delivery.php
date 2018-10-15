@@ -16,5 +16,6 @@ class Driver_finish_delivery extends CI_Controller
     {
         $this->load->view('driver/driver_left');
         $this->load->view('driver/driver_finish_delivery');
+
     }
 }

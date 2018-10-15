@@ -16,6 +16,7 @@ class Driver_index extends CI_Controller
     public function index()
     {
 //        $this->load->view('driver_header');
+        $this->load->view('driver/driver_left');
         $this->load->view('driver/driver_index');
 //        $this->load->view('driver_footer');
     }
