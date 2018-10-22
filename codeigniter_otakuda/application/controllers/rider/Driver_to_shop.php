@@ -15,7 +15,20 @@ class Driver_to_shop extends CI_Controller
 
     public function getDirection($id)
     {
+        $dataInsert = array(
+            'order_id' => $id,
+            'rider_id' => $this->session->userdata('rider_id'),
+            'created_date' => date('Y-m-d H:i:s ')
+        );
+        $this->Driver_to_shop_model->insertRider($dataInsert);
+
+        $dataUpdate = array(
+            'accepter'=>'2'
+        );
+        $this->Driver_to_shop_model->updateOrder($id,$dataUpdate);
+
         $this->data['direction'] = $this->Driver_to_shop_model->get($id);
+
         $this->data['img_url'] = "";
         $this->load->library('ciqrcode');
         $qr_image = 'OrderCode_' . rand() . '.png';
@@ -23,7 +36,7 @@ class Driver_to_shop extends CI_Controller
 //        for ($x = 0; $x <= count($product) - 1; $x++) {
 //            $product_name .= 'Product Name: ' . $product[$x]['product_name'] . ' 數量: ' . $product[$x]['quantity'] . "\n";
 //        }
-        $params['data'] =$id;
+        $params['data'] = $id;
         $params['level'] = 'H';
         $params['size'] = 8;
         $params['savename'] = FCPATH . "qrimg/" . $qr_image;

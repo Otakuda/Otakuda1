@@ -26,7 +26,7 @@ class Order_todestination extends CI_Controller
     {
         $uid = $id;
         $data=array(
-            'accepter'=>'2'
+            'accepter'=>'3'
         );
         $this->Order_todestination_model->update_acc($uid,$data);
         $where = $this->session->userdata('shop_id');

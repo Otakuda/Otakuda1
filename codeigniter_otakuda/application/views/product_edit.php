@@ -21,7 +21,7 @@
 
     .dz-message h3 {
         font-size: 200%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 </style>
 <div id="bd">

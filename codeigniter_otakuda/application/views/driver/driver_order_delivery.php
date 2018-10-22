@@ -140,8 +140,11 @@
                         </p>
                     </div>
                     <div class="modal-footer">
+                        <a href="<?= base_url() ?>rider/driver_sign_delivery">
+                            <button type="button" class="btn btn-primary">簽名</button>
+                        </a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">返回</button>
-                        <a href="<?= base_url() ?>driver_finish_delivery">
+                        <a href="<?= base_url() ?>rider/driver_finish_delivery">
                             <button type="button" class="btn btn-primary">確定</button>
                         </a>
                     </div>

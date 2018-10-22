@@ -71,7 +71,7 @@
                     <a href="<?=base_url()?>rider/driver_index"> <i class="menu-icon fa fa-asterisk"></i>設置</a>
                 </li>
                 <li class="active">
-                    <a href="<?=base_url()?>rider/driver_index"> <i class="menu-icon fa fa-sign-out"></i>退出</a>
+                    <a href="<?= base_url(); ?>rider/driver_login/logout"> <i class="menu-icon fa fa-sign-out"></i>退出</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->

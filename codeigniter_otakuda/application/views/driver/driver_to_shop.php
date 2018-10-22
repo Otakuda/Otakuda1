@@ -135,7 +135,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="<?= base_url() ?>driver_order_delivery/getDirection/<?= $direction['order_id'] ?>"
+                        <form action="<?= base_url() ?>rider/driver_order_delivery/getDirection/<?= $direction['order_id'] ?>"
                               method="post">
                             <?php
                             if ($img_url) {

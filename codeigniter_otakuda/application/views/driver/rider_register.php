@@ -42,7 +42,7 @@
 								已有
 							</span>
 
-                        <a href="<?= base_url() ?>rider/welcome" class="txt2">
+                        <a href="<?= base_url() ?>rider/driver_login" class="txt2">
                             用户 / 密码?
                         </a>
                     </li>

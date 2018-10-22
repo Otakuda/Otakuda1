@@ -130,7 +130,7 @@
                                     <a class="btn-login" href="<?= base_url(); ?>login/logout">退出</a>
                                     <center><a href="<?=base_url()?>user_scan_code"><i class="fa fa-camera"></i></a></center>
                                 </div>
-                                <div class="default" style="display:none">t
+                                <div class="default" style="display:none">
                                     <div class="setting">
                                         <a href="" target="_blank">
                                             <div class="icon">

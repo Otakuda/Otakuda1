@@ -17,8 +17,6 @@ class Driver_new_order_detail extends CI_Controller
     {
         $this->load->view('driver/driver_left');
         $this->load->view('driver/driver_new_order_detail');
-        $this->load->view('driver/driver_right');
-
     }
 
     public function get_orderDetail($id)
@@ -27,6 +25,7 @@ class Driver_new_order_detail extends CI_Controller
         $this->data['show'] = $this->Driver_new_order_detail_model->get_order($order_id);
         $this->load->view('driver/driver_left');
         $this->load->view('driver/driver_new_order_detail',$this->data);
+
 
 
     }

@@ -13,4 +13,5 @@ class Driver_order_delivery_model extends CI_Model
         $query = $this->db->get();
         return $query->row_array();
     }
+
 }

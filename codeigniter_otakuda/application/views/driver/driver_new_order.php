@@ -137,7 +137,7 @@
                                             <input type="hidden" value="<?= $item['address'] ?>" id="end" readonly>
                                         </td>
                                         <td>
-                                            <a href="<?= base_url() ?>Driver_new_order_detail/get_orderDetail/<?= $item['order_id'] ?>">
+                                            <a href="<?= base_url() ?>rider/Driver_new_order_detail/get_orderDetail/<?= $item['order_id'] ?>">
                                                 <button type="button" data-toggle="modal" data-target="#mediumModal">
                                                     <i class="fa fa-search"></i>
                                                 </button>
@@ -147,13 +147,13 @@
                                             <div id="output"></div>
                                         </td>
                                         <td>
-                                            <a href="<?= base_url() ?>Driver_new_order/next/<?= $item['order_id'] ?>">
+                                            <a href="<?= base_url() ?>rider/Driver_new_order/next/<?= $item['order_id'] ?>">
                                                 <button type="button">
                                                     拒單
                                                 </button>
                                             </a>
 
-                                            <a href="<?= base_url() ?>Driver_to_shop/getDirection/<?= $item['order_id'] ?>">
+                                            <a href="<?= base_url() ?>rider/Driver_to_shop/getDirection/<?= $item['order_id'] ?>">
                                                 <button>
                                                     接單
                                                 </button>

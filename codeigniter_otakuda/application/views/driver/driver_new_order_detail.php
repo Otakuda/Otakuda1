@@ -1,7 +1,5 @@
 
 <div id="right-panel" class="right-panel">
-
-    <!-- Header-->
     <header id="header" class="header">
 
         <div class="header-menu">
@@ -132,7 +130,7 @@
                             </table>
                             <div class="modal-footer">
 <!--                                <button type="button" class="btn btn-secondary" data-dismiss="modal">拒單</button>-->
-                                <a href="<?=base_url()?>driver_new_order">
+                                <a href="<?=base_url()?>rider/driver_new_order">
                                     <button type="button" class="btn btn-primary" >返回</button>
                                 </a>
                             </div>
@@ -145,52 +143,5 @@
 
 </div><!-- /#right-panel -->
 <!--order detail-->
-<div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="mediumModalLabel">商品</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="card-body">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">商品名稱</th>
-                            <th scope="col">數量</th>
-                            <th scope="col">價錢(RM)</th>
-                        </tr>
-                        </thead>
-                        <?php
-                        $i = 1;
-                        foreach ($show as $detail):
-                            ?>
-                            <tbody>
-                            <tr>
-                                <th scope="row"><?php echo $i++; ?></th>
-                                <td><?= $detail['name'] ?></td>
-                                <td>25</td>
-                                <td>25</td>
-                            </tr>
-                            </tbody>
-                        <?php endforeach; ?>
-                    </table>
-                    總價錢RM50
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">拒單</button>
-                <a href="delivery.html">
-                    <button type="button" class="btn btn-primary">接單</button>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Right Panel -->
 

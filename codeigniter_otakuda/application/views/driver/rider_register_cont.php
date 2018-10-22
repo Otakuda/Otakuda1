@@ -1,13 +1,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1.0">
+<link rel="stylesheet" href="<?php echo base_url(); ?>vendor/dropzone/dropzone.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
       integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<style>
+    .dropzone {
+        background: #fff;
+        border: 2px dashed #ddd;
+        border-radius: 5px;
+        /*width:80px;*/
+    }
+
+    .dz-message {
+        color: #999;
+    }
+
+    .dz-message:hover {
+        color: #464646;
+    }
+
+    .dz-message h3 {
+        font-size: 200%;
+        margin-bottom: 5px;
+    }
+</style>
 <form action="<?= base_url(); ?>index.php/rider/Rider_C/add_rider_cont" method="post" enctype="multipart/form-data">
 
-    <input type="hidden" name="rider_name" id="rider_name" value="<?=$rider_name?>">
-    <input type="hidden" name="rider_email" id="rider_email" value="<?=$rider_email?>" >
-    <input type="hidden" name="rider_password" id="rider_password" value="<?=$rider_password?>" >
+    <input type="hidden" name="rider_name" id="rider_name" value="<?= $rider_name ?>">
+    <input type="hidden" name="rider_email" id="rider_email" value="<?= $rider_email ?>">
+    <input type="hidden" name="rider_password" id="rider_password" value="<?= $rider_password ?>">
 
     <legend>Contact Us Today!</legend>
     <div class="form-group">
@@ -18,13 +40,12 @@
     </div>
 
 
-
     <div class="form-group">
         <label class="col-md-4 control-label">出身日期<span style="color:red">*</span></label>
         <div class="col-md-4 inputGroupContainer">
 
             <select name="days" id="days">
-                <option value=" "></option>
+                <option>day</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -58,7 +79,7 @@
                 <option>31</option>
             </select>
             <select name="month">
-                <option value=" "></option>
+                <option>month</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -187,15 +208,101 @@
 
     </div>
 
-    <div >
-        <label for="pic_nric">NRIC photo:</label>
-        <input type="file" name="pic_nric"   id="pic_nric">
+    <div>
+        <label for="pic_nric">NRIC and Lessen Photo:</label>
+        <div id="content">
+            <div id="my-dropzone" class="dropzone" onchange="updateFileName()">
+                <div class="dz-message">
+                    <h3>將圖片拖放此處或者點擊上傳</h3>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="ic" name="ic_img">
     </div>
-    <div >
-        <label for="pic_lesen">Licence photo:</label>
-        <input type="file" name="pic_lesen"   id="pic_lesen">
-    </div>
-
-
-    <button type="submit">submit</button>
+<!--    <div>-->
+<!--        <label for="pic_lesen">Licence photo:</label>-->
+<!--        <div id="content">-->
+<!--            <div id="my-dropzone2" class="dropzone" onchange="updateFileName()">-->
+<!--                <div class="dz-message">-->
+<!--                    <h3>將圖片拖放此處或者點擊上傳</h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <input type="hidden" id="lessen" name="lessen_img">-->
+<!--    </div>-->
+    <br>
+    <center>
+        <button type="submit">submit</button>
+    </center>
 </form>
+<script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url(); ?>vendor/dropzone/dropzone.min.js"></script>
+<script>
+    var image_array = [];
+    Dropzone.autoDiscover = false;
+    var myDropzone = new Dropzone("#my-dropzone", {
+        url: "<?php echo site_url("rider/rider_C/upload") ?>",
+        acceptedFiles: "image/*",
+        maxFiles: 4,
+        dictMaxFilesExceeded: "檔案個數限制：4",
+        addRemoveLinks: true,
+        removedfile: function (file) {
+            var name = file.name;
+            $.ajax({
+                type: "post",
+                url: "<?php echo site_url("rider/rider_C/remove") ?>",
+                data: {file: name},
+                dataType: 'html'
+            });
+            var index = image_array.indexOf(name);
+            if (index.length != 0) {
+                image_array.splice(index, 1);
+                $('#ic').val(image_array);
+            }
+            // remove the thumbnail
+            var previewElement;
+            return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+        },
+        init: function () {
+            this.on("success", function (file, response) {
+                image_array.push(response);
+                $('#ic').val(image_array);
+            });
+        }
+    });
+</script>
+
+<!--<script>-->
+<!--    var image_array = [];-->
+<!--    Dropzone.autoDiscover = false;-->
+<!--    var myDropzone = new Dropzone("#my-dropzone2", {-->
+<!--        url: "--><?php //echo site_url("rider/rider_C/upload") ?>//",
+<!--//        acceptedFiles: "image/*",-->
+<!--//        maxFiles: 2,-->
+<!--//        dictMaxFilesExceeded: "檔案個數限制：2",-->
+<!--//        addRemoveLinks: true,-->
+<!--//        removedfile: function (file) {-->
+<!--//            var name = file.name;-->
+<!--//            $.ajax({-->
+<!--//                type: "post",-->
+<!--//                url: "--><?php ////echo site_url("rider/rider_C/remove") ?><!--//",-->
+<!--//                data: {file: name},-->
+<!--//                dataType: 'html'-->
+<!--//            });-->
+<!--//            var index = image_array.indexOf(name);-->
+<!--//            if (index.length != 0) {-->
+<!--//                image_array.splice(index, 1);-->
+<!--//                $('#lessen').val(image_array);-->
+<!--//            }-->
+<!--//            // remove the thumbnail-->
+<!--//            var previewElement;-->
+<!--//            return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);-->
+<!--//        },-->
+<!--//        init: function () {-->
+<!--//            this.on("success", function (file, response) {-->
+<!--//                image_array.push(response);-->
+<!--//                $('#lessen').val(image_array);-->
+<!--//            });-->
+<!--//        }-->
+<!--//    });-->
+<!--//</script>-->

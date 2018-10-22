@@ -7,7 +7,6 @@ class quiz_game extends CI_Controller {
     public function index()
     {
         $this->load->view('driver/quiz_game');
-
     }
 
 

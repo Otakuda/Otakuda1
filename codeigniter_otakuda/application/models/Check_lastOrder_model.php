@@ -9,7 +9,7 @@ class Check_lastOrder_model extends CI_Model
         $this->db->join('order_detail','order_detail.order_id=orders.order_id');
         $this->db->join('products','products.product_id=order_detail.product_id','left');
         $this->db->where('order_detail.shop_id',$where);
-        $this->db->where('orders.accepter',3);
+        $this->db->where('orders.accepter',4);
         $this->db->group_by('orders.order_id');
         $q = $this->db->get();
         return $q->result_array();

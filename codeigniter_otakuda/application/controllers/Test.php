@@ -14,9 +14,6 @@ class Test extends CI_Controller
     public function index()
     {
         $this->load->view('driver/test2');
-
-//        $this->load->view('driver/test');
-
     }
 
 }
