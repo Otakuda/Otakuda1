@@ -1,6 +1,5 @@
-<div id="right-panel" class="right-panel">
 
-    <!-- Header-->
+<div id="right-panel" class="right-panel">
     <header id="header" class="header">
 
         <div class="header-menu">
@@ -86,11 +85,9 @@
                 </div>
             </div>
         </div>
+
     </header>
 
-    <?php
-    foreach ($outputRecord as $out) {
-    ?>
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
@@ -98,38 +95,45 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title"><?= $out['created_date'] ?></strong>
+                            <strong class="card-title">訂單历史记录
+                                <i class="fa fa-chevron-circle-right"></i>訂單詳情
+                            </strong>
                         </div>
                         <div class="card-body">
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>店面名字</th>
-                                    <th>發貨地址</th>
-                                    <th>收件人姓名</th>
-                                    <th>收貨地址</th>
-                                    <th>價錢(RM)</th>
-                                    <th></th>
+                                    <th>#</th>
+                                    <th>商品名稱</th>
+                                    <th>數量</th>
+                                    <th>單價</th>
+                                    <th>價錢</th>
+                                    <th>備註</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td><?= $out['shop_name'] ?></td>
-                                    <td><?= $out['shop_address'] ?></td>
-                                    <td><?= $out['name'] ?></td>
-                                    <td><?= $out['address'] ?></td>
-                                    <td><?= $revenue ?></td>
-                                    <td>
-                                        <!--<button type="button" class="fa-search" data-toggle="modal" data-target="#mediumModal">-->
-                                        <a href="<?=base_url()?>rider/driver_history_order_detail/get_orderDetail/<?=$out['order_id'];?>">
-                                            <button type="button" data-toggle="modal">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </a>
-                                    </td>
-                                </tr>
-                                </tbody>
+                                <?php
+                                $i = 1;
+                                foreach ($show as $item):
+                                    $a = array($item['price']);
+                                    ?>
+                                    <tbody>
+                                    <tr>
+                                        <td><?php echo $i++; ?></td>
+                                        <td><?= $item['product_name'] ?></td>
+                                        <td><?= $item['quantity'] ?></td>
+                                        <td><?= $item['product_price'] ?></td>
+                                        <td><?= $item['price'] ?></td>
+                                        <td><?=$item['remark']?></td>
+                                    </tr>
+                                    </tbody>
+                                <?php endforeach; ?>
                             </table>
+                            <div class="modal-footer">
+                                <!--                                <button type="button" class="btn btn-secondary" data-dismiss="modal">拒單</button>-->
+                                <a href="<?=base_url()?>rider/driver_order_record">
+                                    <button type="button" class="btn btn-primary" >返回</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,6 +142,6 @@
     </div><!-- .content -->
 
 </div><!-- /#right-panel -->
+<!--order detail-->
+<!-- Right Panel -->
 
-<?php
-} ?>

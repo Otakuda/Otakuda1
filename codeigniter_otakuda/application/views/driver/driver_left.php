@@ -61,7 +61,7 @@
                        aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>訂單</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-puzzle-piece"></i><a href="<?=base_url()?>rider/Driver_new_order">新訂單</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="<?=base_url()?>rider/Driver_order_record">訂單歷史記錄</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="<?=base_url()?>rider/Driver_order_record/getRecord/<?=$this->session->userdata('rider_id')?>">訂單歷史記錄</a></li>
                     </ul>
                 </li>
                 <li class="active">
