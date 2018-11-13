@@ -32,21 +32,26 @@ class Rider_C extends CI_Controller
 
             $data = $this->rider_M->display_rider_detail($rider_email);
 
-            $riderdata = array(
-
+            $riderData = array(
                 'rider_name' => $data[0]['rider_name'],
                 'rider_email' => $data[0]['rider_email'],
-                'logged_in' => TRUE,
                 'rider_id' => $data[0]['rider_id'],
                 'rider_nric' => $data[0]['rider_nric'],
                 'phone' => $data[0]['phone'],
-
+                'rate_mark'=>$data[0]['rate_mark'],
+                'number_of_times'=>$data[0]['number_of_times'],
+                'rider_login'=>TRUE
             );
-            $this->session->set_userdata($riderdata);
+            $this->session->set_userdata($riderData);
 
-            redirect(base_url() . 'rider/Driver_index');
+            $rider_idGet=$this->rider_M->display_rider_id($rider_email);
+            $status=array(
+              'rider_status'=>1
+            );
+            $this->rider_M->updateStatus($rider_email,$status);
+            $this->load->view('driver/Driver_left');
+            $this->load->view('driver/Driver_index');
         } else {
-
             echo "<script type=\"text/javascript\">
                    alert(\"Name Available\");
                    </script>";

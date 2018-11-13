@@ -20,7 +20,6 @@ class Trader_model extends CI_Model
         $this->db->select('order_detail.*,products.*');
         $this->db->from('order_detail');
         $this->db->join('products','products.product_id=order_detail.product_id','left');
-//        $this->db->group_by('order_id');
         $q=$this->db->get();
         return $q->result_array();
     }
@@ -29,5 +28,30 @@ class Trader_model extends CI_Model
     {
         $this->db->where('order_id',$uid);
         $this->db->update('orders',$data);
+    }
+
+    function get_Rider()
+    {
+        $this->db->select_max('rider_rate.rate_mark');
+        $this->db->from('rider_rate');
+        $this->db->join('rider','rider.rider_id=rider_rate.rider_id');
+        $this->db->where('rider.rider_status',1);
+        $q=$this->db->get();
+
+        return $q->row_array();
+    }
+
+    function get_riderId($rider_mark)
+    {
+        $this->db->select('rider_rate.rider_id');
+        $this->db->from('rider_rate');
+        $this->db->where('rate_mark',$rider_mark);
+        $q=$this->db->get();
+        return $q->row_array();
+    }
+
+    function insertDecide($dataNew)
+    {
+        $this->db->insert('rider_order_decide',$dataNew);
     }
 }

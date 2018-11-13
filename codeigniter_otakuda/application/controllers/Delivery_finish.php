@@ -17,7 +17,7 @@ class Delivery_finish extends CI_Controller
     {
         $uid = $id;
         $data = array(
-            'accepter' => '3'
+            'accepter' => '4'
         );
         $this->Delivery_finish_model->updateAcc($uid, $data);
         $this->data['access'] = $this->Delivery_finish_model->getRider($id);
@@ -29,6 +29,9 @@ class Delivery_finish extends CI_Controller
     {
         $rate = $this->input->post('rate');
         $this->Delivery_finish_model->update_rate($rider,$rate);
-        $this->load->view('');
+        echo "<script>";
+        echo " alert('感謝您的購買');
+            window.location.href='".site_url('welcome')."';
+            </script>";
     }
 }

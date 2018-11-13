@@ -136,8 +136,7 @@
             </div>
         </div><!-- .animated -->
     </div><!-- .content -->
-
+        <?php
+    } ?>
 </div><!-- /#right-panel -->
 
-<?php
-} ?>

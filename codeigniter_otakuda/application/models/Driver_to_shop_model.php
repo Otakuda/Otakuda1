@@ -37,4 +37,11 @@ class Driver_to_shop_model extends CI_Model
         $this->db->where('order_id',$id);
         $this->db->update('orders',$dataUpdate);
     }
+
+    function updateStatus($id,$data)
+    {
+        $this->db->where('rider_id',$id);
+        $this->db->update('rider',$data);
+    }
+
 }

@@ -9,17 +9,17 @@ class Order_todestination extends CI_Controller
         // load base_url
         $this->load->helper('url');
         //load model
-        $this->load->model('Order_todestination_model');
+        $this->load->model('Order_toDestination_model');
 
     }
 
     public function index()
     {
         $where = $this->session->userdata('shop_id');
-        $this->data['order'] = $this->Order_todestination_model->getOrder($where);
-        $this->data['order_detail'] = $this->Order_todestination_model->getOrderDetail();
+        $this->data['order'] = $this->Order_toDestination_model->getOrder($where);
+        $this->data['order_detail'] = $this->Order_toDestination_model->getOrderDetail();
         $this->load->view('header2');
-        $this->load->view('order_todestination', $this->data);
+        $this->load->view('order_toDestination', $this->data);
     }
 
     public function updateAccepter($id)
@@ -28,11 +28,11 @@ class Order_todestination extends CI_Controller
         $data=array(
             'accepter'=>'3'
         );
-        $this->Order_todestination_model->update_acc($uid,$data);
+        $this->Order_toDestination_model->update_acc($uid,$data);
         $where = $this->session->userdata('shop_id');
-        $this->data['order'] = $this->Order_todestination_model->getOrder($where);
-        $this->data['order_detail'] = $this->Order_todestination_model->getOrderDetail();
+        $this->data['order'] = $this->Order_toDestination_model->getOrder($where);
+        $this->data['order_detail'] = $this->Order_toDestination_model->getOrderDetail();
         $this->load->view('header2');
-        $this->load->view('order_todestination', $this->data);
+        $this->load->view('order_toDestination', $this->data);
     }
 }

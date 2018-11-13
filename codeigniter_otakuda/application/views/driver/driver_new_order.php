@@ -1,4 +1,3 @@
-
 <div id="right-panel" class="right-panel">
 
     <!-- Header-->
@@ -104,10 +103,7 @@
                                 <thead>
                                 <tr>
                                     <th>訂單編號</th>
-                                    <th>店面名字</th>
-                                    <th>發貨地址</th>
-                                    <th>收件人姓名</th>
-                                    <th>送貨地址</th>
+                                    <th>發貨/送貨地址</th>
                                     <th>訂單詳情</th>
                                     <th>距離/時間</th>
                                     <th>接/拒单</th>
@@ -119,45 +115,53 @@
                                     <tbody>
                                     <tr>
                                         <td>
-                                            <?= $item['order_id'] ?>
+                                            <center>
+                                                <?= $item['order_id'] ?>
+                                            </center>
                                         </td>
                                         <td>
-                                            <?= $item['shop_name'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $item['shop_address'] ?>
-                                            <input type="hidden" value="<?= $item['shop_address'] ?>" id="start"
-                                                   readonly>
-                                        </td>
-                                        <td>
-                                            <?= $item['name'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $item['address'] ?>
+                                            <center>
+                                                <button type="button" class="btn btn-secondary mb-1" data-toggle="modal"
+                                                        data-target="#staticModal">
+                                                    查看地址
+                                                </button>
+                                                <input type="hidden" value="<?= $item['shop_address'] ?>" id="start"
+                                                       readonly>
+                                            </center>
                                             <input type="hidden" value="<?= $item['address'] ?>" id="end" readonly>
                                         </td>
                                         <td>
-                                            <a href="<?= base_url() ?>rider/Driver_new_order_detail/get_orderDetail/<?= $item['order_id'] ?>">
-                                                <button type="button" data-toggle="modal" data-target="#mediumModal">
+                                            <center>
+                                                <a href="<?= base_url() ?>rider/Driver_new_order_detail/get_orderDetail/<?= $item['order_id'] ?>">
+                                                    <button type="button" data-toggle="modal"
+                                                            data-target="#mediumModal">
+                                                        <i class="fa fa-search"></i>
+                                                    </button>
+                                                </a>
+                                            </center>
+                                        </td>
+                                        <td>
+                                            <center>
+                                                <button type="button" class="btn btn-secondary mb-1" data-toggle="modal"
+                                                        data-target="#staticModal3">
                                                     <i class="fa fa-search"></i>
                                                 </button>
-                                            </a>
+                                            </center>
                                         </td>
                                         <td>
-                                            <div id="output"></div>
-                                        </td>
-                                        <td>
-                                            <a href="<?= base_url() ?>rider/Driver_new_order/next/<?= $item['order_id'] ?>">
-                                                <button type="button">
-                                                    拒單
-                                                </button>
-                                            </a>
+                                            <center>
+                                                <a href="<?= base_url() ?>rider/Driver_new_order/next/<?= $item['order_id'] ?>">
+                                                    <button type="button">
+                                                        拒單
+                                                    </button>
+                                                </a>
 
-                                            <a href="<?= base_url() ?>rider/Driver_to_shop/getDirection/<?= $item['order_id'] ?>">
-                                                <button>
-                                                    接單
-                                                </button>
-                                            </a>
+                                                <a href="<?= base_url() ?>rider/Driver_to_shop/getDirection/<?= $item['order_id'] ?>">
+                                                    <button>
+                                                        接單
+                                                    </button>
+                                                </a>
+                                            </center>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -165,14 +169,55 @@
                             </table>
                         </div>
                     </div>
-
                     <div id="map" hidden></div>
-
-
                 </div>
+
             </div>
         </div><!-- .animated -->
     </div><!-- .content -->
+
+    <div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel"
+         aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticModalLabel">發貨/取貨地址</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    發貨地址： <?= $item['shop_address'] ?>
+                    <br>
+                    送貨地址： <?= $item['address'] ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticModal3" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel"
+         aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticModalLabel">距離/時間</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="output"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         function initMap() {
             var bounds = new google.maps.LatLngBounds;

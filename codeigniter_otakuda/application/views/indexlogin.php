@@ -128,7 +128,11 @@
                                     <?php echo '<p class="user-name"> ' . $this->session->userdata('username') . "</b></p>";
                                     ?>
                                     <a class="btn-login" href="<?= base_url(); ?>login/logout">退出</a>
-                                    <center><a href="<?=base_url()?>user_scan_code"><i class="fa fa-camera"></i></a></center>
+                                    <center>
+                                        <a href="<?=base_url()?>user_scan_code">
+                                            <i class="fa fa-camera"></i>
+                                        </a>
+                                    </center>
                                 </div>
                                 <div class="default" style="display:none">
                                     <div class="setting">
@@ -199,16 +203,16 @@
 <script>
     // Initialize and add the map
     function initMap() {
-        var uluru = {lat: -25.344, lng: 131.036};
+        var uluru = {lat:12, lng:131};
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: uluru});
+            document.getElementById('map'), {zoom: 16, center: uluru});
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
     }
 
-    $(function () {
-        $("#dialog").dialog();
-    });
+//    $(function () {
+//        $("#dialog").dialog();
+//    });
 
 </script>
 <!--Load the API from the specified URL

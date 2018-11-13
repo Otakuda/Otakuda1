@@ -4,7 +4,7 @@ class CheckQrCode_model extends CI_Model
 {
     public function getId($id)
     {
-        $this->db->select('orders.*,products.product_name,products.product_price,order_detail.*');
+        $this->db->select('orders.*,products.*,order_detail.*');
         $this->db->from('orders');
         $this->db->join('order_detail','order_detail.order_id=orders.order_id');
         $this->db->join('products','products.product_id=order_detail.product_id');
@@ -12,4 +12,6 @@ class CheckQrCode_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
+
 }

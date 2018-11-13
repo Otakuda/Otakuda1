@@ -15,12 +15,9 @@ class Driver_new_order extends CI_Controller
 
     public function index()
     {
-
         $this->data['orderD'] = $this->Driver_new_order_model->get_orderD();
         $this->load->view('driver/driver_left');
         $this->load->view('driver/driver_new_order', $this->data);
-
-
     }
 
     public function next($id)
@@ -33,8 +30,6 @@ class Driver_new_order extends CI_Controller
         $this->data['orderD'] = $this->Driver_new_order_model->get_orderD();
         $this->load->view('driver/driver_left');
         $this->load->view('driver/driver_new_order', $this->data);
-
-
     }
 
 }

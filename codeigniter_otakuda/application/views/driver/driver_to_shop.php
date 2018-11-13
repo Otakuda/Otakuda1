@@ -1,24 +1,31 @@
+<style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+        height: 80%;
+    }
 
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-            height: 80%;
-        }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+    #warnings-panel {
+        width: 100%;
+        height: 10%;
+        text-align: center;
+    }
 
-        #warnings-panel {
-            width: 100%;
-            height: 10%;
-            text-align: center;
+    @media only screen and (max-width: 900px) {
+        map {
+            width:375px;
+            height:812px;
         }
-    </style>
+    }
+
+</style>
 
 
 <div id="right-panel" class="right-panel">
@@ -141,7 +148,7 @@
                             if ($img_url) {
                                 ?>
                                 <center><img src="<?php echo base_url('qrimg/' . $img_url); ?>"></center>
-                                <input type="hidden" id="order_id" name="order_id" value="<?=$img_url ?>">
+                                <input type="hidden" id="order_id" name="order_id" value="<?= $img_url ?>">
                                 <?php
                             }
                             ?>

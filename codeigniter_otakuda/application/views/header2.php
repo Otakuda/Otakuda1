@@ -28,8 +28,9 @@
         <nav class="my-nav" id="yui_3_12_0_5_1531460838790_1927">
             <ul class="yui3-g" id="yui_3_12_0_5_1531460838790_1926">
                 <li class="yui3-u nav-tabs none act" id="yui_3_12_0_5_1531460838790_1925">
-                    <a href="<?= base_url() ?>trader"
-                       id="yui_3_12_0_5_1531460838790_1924"><?php echo '<p class="user-name"> ' . $this->session->userdata('username') . "</p>"; ?></a>
+                    <a href="<?= base_url() ?>trader" id="yui_3_12_0_5_1531460838790_1924">
+                        <?php echo '<p class="user-name"> ' . $this->session->userdata('username') . "</p>"; ?>
+                    </a>
                     <em class="decoration">decoration</em>
                 </li>
                 <li class="yui3-u nav-tabs none act" id="yui_3_12_0_5_1531460838790_1925">
@@ -41,7 +42,7 @@
                     <div class="submenu">
                         <ul class="yui3-g">
                             <li class="yui3-u"><p class="caption">商品管理</p>
-                                <a href="https://tw.bid.yahoo.com/partner/merchandise/list_merchandise">商品目錄</a>
+                                <a href="<?= base_url(); ?>catalog/getCatalog/<?php echo $this->session->userdata('user_id')?>">商品目錄</a>
                                 <a href="<?= base_url(); ?>select_category">上架新商品</a>
                             </li>
                         </ul>
@@ -55,12 +56,12 @@
                     <div class="submenu">
                         <ul class="yui3-g">
                             <li class="yui3-u">
-                                <a href="<?=base_url()?>trader">新訂單</a>
-                                <a href="<?=base_url()?>order_ontheway">待取貨的訂單</a>
-                                <a href="<?=base_url()?>order_todestination">運送中的訂單</a>
-                                <a href="<?=base_url()?>check_lastOrder">訂單歷史記錄</a>
-                                <a href="<?=base_url()?>scancode">掃描騎手二維碼</a>
-                                <a href="https://tw.bid.yahoo.com/myauc/orderqna">買家留言</a>
+                                <a href="<?= base_url() ?>trader">新訂單</a>
+                                <a href="<?= base_url() ?>order_ontheway">待取貨的訂單</a>
+                                <a href="<?= base_url() ?>order_toDestination">運送中的訂單</a>
+                                <a href="<?= base_url() ?>check_lastOrder">訂單歷史記錄</a>
+                                <a href="<?= base_url() ?>scancode">掃描騎手二維碼</a>
+                                <a href="">買家留言</a>
                             </li>
                         </ul>
                         <em class="sep-line">decoration</em></div>

@@ -18,11 +18,6 @@ class rider_M extends CI_Model
         return $this->db->insert('ic_image', $photoIc);
     }
 
-//    public function add_lessenPhoto($lessenDataPhoto)
-//    {
-//        return $this->db->insert('lessen_image', $lessenDataPhoto);
-//    }
-
     public function rider_login($rider_email, $rider_password)
     {
         //query the table 'phone' and get the result count
@@ -38,6 +33,16 @@ class rider_M extends CI_Model
     {
         $this->db->select('*');
         $this->db->from("rider");
+        $this->db->join('rider_rate','rider_rate.rider_id=rider.rider_id');
+        $this->db->where('rider_email', $rider_email);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function display_rider_id($rider_email)
+    {
+        $this->db->select('rider.rider_id');
+        $this->db->from('rider');
         $this->db->where('rider_email', $rider_email);
         $query = $this->db->get();
         return $query->result_array();
@@ -47,14 +52,20 @@ class rider_M extends CI_Model
     {
         return $this->db->insert('rider_rate',$rate);
     }
-//    public function display_rider($rider_name)
-//    {
-//        $this->db->select('*');
-//        $this->db->from("rider");
-//        $this->db->where('rider_name', $rider_name);
-//        $query = $this->db->get();
-//        return $query->result_array();
-//    }
 
+    function getRate($rider_id)
+    {
+        $this->db->select('rider_rate.rate_mark');
+        $this->db->from('rider_rate');
+        $this->db->where('rider_rate.rider_id',$rider_id);
+        $q=$this->db->get();
+        return $q->result_array();
+    }
+
+    function updateStatus($rider_email,$status)
+    {
+        $this->db->where('rider_email',$rider_email);
+        $this->db->update('rider',$status);
+    }
 
 }

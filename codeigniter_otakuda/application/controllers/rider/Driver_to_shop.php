@@ -43,6 +43,12 @@ class Driver_to_shop extends CI_Controller
         if ($this->ciqrcode->generate($params)) {
             $this->data['img_url'] = $qr_image;
         }
+
+        $data=array(
+            'rider_status'=>2
+        );
+        $this->Driver_to_shop_model->updateStatus($id,$data);
+
         $this->load->view('driver/driver_left');
         $this->load->view('driver/driver_to_shop', $this->data);
     }

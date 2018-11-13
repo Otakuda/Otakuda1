@@ -15,31 +15,32 @@
             </tr>
             <?php
             $i = 1;
-            foreach ($order as $item) { ?>
+            foreach ($order as $product) { ?>
                 <tr bgcolor="#FFFFFF">
                     <td>
                         <?php echo $i++; ?>
                     </td>
                     <td>
-                        <?php echo $item['product_name']; ?>
+                        <?php echo $product['product_name']; ?>
                     </td>
                     <td>
-                        <?php echo $item['product_price']; ?>
+                        <?php echo $product['product_price']; ?>
                     </td>
                     <td>
-                        <?php echo $item['quantity']; ?>
+                        <?php echo $product['quantity']; ?>
                     </td>
                     <td>
-                        <?php echo $item['price']; ?>
+                        <?php echo $product['price']; ?>
                     </td>
                     <td>
-                        <?php echo $item['remark']; ?>
+                        <?php echo $product['remark']; ?>
                     </td>
                 </tr>
-            <?php } ?>
+            <?php }
+            ?>
             <tr bgcolor="#FFFFFF">
                 <td colspan="7" align="center">
-                    <a href="<?= base_url() ?>order_todestination/updateAccepter/<?php echo $item['order_id']; ?>">
+                    <a href="<?= base_url() ?>order_toDestination/updateAccepter/<?php echo $product['order_id']; ?>">
                         <button>確定</button>
                     </a>
                     <button>取消</button>

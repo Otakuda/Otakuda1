@@ -53,15 +53,13 @@ class Login extends CI_Controller
                 'shop_id' => $data[0]['shop_id'],
             );
             $this->session->set_userdata($userdata);
-
             redirect('index');
         }else{
 
         }
     }
-
         public function logout() {
-        $this->session->sess_destroy();
+        $this->session->unset_userdata('logged_in');
             $this->load->view('header');
             $this->load->view('index');
             $this->load->view('footer');

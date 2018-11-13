@@ -1,27 +1,25 @@
+<style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+        height: 80%;
+    }
 
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-            height: 80%;
-        }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #warnings-panel {
-            width: 100%;
-            height: 10%;
-            text-align: center;
-        }
-    </style>
+    #warnings-panel {
+        width: 100%;
+        height: 10%;
+        text-align: center;
+    }
+</style>
 
 <div id="right-panel" class="right-panel">
-
     <!-- Header-->
     <header id="header" class="header">
 
@@ -114,7 +112,6 @@
     </head>
     <body>
 
-
     <div id="floating-panel">
         <input type="hidden" value="<?= $direction['shop_address'] ?>" id="start" readonly>
         <b>送貨地點: </b>
@@ -140,11 +137,11 @@
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <a href="<?= base_url() ?>rider/driver_sign_delivery">
+                        <a href="<?= base_url() ?>rider/driver_sign_delivery/getOrder/<?=$direction['order_id']?>">
                             <button type="button" class="btn btn-primary">簽名</button>
                         </a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">返回</button>
-                        <a href="<?= base_url() ?>rider/driver_finish_delivery">
+                        <a href="<?= base_url() ?>rider/driver_finish_delivery/finish_delivery/<?=$this->session->userdata('rider_id')?>">
                             <button type="button" class="btn btn-primary">確定</button>
                         </a>
                     </div>

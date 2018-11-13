@@ -10,6 +10,14 @@ class Driver_sign_delivery extends CI_Controller
 {
     public function index()
     {
+        $this->load->view('driver/driver_left');
         $this->load->view('driver/Driver_sign_delivery');
+    }
+
+    public function getOrder($id)
+    {
+        $this->data['order']=$id;
+        $this->load->view('driver/driver_left');
+        $this->load->view('driver/Driver_sign_delivery',$this->data);
     }
 }
